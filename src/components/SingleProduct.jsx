@@ -2,8 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import "./products.css"
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+ 
 
 
 
@@ -49,12 +48,12 @@ const SingleProduct = () => {
         return (
             <>
                 <div className='container bg-white py-5' style={{marginTop:"7rem"}}>
-                    <div className='row  '>
+                    <div className='row'>
 
                        
                         <>
                             <div className='col-12 col-md-6 bg-white text-center'>
-                                <img height="400" width="400" src={data.image} className='single-img' />
+                                <img height="400" width="400" src={data.image} className='single-img' alt={data.category} />
 
                             </div>
                             <div className='col-12 col-md-6 bg-white pt-3'>
