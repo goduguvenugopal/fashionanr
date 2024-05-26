@@ -1,0 +1,160 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    user-select: none;
+    background-color: rgb(251, 248, 248);
+
+ }
+
+ body::-webkit-scrollbar {
+    display: none;
+ }
+
+ /* home and navbar styling  */
+
+ .logo-text {
+    font-size: 27px;
+    font-weight: bold;
+    color: white !important;
+    font-style: italic;
+
+
+ }
+
+ .nav-icon {
+    margin-right: 5px;
+    color: white;
+    background-color: transparent;
+
+ }
+
+
+ .bt-nav {
+    border: 1px solid white;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+ }
+
+
+ .image-card {
+    display: flex;
+    overflow-x: auto;
+    gap: 3rem;
+    margin-top: 5rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+
+
+
+
+ }
+
+ .image-card::-webkit-scrollbar {
+    display: none;
+ }
+
+ .img-sub-card {
+    box-shadow: 0 0 6px rgb(145, 143, 143);
+    border-radius: 10px;
+    height: 22rem;
+    width: 15rem;
+    text-align: center;
+    background-color: white;
+
+
+ }
+
+ .home-images {
+    width: 15rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: white;
+    mix-blend-mode: multiply;
+
+ }
+
+ .title {
+    font-size: 16px;
+    margin-top: 8px;
+    background-color: white;
+ }
+
+ .cost {
+    font-size: 16px;
+    background-color: white;
+ }
+
+ .bt-buy {
+    border: 1px solid rgb(54, 53, 53);
+    padding-left: 9px;
+    padding-right: 9px;
+    border-radius: 5px;
+    background-color: white;
+    
+    height: 32px;
+
+ }
+
+ .category-img {
+    width: 80px;
+
+ }
+
+
+ /* carousel styling  */
+.carousel-card{
+   display: flex;
+   position: relative;
+   align-items: center;
+
+}
+.carousel-img{
+   max-width: 100%;
+   
+ }
+
+ .inc-bt{
+   position: absolute;
+   border: none;
+   background-color: white;
+   width: 45px;
+   height: 70px;
+   border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
+   
+ }
+ .dec-bt{
+   position: absolute;
+   border: none;
+   background-color: white;
+   right:0.7rem;
+   width: 45px;
+   height:70px ;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+   
+   
+   
+ }
+
+ @media only screen and (max-width : 762px){
+   .dec-bt{
+      width: 25px;
+      height: 40px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+   }
+   .inc-bt{
+      width: 25px;
+      height: 40px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      
+   }
+ }

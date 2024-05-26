@@ -1,0 +1,95 @@
+.filter-card {
+    display: flex;
+    overflow-x: auto;
+
+
+
+}
+
+@media only screen and (min-width : 762px) {
+    .filter-card {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .skeleton {
+
+        border-radius: 10px;
+        height: 22rem;
+        width: 15rem;
+        text-align: center;
+        background-color: white;
+        padding-top: 2rem;
+    }
+}
+
+
+
+.filter-card::-webkit-scrollbar {
+    display: none;
+}
+
+
+.filter-bt {
+    height: 35px;
+
+}
+
+
+.products-cont {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    row-gap: 2.5rem;
+    column-gap: 2.5rem;
+    background-color: white;
+
+
+}
+
+.cat-sub-card {
+    box-shadow: 0 0 6px rgb(145, 143, 143);
+    border-radius: 10px;
+    height: 22rem;
+    width: 15rem;
+    text-align: center;
+    background-color: white;
+    padding-top: 2rem;
+
+}
+
+.cat-images {
+    width: 11rem;
+    height: 12rem;
+}
+
+@media only screen and (max-width : 762px) {
+    .products-cont {
+        display: flex;
+        justify-content: space-around;
+        row-gap: 2rem;
+        column-gap: 1rem;
+
+    }
+
+    .cat-sub-card {
+        padding-top: 1.5rem;
+        height: 16rem;
+        width: 9rem;
+
+
+    }
+
+    .cat-images {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .skeleton {
+        height: 15rem;
+        width: 9rem;
+
+    }
+
+
+}
