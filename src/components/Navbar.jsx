@@ -5,7 +5,7 @@ const Navbar = () => {
         <div className=''>
             <nav className="fixed-top navbar shadow navbar-expand-lg navbar-light bg-primary">
                 <div className="container  bg-primary">
-                    <a className="navbar-brand logo-text bg-primary " href="">
+                    <a className="navbar-brand logo-text bg-primary" href="">
                         Fashionkart
                     </a>
                     <button
@@ -22,22 +22,22 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse bg-primary" id="navbarSupportedContent">
                         <ul className="navbar-nav mx-auto bg-primary mb-2 mb-lg-0">
                             <li className="nav-item  bg-primary">
-                                <a className="nav-link active bg-primary text-white" aria-current="page" href="#">
+                                <a className="nav-link active bg-primary text-white" aria-current="page"  >
                                     Home
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link bg-primary text-white" href="#">
+                                <a className="nav-link bg-primary text-white">
                                     Products
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link bg-primary text-white" href="#">
+                                <a className="nav-link bg-primary text-white">
                                     About
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link bg-primary text-white" href="#">
+                                <a className="nav-link bg-primary text-white">
                                     Contact
                                 </a>
                             </li>
