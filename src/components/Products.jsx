@@ -4,6 +4,7 @@ import './products.css'
 import '../App.css'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import { Link } from 'react-router-dom'
 
 
 const Products = () => {
@@ -84,6 +85,7 @@ const Products = () => {
     const ShowProducts = () => {
         return (
             <>
+
                 <div className='bg-white filter-card'>
 
                     <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => setFilter(data)}>All</button>
@@ -104,8 +106,10 @@ const Products = () => {
                                         <i class="fa-solid fa-indian-rupee-sign bg-white " style={{ fontSize: "13px", marginBottom: "0.3rem" }}></i>
                                         <h4 className='cost bg-white'>{item.price}</h4>
                                     </div>
+                                    <Link to={`/products/${item.id}`}>
+                                        <button className='bt-buy'>Buy now</button>
 
-                                    <button className='bt-buy'>Buy now</button>
+                                    </Link>
                                 </div>
                             </>
                         )
