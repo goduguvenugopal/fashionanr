@@ -5,9 +5,9 @@ const Navbar = () => {
         <div className=''>
             <nav className="fixed-top navbar shadow navbar-expand-lg navbar-light bg-primary">
                 <div className="container  bg-primary">
-                    <a className="navbar-brand logo-text bg-primary" href="">
+                    <h5 className="navbar-brand logo-text bg-primary" href="">
                         Fashionkart
-                    </a>
+                    </h5>
                     <button
                         className="navbar-toggler  bg-white"
                         type="button"
@@ -22,24 +22,24 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse bg-primary" id="navbarSupportedContent">
                         <ul className="navbar-nav mx-auto bg-primary mb-2 mb-lg-0">
                             <li className="nav-item  bg-primary">
-                                <a className="nav-link active bg-primary text-white" aria-current="page"  >
+                                <h6 className="nav-link active bg-primary text-white" aria-current="page"  >
                                     Home
-                                </a>
+                                </h6>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link bg-primary text-white">
+                            <li className="nav-item bg-primary">
+                                <h6 className="nav-link bg-primary text-white">
                                     Products
-                                </a>
+                                </h6>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link bg-primary text-white">
+                            <li className="nav-item bg-primary">
+                                <h6 className="nav-link bg-primary text-white">
                                     About
-                                </a>
+                                </h6>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link bg-primary text-white">
+                            <li className="nav-item bg-primary">
+                                <h6 className="nav-link bg-primary text-white">
                                     Contact
-                                </a>
+                                </h6>
                             </li>
 
                         </ul>
