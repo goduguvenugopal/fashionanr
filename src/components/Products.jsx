@@ -10,9 +10,9 @@ const Products = () => {
     const [data, setData] = useState([])
     const [filter, setFilter] = useState(data)
     const [loader, setLoader] = useState(false)
- 
-     
-// fetching the products 
+
+
+    // fetching the products 
     useEffect(() => {
         const fetchProducts = async () => {
             setLoader(true);
@@ -36,69 +36,70 @@ const Products = () => {
     const Loading = () => {
         return (
             <>
-            <div className='products-cont'>
-                <div className='cat-sub-card shadow-none pt-0'>
-                    <Skeleton className='skeleton'/>
+                <div className='products-cont'>
+                    <div className='cat-sub-card shadow-none pt-0'>
+                        <Skeleton className='skeleton' />
+                    </div>
+                    <div className='cat-sub-card pt-0 shadow-none'>
+                        <Skeleton className='skeleton' />
+                    </div>
+                    <div className='cat-sub-card pt-0 shadow-none'>
+                        <Skeleton className='skeleton' />
+                    </div>
+                    <div className='cat-sub-card pt-0 shadow-none'>
+                        <Skeleton className='skeleton' />
+                    </div>
+                    <div className='cat-sub-card pt-0 shadow-none'>
+                        <Skeleton className='skeleton' />
+                    </div>
+                    <div className='cat-sub-card pt-0 shadow-none'>
+                        <Skeleton className='skeleton' />
+                    </div>
+                    <div className='cat-sub-card pt-0 shadow-none'>
+                        <Skeleton className='skeleton' />
+                    </div>
+                    <div className='cat-sub-card pt-0 shadow-none' >
+                        <Skeleton className='skeleton' />
+                    </div>
+                    <div className='cat-sub-card pt-0 shadow-none'>
+                        <Skeleton className='skeleton' />
+                    </div>
+                    <div className='cat-sub-card pt-0 shadow-none'>
+                        <Skeleton className='skeleton' />
+                    </div>
+                    <div className='cat-sub-card pt-0 shadow-none'>
+                        <Skeleton className='skeleton' />
+                    </div>
+                    <div className='cat-sub-card pt-0 shadow-none'>
+                        <Skeleton className='skeleton' />
+                    </div>
+
                 </div>
-                <div className='cat-sub-card pt-0 shadow-none'>
-                    <Skeleton className='skeleton'/>
-                </div>
-                <div className='cat-sub-card pt-0 shadow-none'>
-                    <Skeleton className='skeleton'/>
-                </div>
-                <div className='cat-sub-card pt-0 shadow-none'>
-                    <Skeleton className='skeleton'/>
-                </div>
-                <div className='cat-sub-card pt-0 shadow-none'>
-                    <Skeleton className='skeleton'/>
-                </div>
-                <div className='cat-sub-card pt-0 shadow-none'>
-                    <Skeleton className='skeleton'/>
-                </div>
-                <div className='cat-sub-card pt-0 shadow-none'>
-                    <Skeleton className='skeleton'/>
-                </div>
-                <div className='cat-sub-card pt-0 shadow-none' >
-                    <Skeleton className='skeleton'/>
-                </div>
-                <div className='cat-sub-card pt-0 shadow-none'>
-                    <Skeleton className='skeleton'/>
-                </div>
-                <div className='cat-sub-card pt-0 shadow-none'>
-                    <Skeleton className='skeleton'/>
-                </div>
-                <div className='cat-sub-card pt-0 shadow-none'>
-                    <Skeleton className='skeleton'/>
-                </div>
-                <div className='cat-sub-card pt-0 shadow-none'>
-                    <Skeleton className='skeleton'/>
-                </div>
-                       
-            </div>
-                 
+
             </>
         )
     }
 
-// mapping the products 
+    // mapping the products 
     const ShowProducts = () => {
         return (
-            <> <div className='bg-white filter-card'>
+            <>
+                <div className='bg-white filter-card'>
 
-               <a href=''><button className='btn btn-outline-dark me-2 filter-bt'>All</button></a> 
-                <button className='btn btn-outline-dark me-2 filter-bt' onClick={()=> filterFunc("men's clothing")}>Men'sClothing</button>
-                <button className='btn btn-outline-dark me-2 filter-bt' onClick={()=> filterFunc("women's clothing")}>Women'sClothing</button>
-                <button className='btn btn-outline-dark me-2 filter-bt' onClick={()=> filterFunc("jewelery")}>JeweleryClothing</button>
-                <button className='btn btn-outline-dark me-2 filter-bt' onClick={()=> filterFunc("electronics")}>Electronics</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => setFilter(data)}>All</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("men's clothing")}>Men'sClothing</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("women's clothing")}>Women'sClothing</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("jewelery")}>JeweleryClothing</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("electronics")}>Electronics</button>
 
-            </div>
+                </div>
                 <div className='products-cont py-5 px-3'>
                     {filter.map((item) => {
                         return (
                             <>
                                 <div className='cat-sub-card bg-white'>
                                     <img key={item.id} src={item.image} className='cat-images bg-white' alt='products' />
-                                    <h5 className='title mt-3'>{item.title.substring(0,12)}</h5>
+                                    <h5 className='title mt-3'>{item.title.substring(0, 12)}</h5>
                                     <div className='d-flex justify-content-center align-items-center gap-1 bg-white '>
                                         <i class="fa-solid fa-indian-rupee-sign bg-white " style={{ fontSize: "13px", marginBottom: "0.3rem" }}></i>
                                         <h4 className='cost bg-white'>{item.price}</h4>
@@ -119,17 +120,17 @@ const Products = () => {
 
 
     // products filter function
-    
-    const filterFunc = (filterPro) =>{
 
-  const filtered = data.filter((item) => item.category === filterPro )
-   setFilter(filtered)
+    const filterFunc = (filterPro) => {
+
+        const filtered = data.filter((item) => item.category === filterPro)
+        setFilter(filtered)
     }
 
     return (
         <div className='container bg-white text-center py-3'>
             <h4 className='bg-white'>Latest Products</h4>
-            <hr className='mb-4'/>
+            <hr className='mb-4' />
             {loader ? <Loading /> : <ShowProducts />}
         </div>
     )
