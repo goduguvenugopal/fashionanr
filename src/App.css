@@ -157,4 +157,9 @@
       border-bottom-right-radius: 5px;
       
    }
+   .carousel-img{
+      width: 100%;
+      height: 8rem;
+      
+    }
  }
