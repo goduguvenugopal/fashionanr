@@ -29,7 +29,7 @@ const SingleProduct = () => {
             }
         }
         getSingle()
-    })
+    },[])
 
     // loader function
 
