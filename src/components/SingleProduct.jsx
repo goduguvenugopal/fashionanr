@@ -13,7 +13,7 @@ const SingleProduct = () => {
     const [loader, setLoader] = useState(false)
     const { id } = useParams()
 
-    console.log(data)
+     
     // fetching single product by id 
     useEffect(() => {
         const getSingle = async () => {
@@ -29,7 +29,7 @@ const SingleProduct = () => {
             }
         }
         getSingle()
-    }, [])
+    })
 
     // loader function
 
