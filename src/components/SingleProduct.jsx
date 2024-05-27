@@ -46,8 +46,8 @@ const SingleProduct = () => {
 
                         <div className='pb-3 col-12 col-md-6 bg-white pt-3 px-3'>
                             <Skeleton width="170px" height="40px" />
-                            <Skeleton className='mt-3' width="400px" height="40px" />
-                            <Skeleton className='mt-3' width="400px" height="40px" />
+                            <Skeleton className='mt-3'  height="40px" />
+                            <Skeleton className='mt-3'  height="40px" />
                             <div className='mr-2 mt-2 bg-white' style={{ width: "50px", height: "55px" }}>
                                 <Skeleton className='  mt-2' height="40px" />
 
@@ -63,26 +63,26 @@ const SingleProduct = () => {
 
                         <hr className=' mb-0 ' />
                         <div className='col-12 bg-white py-3  px-3'>
-                            <Skeleton width="400px" height="40px" />
+                            <Skeleton height="40px"/>
                         </div> <hr className=' mb-0 ' />
 
                         <div className='col-12 bg-white py-3  px-3'>
-                            <Skeleton width="400px" height="40px" />
+                            <Skeleton height="40px"  />
                         </div> <hr className=' mb-0 ' />
                         <div className='col-12 bg-white py-4  px-3'>
                             <div className='bg-white d-flex align-items-center'>
-                                <Skeleton style={{ marginRight: "2rem" }} width="170px" height="45px" />
-                                <Skeleton width="170px" height="45px" />
+                                <Skeleton style={{ marginRight: "2rem" }} width="150px" height="40px" />
+                                <Skeleton width="150px" height="40px" />
 
                             </div>
                         </div> <hr className=' mb-0 ' />
                         <div className='col-12 bg-white py-3  px-3'>
                             <div className='bg-white'>
-                                <Skeleton width="170px" height="45px" />
-                                <Skeleton style={{ marginTop: "1rem" }} width="470px" height="15px" />
-                                <Skeleton width="470px" height="15px" />
-                                <Skeleton width="470px" height="15px" />
-                                <Skeleton width="470px" height="15px" />
+                                <Skeleton width="170px" height="30px" />
+                                <Skeleton style={{ marginTop: "1rem" }}  />
+                                <Skeleton   />
+                                <Skeleton   />
+                                <Skeleton   />
                             </div>
                         </div>
 
@@ -177,7 +177,7 @@ const SingleProduct = () => {
 
     return (
         <div>
-            {loader ? <Loading /> : <ShowProduct />}
+            {!loader ? <Loading /> : <ShowProduct />}
 
         </div>
     )
