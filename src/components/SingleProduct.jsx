@@ -2,7 +2,8 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import "./products.css"
-
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 
 
@@ -36,7 +37,61 @@ const SingleProduct = () => {
     const Loading = () => {
         return (
             <>
-                Loading...
+                <div className='container bg-white py-5 ' style={{ marginTop: "5rem" }}>
+                    <div className='row'>
+                        <div className='col-12 col-md-6 bg-white text-center pb-4 '>
+                            <Skeleton height="330px" width="320px" />
+
+                        </div><hr className='d-md-none mb-0 ' />
+
+                        <div className='pb-3 col-12 col-md-6 bg-white pt-3 px-3'>
+                            <Skeleton width="170px" height="40px" />
+                            <Skeleton className='mt-3' width="400px" height="40px" />
+                            <Skeleton className='mt-3' width="400px" height="40px" />
+                            <div className='mr-2 mt-2 bg-white' style={{ width: "50px", height: "55px" }}>
+                                <Skeleton className='  mt-2' height="40px" />
+
+                            </div>
+                            <Skeleton className=' mt-1' width="60px" height="25px" />
+
+
+                            <Skeleton className='mt-2' width="65px" height="35px" />
+
+
+
+                        </div>
+
+                        <hr className=' mb-0 ' />
+                        <div className='col-12 bg-white py-3  px-3'>
+                            <Skeleton width="400px" height="40px" />
+                        </div> <hr className=' mb-0 ' />
+
+                        <div className='col-12 bg-white py-3  px-3'>
+                            <Skeleton width="400px" height="40px" />
+                        </div> <hr className=' mb-0 ' />
+                        <div className='col-12 bg-white py-4  px-3'>
+                            <div className='bg-white d-flex align-items-center'>
+                                <Skeleton style={{ marginRight: "2rem" }} width="170px" height="45px" />
+                                <Skeleton width="170px" height="45px" />
+
+                            </div>
+                        </div> <hr className=' mb-0 ' />
+                        <div className='col-12 bg-white py-3  px-3'>
+                            <div className='bg-white'>
+                                <Skeleton width="170px" height="45px" />
+                                <Skeleton style={{ marginTop: "1rem" }} width="470px" height="15px" />
+                                <Skeleton width="470px" height="15px" />
+                                <Skeleton width="470px" height="15px" />
+                                <Skeleton width="470px" height="15px" />
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
             </>
         )
     }
@@ -58,9 +113,6 @@ const SingleProduct = () => {
             <>
                 <div className='container bg-white py-5 ' style={{ marginTop: "5rem" }}>
                     <div className='row'>
-
-
-
                         <div className='col-12 col-md-6 bg-white text-center pb-4 '>
                             <img height="330px" width="320px" src={data.image} className='single-img' alt={data.category} />
 
@@ -92,7 +144,7 @@ const SingleProduct = () => {
                         <div className='col-12 bg-white py-3  px-3'>
                             <div className='bg-white d-flex align-items-center'>
 
-                                <i class="fa-solid fa-tag bg-white mb-1 text-secondary" style={{ marginRight: "1rem", fontSize: "20px",marginBottom:"0.3rem" }}></i>
+                                <i class="fa-solid fa-tag bg-white mb-1 text-secondary" style={{ marginRight: "1rem", fontSize: "20px", marginBottom: "0.3rem" }}></i>
                                 <h5 className='bg-white'>All Offers & Coupons</h5>
                             </div>
                         </div> <hr className=' mb-0 ' />
