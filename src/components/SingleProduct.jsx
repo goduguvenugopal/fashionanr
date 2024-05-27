@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import "./products.css"
 
 
@@ -62,7 +62,7 @@ const SingleProduct = () => {
 
 
                         <div className='col-12 col-md-6 bg-white text-center pb-4'>
-                            <img height="350px" width="350px" src={data.image} className='single-img' alt={data.category} />
+                            <img height="350px" width="345px" src={data.image} className='single-img' alt={data.category} />
 
                         </div><hr className='d-md-none mb-0 ' />
 
@@ -96,12 +96,22 @@ const SingleProduct = () => {
                                 <h5 className='bg-white'>All Offers & Coupons</h5>
                             </div>
                         </div> <hr className=' mb-0 ' />
-                        <div className='col-12 bg-white py-3  px-4'>
+                        <div className='col-12 bg-white py-4  px-4'>
                             <div className='bg-white d-flex align-items-center'>
-                                <button className='cart-bt'> <i style={{marginRight:"8px"}} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>
-                                <button className='buy-bt'><i style={{marginRight:"8px"}}  class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>
+                                {data ? 
+                                <Link to="/cart" style={{ textDecoration: "none" }}>  
+                                <button className='cart-bt'> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button></Link> :
+                                 <button className='cart-bt bg-success'> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>GO TO CART</button>}
+
+                                <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>
                             </div>
                         </div> <hr className=' mb-0 ' />
+                        <div className='col-12 bg-white py-3  px-4'>
+                            <div className='bg-white'>
+                                <h5 className='bg-white '>Product Description</h5>
+                                <h6 className='bg-white text-secondary mt-3'>{data.description}</h6>
+                            </div>
+                        </div>
 
 
 
