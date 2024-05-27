@@ -61,8 +61,8 @@ const SingleProduct = () => {
 
 
 
-                        <div className='col-12 col-md-6 bg-white text-center pb-4 px-3'>
-                            <img height="350px" width="345px" src={data.image} className='single-img' alt={data.category} />
+                        <div className='col-12 col-md-6 bg-white text-center pb-4 '>
+                            <img height="330px" width="320px" src={data.image} className='single-img' alt={data.category} />
 
                         </div><hr className='d-md-none mb-0 ' />
 
