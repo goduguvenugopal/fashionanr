@@ -114,3 +114,25 @@
     justify-content: space-evenly;
     border-radius: 3px;
 }
+
+.cart-bt{
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 10rem;
+    background-color: orange;
+    font-weight: 500;
+    color: white;
+    margin-right: 1rem;
+
+}
+.buy-bt{
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 10rem;
+    background-color: rgb(241, 105, 75);
+    font-weight: 500;
+    color: white;
+
+}
