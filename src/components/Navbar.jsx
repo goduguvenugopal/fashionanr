@@ -5,7 +5,7 @@ import { cartContext } from '../App'
 
 const Navbar = () => {
 
-    const [cart , setCart] = useContext(cartContext)
+    const [cart] = useContext(cartContext)
 
     return (
         <div className=''>
