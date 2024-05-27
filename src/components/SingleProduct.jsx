@@ -14,15 +14,20 @@ const SingleProduct = () => {
     const { id } = useParams()
     const [products, setProducts] = useState([])
     const [exist, setExist] = useState(false)
+    const [blinker, setBlinker] = useState(false)
 
 
     // adding items to the cart function 
 
     const addcartFunc = (product) => {
+        setBlinker(true)
+        setTimeout(() => {
+            setBlinker(false)
+        }, 1300);
         const addedItem = products.find((item) => item.id === product)
         if (addedItem) {
             setCart([...cart, { ...addedItem, quantity: 1 }]);
-            alert("Item added into the cart")
+
         } else {
             alert("Item not added into the cart")
         }
@@ -118,7 +123,7 @@ const SingleProduct = () => {
                                 <Skeleton style={{ marginTop: "1rem" }} />
                                 <Skeleton />
                                 <Skeleton />
-                                
+
                             </div>
                         </div>
                     </div>
@@ -155,7 +160,7 @@ const SingleProduct = () => {
                                 <h6 className='bg-success text-white mt-2'>{data.rating && data.rating.rate}</h6>
                                 <i className='fa fa-star bg-success text-white ' style={{ fontSize: "13px" }}></i>
                             </div>
-                            <h6 className='bg-white mt-1'>Ratings</h6>
+                            <h6 className='bg-white mt-1'>Rating</h6>
                             <div className=' d-flex justify-content-flex-start align-items-center gap-1 bg-white '>
                                 <i class="fa-solid fa-indian-rupee-sign bg-white " id='rupee-icon'></i>
                                 <h4 className='fs-1 bg-white'>{data.price}</h4>
@@ -180,10 +185,25 @@ const SingleProduct = () => {
                         </div> <hr className=' mb-0 ' />
                         <div className='col-12 bg-white py-4  px-3'>
                             <div className='bg-white d-flex align-items-center'>
-                                {exist ?
-                                    <Link to="/cart" style={{ textDecoration: "none" }}>
-                                        <button className='cart-bt bg-success'> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>GO TO CART</button></Link> :
-                                    <button onClick={() => addcartFunc(data.id)} className='cart-bt  '> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>}
+
+
+
+
+                                {blinker ? <button className="cart-bt" type="button">
+                                    <span
+                                        className="spinner-grow spinner-grow-sm"
+                                        role="status"
+                                        aria-hidden="true"
+                                    />
+                                    <span className="visually-hidden">Loading...</span>
+                                </button> :
+                                    exist ?
+                                        <Link to="/cart" style={{ textDecoration: "none" }
+                                        } >
+                                            <button className='cart-bt bg-success'> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>GO TO CART</button></Link> :
+                                        <button onClick={() => addcartFunc(data.id)} className='cart-bt  '> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>
+
+                                }
 
                                 <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>
                             </div>
@@ -199,7 +219,7 @@ const SingleProduct = () => {
 
 
                     </div>
-                </div>
+                </div >
             </>
         )
     }

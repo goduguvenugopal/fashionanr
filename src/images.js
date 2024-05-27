@@ -52,6 +52,11 @@ export const categories = [
     title: "Mobiles",
   },
   {
+    id : 9,
+    image: "images/categories/8.webp",
+    title: "Sofa",
+  },
+  {
     id : 3,
     image: "images/categories/2.webp",
     title: "appliances",
@@ -61,6 +66,7 @@ export const categories = [
     image: "images/categories/3.webp",
     title: "Travel",
   },
+  
   {
     id : 5,
     image: "images/categories/4.webp",
@@ -71,6 +77,7 @@ export const categories = [
     image: "images/categories/5.webp",
     title: "Toys",
   },
+
   {
     id : 7,
     image: "images/categories/6.webp",
@@ -81,11 +88,7 @@ export const categories = [
     image: "images/categories/7.webp",
     title: "Vehicles",
   },
-  {
-    id : 9,
-    image: "images/categories/8.webp",
-    title: "Televisons",
-  }
+  
 ];
 
 
