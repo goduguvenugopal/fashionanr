@@ -61,12 +61,12 @@ const SingleProduct = () => {
 
 
 
-                        <div className='col-12 col-md-6 bg-white text-center pb-4'>
+                        <div className='col-12 col-md-6 bg-white text-center pb-4 px-3'>
                             <img height="350px" width="345px" src={data.image} className='single-img' alt={data.category} />
 
                         </div><hr className='d-md-none mb-0 ' />
 
-                        <div className='pb-3 col-12 col-md-6 bg-white pt-3 px-4'>
+                        <div className='pb-3 col-12 col-md-6 bg-white pt-3 px-3'>
                             <h5 className='text-uppercase text-black-50 bg-white' >{data.category}</h5>
                             <h4 className='display-5 bg-white' >{data.title}</h4>
                             <div className='bg-success mr-2 rating-card mt-3' >
@@ -82,21 +82,21 @@ const SingleProduct = () => {
 
                         </div>
                         <hr className=' mb-0 ' />
-                        <div className='col-12 bg-white py-3  px-4'>
+                        <div className='col-12 bg-white py-3  px-3'>
                             <div className='bg-white d-flex align-items-center'>
                                 <i class="fa-solid fa-truck bg-white mb-1 text-secondary" style={{ marginRight: "1rem" }}></i>
                                 <h5 className='bg-white'><span className='text-success bg-white'>Free Delivery</span> | Delivery by {date}</h5>
                             </div>
                         </div> <hr className=' mb-0 ' />
 
-                        <div className='col-12 bg-white py-3  px-4'>
+                        <div className='col-12 bg-white py-3  px-3'>
                             <div className='bg-white d-flex align-items-center'>
 
-                                <i class="fa-solid fa-tag bg-white mb-1 text-secondary" style={{ marginRight: "1rem", fontSize: "20px" }}></i>
+                                <i class="fa-solid fa-tag bg-white mb-1 text-secondary" style={{ marginRight: "1rem", fontSize: "20px",marginBottom:"0.3rem" }}></i>
                                 <h5 className='bg-white'>All Offers & Coupons</h5>
                             </div>
                         </div> <hr className=' mb-0 ' />
-                        <div className='col-12 bg-white py-4  px-4'>
+                        <div className='col-12 bg-white py-4  px-3'>
                             <div className='bg-white d-flex align-items-center'>
                                 {!data ?
                                     <Link to="/cart" style={{ textDecoration: "none" }}>
@@ -106,7 +106,7 @@ const SingleProduct = () => {
                                 <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>
                             </div>
                         </div> <hr className=' mb-0 ' />
-                        <div className='col-12 bg-white py-3  px-4'>
+                        <div className='col-12 bg-white py-3  px-3'>
                             <div className='bg-white'>
                                 <h5 className='bg-white '>Product Description</h5>
                                 <h6 className='bg-white text-secondary mt-3'>{data.description}</h6>
