@@ -58,9 +58,12 @@
     border-radius: 10px;
     height: 22rem;
     width: 15rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: white;
-    padding-top: 2rem;
+    align-content: space-evenly;
+    align-items: center;
 
 }
 
@@ -79,7 +82,7 @@
     }
 
     .cat-sub-card {
-        padding-top: 1.5rem;
+
         height: 16rem;
         width: 9rem;
 
@@ -109,17 +112,16 @@
 .rating-card {
     width: 55px;
     height: 30px;
-
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     border-radius: 3px;
 }
 
-.cart-bt{
+.cart-bt {
     border-radius: 10px;
     border: none;
-    height: 40px;
+    height: 42px;
     width: 10rem;
     background-color: orange;
     font-weight: 500;
@@ -127,10 +129,11 @@
     margin-right: 1rem;
 
 }
-.buy-bt{
+
+.buy-bt {
     border-radius: 10px;
     border: none;
-    height: 40px;
+    height: 42px;
     width: 10rem;
     background-color: rgb(241, 105, 75);
     font-weight: 500;

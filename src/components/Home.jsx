@@ -6,7 +6,7 @@ import Products from './Products.jsx'
 
 
 const Home = () => {
- 
+
   return (
 
     <>
@@ -24,7 +24,7 @@ const Home = () => {
       </div>
 
       <Carousel />
-      <Products/>
+      <Products />
 
       <div className='container mt-3 bg-white pt-4'>
         <h5 className='bg-white'>Men's Collection</h5>
@@ -40,7 +40,7 @@ const Home = () => {
                   <h4 className='cost bg-white'>{item.cost}</h4>
                 </div>
 
-                <button className='bt-buy'>BUY NOW</button>
+
               </div>
             )
           })}

@@ -1,22 +1,47 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import "./products.css"
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-
-
+import { cartContext } from '../App'
 
 
 const SingleProduct = () => {
-
+    const [cart, setCart] = useContext(cartContext)
     const [data, setData] = useState([])
     const [loader, setLoader] = useState(false)
     const { id } = useParams()
+    const [products, setProducts] = useState([])
+    const [exist, setExist] = useState(false)
+
+
+    // adding items to the cart function 
+
+    const addcartFunc = (product) => {
+        const addedItem = products.find((item) => item.id === product)
+        if (addedItem) {
+            setCart([...cart, { ...addedItem, quantity: 1 }]);
+            alert("Item added into the cart")
+        } else {
+            alert("Item not added into the cart")
+        }
+    }
+
+    // checking products already in cart 
+
+    useEffect(() => {
+        const existed = cart.some((item) => item.id === data.id)
+        if (existed) {
+            setExist(true)
+        }
+    }, [cart, data])
+
 
 
     // fetching single product by id 
     useEffect(() => {
+
         const getSingle = async () => {
             setLoader(true)
             try {
@@ -30,6 +55,21 @@ const SingleProduct = () => {
             }
         }
         getSingle()
+
+        // fetching all products 
+        const getAll = async () => {
+
+            try {
+                const response = await axios.get(`https://fakestoreapi.com/products`)
+                setProducts(response.data)
+
+            } catch (err) {
+
+                console.log(err)
+            }
+        }
+        getAll()
+
     }, [id])
 
     // loader function
@@ -46,28 +86,24 @@ const SingleProduct = () => {
 
                         <div className='pb-3 col-12 col-md-6 bg-white pt-3 px-3'>
                             <Skeleton width="170px" height="40px" />
-                            <Skeleton className='mt-3'  height="40px" />
-                            <Skeleton className='mt-3'  height="40px" />
+                            <Skeleton className='mt-3' height="40px" />
+                            <Skeleton className='mt-3' height="40px" />
                             <div className='mr-2 mt-2 bg-white' style={{ width: "50px", height: "55px" }}>
                                 <Skeleton className='  mt-2' height="40px" />
 
                             </div>
                             <Skeleton className=' mt-1' width="60px" height="25px" />
-
-
                             <Skeleton className='mt-2' width="65px" height="35px" />
-
-
 
                         </div>
 
                         <hr className=' mb-0 ' />
                         <div className='col-12 bg-white py-3  px-3'>
-                            <Skeleton height="40px"/>
+                            <Skeleton height="40px" />
                         </div> <hr className=' mb-0 ' />
 
                         <div className='col-12 bg-white py-3  px-3'>
-                            <Skeleton height="40px"  />
+                            <Skeleton height="40px" />
                         </div> <hr className=' mb-0 ' />
                         <div className='col-12 bg-white py-4  px-3'>
                             <div className='bg-white d-flex align-items-center'>
@@ -79,24 +115,18 @@ const SingleProduct = () => {
                         <div className='col-12 bg-white py-3  px-3'>
                             <div className='bg-white'>
                                 <Skeleton width="170px" height="30px" />
-                                <Skeleton style={{ marginTop: "1rem" }}  />
-                                <Skeleton   />
-                                <Skeleton   />
-                                <Skeleton   />
+                                <Skeleton style={{ marginTop: "1rem" }} />
+                                <Skeleton />
+                                <Skeleton />
+                                
                             </div>
                         </div>
-
-
-
-
                     </div>
                 </div>
 
             </>
         )
     }
-
-
     // delivery date logic code 
 
     let today = new Date()
@@ -150,10 +180,10 @@ const SingleProduct = () => {
                         </div> <hr className=' mb-0 ' />
                         <div className='col-12 bg-white py-4  px-3'>
                             <div className='bg-white d-flex align-items-center'>
-                                {!data ?
+                                {exist ?
                                     <Link to="/cart" style={{ textDecoration: "none" }}>
                                         <button className='cart-bt bg-success'> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>GO TO CART</button></Link> :
-                                    <button className='cart-bt  '> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>}
+                                    <button onClick={() => addcartFunc(data.id)} className='cart-bt  '> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>}
 
                                 <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>
                             </div>
@@ -173,8 +203,6 @@ const SingleProduct = () => {
             </>
         )
     }
-
-
     return (
         <div>
             {loader ? <Loading /> : <ShowProduct />}

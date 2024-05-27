@@ -99,18 +99,23 @@ const Products = () => {
                     {filter.map((item) => {
                         return (
                             <>
-                                <div className='cat-sub-card bg-white'>
-                                    <img key={item.id} src={item.image} className='cat-images bg-white' alt='products' />
-                                    <h5 className='title mt-3'>{item.title.substring(0, 12)}</h5>
-                                    <div className='d-flex justify-content-center align-items-center gap-1 bg-white '>
-                                        <i class="fa-solid fa-indian-rupee-sign bg-white " style={{ fontSize: "13px", marginBottom: "0.4rem" }}></i>
-                                        <h4 className='cost bg-white'>{item.price}</h4>
-                                    </div>
-                                    <Link to={`/products/${item.id}`}>
-                                        <button className='bt-buy'>BUY NOW</button>
+                                <Link className='text-dark' style={{ textDecoration: "none" }} to={`/products/${item.id}`}>
+                                    <div className='cat-sub-card bg-white'>
+                                        <img key={item.id} src={item.image} className='cat-images bg-white' alt='products' />
+                                        <h5 className='title'>{item.title.substring(0, 12)}</h5>
+                                        <div className='d-flex justify-content-center align-items-center gap-1 bg-white '>
+                                            <i class="fa-solid fa-indian-rupee-sign bg-white " style={{ fontSize: "13px", marginBottom: "0.4rem" }}></i>
+                                            <h4 className='cost bg-white'>{item.price}</h4>
+                                        </div>
 
-                                    </Link>
-                                </div>
+                                        <div className='bg-success rating-card' >
+                                            <h6 className='bg-success text-white mt-2'>{item.rating && item.rating.rate}</h6>
+                                            <i className='fa fa-star bg-success text-white ' style={{ fontSize: "13px" }}></i>
+                                        </div>
+
+
+                                    </div>
+                                </Link>
                             </>
                         )
                     })}
