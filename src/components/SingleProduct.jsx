@@ -177,7 +177,7 @@ const SingleProduct = () => {
 
     return (
         <div>
-            {!loader ? <Loading /> : <ShowProduct />}
+            {loader ? <Loading /> : <ShowProduct />}
 
         </div>
     )
