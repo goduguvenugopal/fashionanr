@@ -95,7 +95,7 @@ const Products = () => {
                     <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("electronics")}>Electronics</button>
 
                 </div>
-                <div className='products-cont py-5 px-3'>
+                <div className='products-cont pt-5 pb-3 px-3'>
                     {filter.map((item) => {
                         return (
                             <>
@@ -103,11 +103,11 @@ const Products = () => {
                                     <img key={item.id} src={item.image} className='cat-images bg-white' alt='products' />
                                     <h5 className='title mt-3'>{item.title.substring(0, 12)}</h5>
                                     <div className='d-flex justify-content-center align-items-center gap-1 bg-white '>
-                                        <i class="fa-solid fa-indian-rupee-sign bg-white " style={{ fontSize: "13px", marginBottom: "0.3rem" }}></i>
+                                        <i class="fa-solid fa-indian-rupee-sign bg-white " style={{ fontSize: "13px", marginBottom: "0.4rem" }}></i>
                                         <h4 className='cost bg-white'>{item.price}</h4>
                                     </div>
                                     <Link to={`/products/${item.id}`}>
-                                        <button className='bt-buy'>Buy now</button>
+                                        <button className='bt-buy'>BUY NOW</button>
 
                                     </Link>
                                 </div>

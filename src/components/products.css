@@ -21,6 +21,12 @@
         background-color: white;
         padding-top: 2rem;
     }
+
+    #rupee-icon {
+
+        font-size: 2rem;
+        margin-right: 4px;
+    }
 }
 
 
@@ -91,5 +97,20 @@
 
     }
 
+    #rupee-icon {
+        font-size: 1.6rem;
+        margin-right: 4px;
+    }
+}
 
+
+
+.rating-card {
+    width: 55px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 3px;
 }

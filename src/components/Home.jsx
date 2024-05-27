@@ -36,11 +36,11 @@ const Home = () => {
                 <img key={item.id} src={item.Image} className='home-images bg-white' alt='products' />
                 <h5 className='title'>{item.title}</h5>
                 <div className='d-flex justify-content-center align-items-center gap-1 bg-white'>
-                  <i class="fa-solid fa-indian-rupee-sign bg-white " style={{ fontSize: "13px", marginBottom: "0.3rem" }}></i>
+                  <i class="fa-solid fa-indian-rupee-sign bg-white" style={{ fontSize: "13px", marginBottom: "0.4rem" }}></i>
                   <h4 className='cost bg-white'>{item.cost}</h4>
                 </div>
 
-                <button className='bt-buy'>Buy now</button>
+                <button className='bt-buy'>BUY NOW</button>
               </div>
             )
           })}

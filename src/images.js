@@ -98,4 +98,5 @@ export const carousel = [
   "images/carousel/5.webp",
   "images/carousel/6.webp",
   "images/carousel/7.webp",
+  "images/carousel/8.webp",
 ];
