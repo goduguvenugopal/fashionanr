@@ -50,18 +50,21 @@ const Navbar = () => {
                         </ul>
                         <div className="bg-primary  d-flex justify-content-between gap-4">
                             <Link style={{textDecoration:"none"}} className="bg-primary" to="/login">
-                                <button className="bt-nav " type="submit">
+                                <button className="bt-nav ">
                                     <i className="nav-icon fa-solid fa-right-to-bracket"></i>
                                     Login
                                 </button>
                             </Link>
                             <Link style={{textDecoration:"none"}} className="bg-primary" to="/signup">
-                                <button className="bt-nav  " type="submit">
+                                <button className="bt-nav  ">
                                     <i className="nav-icon fa-solid fa-user-plus"></i> Signup
                                 </button>
                             </Link>
                             <Link style={{textDecoration:"none"}} className="bg-primary"  to="/cart">
-                                <button className="bt-nav  " type="submit">
+                                <button className="bt-nav  ">
+                                    <div className='cart-items-card'>
+                                       <h6 style={{fontSize:"10px",marginTop:"2px"}} className='bg-transparent'>1</h6>
+                                    </div>
                                     <i className="nav-icon fa-solid fa-cart-shopping"></i> Cart
                                 </button>
 

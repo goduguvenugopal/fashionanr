@@ -27,10 +27,23 @@
     margin-right: 5px;
     color: white;
     background-color: transparent;
+     
 
  }
 
+.cart-items-card{
+   position: absolute;
+   background-color: red;
+   height: 16px;
+   display: flex;
+   
+   border-radius: 50%;
+   justify-content: center;
+   width: 16px;
+   top: 2px;
+   left: 16px;
 
+}
  .bt-nav {
     border: 1px solid white;
     padding: 4px;
@@ -39,6 +52,7 @@
     border-radius: 5px;
     background-color: transparent;
     color: white;
+    position: relative;
  }
 
 

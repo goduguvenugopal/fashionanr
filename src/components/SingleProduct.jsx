@@ -98,10 +98,10 @@ const SingleProduct = () => {
                         </div> <hr className=' mb-0 ' />
                         <div className='col-12 bg-white py-4  px-4'>
                             <div className='bg-white d-flex align-items-center'>
-                                {data ? 
-                                <Link to="/cart" style={{ textDecoration: "none" }}>  
-                                <button className='cart-bt'> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button></Link> :
-                                 <button className='cart-bt bg-success'> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>GO TO CART</button>}
+                                {!data ?
+                                    <Link to="/cart" style={{ textDecoration: "none" }}>
+                                        <button className='cart-bt bg-success'> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>GO TO CART</button></Link> :
+                                    <button className='cart-bt  '> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>}
 
                                 <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>
                             </div>
