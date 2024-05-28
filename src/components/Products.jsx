@@ -2,8 +2,6 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import './products.css'
 import '../App.css'
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
 import { Link } from 'react-router-dom'
 
 
@@ -37,45 +35,15 @@ const Products = () => {
     const Loading = () => {
         return (
             <>
-                <div className='products-cont'>
-                    <div className='cat-sub-card shadow-none pt-0'>
-                        <Skeleton className='skeleton' />
-                    </div>
-                    <div className='cat-sub-card pt-0 shadow-none'>
-                        <Skeleton className='skeleton' />
-                    </div>
-                    <div className='cat-sub-card pt-0 shadow-none'>
-                        <Skeleton className='skeleton' />
-                    </div>
-                    <div className='cat-sub-card pt-0 shadow-none'>
-                        <Skeleton className='skeleton' />
-                    </div>
-                    <div className='cat-sub-card pt-0 shadow-none'>
-                        <Skeleton className='skeleton' />
-                    </div>
-                    <div className='cat-sub-card pt-0 shadow-none'>
-                        <Skeleton className='skeleton' />
-                    </div>
-                    <div className='cat-sub-card pt-0 shadow-none'>
-                        <Skeleton className='skeleton' />
-                    </div>
-                    <div className='cat-sub-card pt-0 shadow-none' >
-                        <Skeleton className='skeleton' />
-                    </div>
-                    <div className='cat-sub-card pt-0 shadow-none'>
-                        <Skeleton className='skeleton' />
-                    </div>
-                    <div className='cat-sub-card pt-0 shadow-none'>
-                        <Skeleton className='skeleton' />
-                    </div>
-                    <div className='cat-sub-card pt-0 shadow-none'>
-                        <Skeleton className='skeleton' />
-                    </div>
-                    <div className='cat-sub-card pt-0 shadow-none'>
-                        <Skeleton className='skeleton' />
+                <div className="bg-white d-flex justify-content-center mt-5">
+                    <h5 className='bg-white text-secondary' style={{ marginRight: "0.7rem" }}>Hang on, Loading Products</h5>
+                    <div style={{ height: "25px", width: "25px", }} className=" bg-white spinner-border text-primary " role="status">
+                        <span className="visually-hidden ">Loading...</span>
+
                     </div>
 
                 </div>
+
 
             </>
         )

@@ -23,7 +23,7 @@ const SingleProduct = () => {
         setBlinker(true)
         setTimeout(() => {
             setBlinker(false)
-        }, 1300);
+        }, 1000);
         const addedItem = products.find((item) => item.id === product)
         if (addedItem) {
             setCart([...cart, { ...addedItem, quantity: 1 }]);
@@ -198,7 +198,7 @@ const SingleProduct = () => {
                                     <span className="visually-hidden">Loading...</span>
                                 </button> :
                                     exist ?
-                                        <Link to="/cart" style={{ textDecoration: "none" }
+                                        <Link className='bg-white' to="/cart" style={{ textDecoration: "none" }
                                         } >
                                             <button className='cart-bt bg-success'> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>GO TO CART</button></Link> :
                                         <button onClick={() => addcartFunc(data.id)} className='cart-bt  '> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>
