@@ -6,6 +6,7 @@ import Products from "./components/Products";
 import SingleProduct from "./components/SingleProduct";
 import Cart from "./components/Cart";
 import { createContext, useState } from "react";
+import Signup from "./components/Signup";
 
 export const cartContext = createContext();
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<SingleProduct />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/signup" element={<Signup/>} />
           </Routes>
         </BrowserRouter>
       </cartContext.Provider>

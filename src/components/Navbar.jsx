@@ -42,15 +42,10 @@ const Navbar = () => {
                             </Link>
                             <Link style={{ textDecoration: "none" }} to="/about" className="nav-item bg-primary">
                                 <h6 className="nav-link bg-primary text-white">
-                                    About
+                                    Orders
                                 </h6>
                             </Link>
-                            <Link style={{ textDecoration: "none" }} to="/contact" className="nav-item bg-primary">
-                                <h6 className="nav-link bg-primary text-white">
-                                    Contact
-                                </h6>
-                            </Link>
-
+                            
                         </ul>
                         <div className="bg-primary  d-flex justify-content-between gap-4">
                             <Link style={{ textDecoration: "none" }} className="bg-primary" to="/login">
