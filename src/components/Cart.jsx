@@ -47,14 +47,15 @@ const Cart = () => {
   // totalAmount of cart items 
 
   const TotalAmoFunc = () => {
-    let totalAmount = 0
-
-    cart.map((item => {
-      totalAmount += item.quantity * (item.price)
-    }))
-
-    return totalAmount.toFixed(2)
-  }
+   
+    const totalAmount = cart.reduce((acc, item) => {
+      return acc + item.quantity * item.price;
+    }, 0);
+  
+    
+    return totalAmount.toFixed(2);
+  };
+  
 
 
   return (
