@@ -116,7 +116,9 @@ const Cart = () => {
 
                 </div>) : ""}
 
-
+<div className='total-price-card'>
+  
+</div>
             </>
 
           )

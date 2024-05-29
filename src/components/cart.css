@@ -75,7 +75,9 @@
         display: flex;
         column-gap: 1.6rem;
     }
-
+    #indian-rupee{
+        margin-bottom: 0.4rem;
+    }
     
 }
 
@@ -115,15 +117,15 @@
         display: flex;
         column-gap: 3rem;
     }
-   
+    #indian-rupee{
+        margin-bottom: 0.3rem;
+    }
+    
 }
 
 
 
-#indian-rupee{
-    margin-bottom: 0.3rem;
-}
-
+ 
 .modal-card {
     position: fixed;
     top: 0;
