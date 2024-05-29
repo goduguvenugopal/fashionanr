@@ -26,14 +26,14 @@ const SingleProduct = () => {
         setBlinker(true)
         setTimeout(() => {
             setBlinker(false)
-            toast("Item Added To Cart")
+            toast.success("Item Added To Cart")
         }, 1000);
         const addedItem = products.find((item) => item.id === product)
         if (addedItem) {
             setCart([...cart, { ...addedItem, quantity: 1 }]);
               
         } else {
-            toast("Please Try Again Item Not Added Into The Cart")
+            toast.error("Please Try Again Item Not Added Into The Cart")
         }
     }
 

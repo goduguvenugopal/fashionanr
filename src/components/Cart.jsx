@@ -13,7 +13,7 @@ const Cart = () => {
     setModal(false)
     const remainedItems = cart.filter((item) => item.id !== removeId);
     setCart(remainedItems);
-    toast(`${title} has been removed successfully`);
+    toast.success(`${title} has been removed successfully`);
 
   }
 
@@ -23,7 +23,7 @@ const Cart = () => {
     const updated = cart.map((product) => {
       if (product.id === itemId) {
         product.quantity = product.quantity + 1;
-        toast(`You have Changed ${product.title} QUANTITY '${product.quantity}'`);
+        toast.success(`You have Changed ${product.title} QUANTITY '${product.quantity}'`);
       }
 
       return product
@@ -37,7 +37,7 @@ const Cart = () => {
     const DecrUpdate = cart.map((check) => {
       if (check.id === decrID) {
         check.quantity = check.quantity - 1
-        toast(`You have Changed ${check.title} QUANTITY '${check.quantity}'`);
+        toast.success(`You have Changed ${check.title} QUANTITY '${check.quantity}'`);
       }
       return check
     })
