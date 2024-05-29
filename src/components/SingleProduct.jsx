@@ -231,7 +231,7 @@ const SingleProduct = () => {
     }
     return (
         <div>
-              <ToastContainer/>
+              <ToastContainer className="bg-transparent"/>
             {loader ? <Loading /> : <ShowProduct />}
 
         </div>

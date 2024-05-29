@@ -31,11 +31,24 @@ const Cart = () => {
     setCart([...updated]);
   }
 
+  // price decremnt function 
+
+  const priceDecrement = (decrID) =>{
+    const DecrUpdate =  cart.map((check) =>{
+      if(check.id === decrID){
+        check.quantity = check.quantity - 1 
+        toast(`You have Changed ${check.title} QUANTITY '${check.quantity}'`);
+      }
+      return check
+    })
+    setCart([...DecrUpdate])
+  }
 
 
   return (
     <>
-      <ToastContainer />
+    
+      <ToastContainer className="bg-transparent"/>
       {cart.length ? <div className='container pt-2 bg-white' style={{ marginTop: "5rem", marginBottom: "2rem" }}>
 
         {cart.map((item) => {
@@ -66,7 +79,7 @@ const Cart = () => {
 
               <div className=' pb-4 pt-3 bg-white cart-bt-card px-3'>
                 <div className='gap-2 increment-card bg-white '>
-                  <button className='incre-bt'>- </button>
+                  <button onClick={()=> priceDecrement(item.id)} id={item.quantity === 1 ? "disable-bt" : ""} className='incre-bt'>- </button>
                   <div className='qty-count-card'> {item.quantity}</div>
                   <button onClick={()=> priceIncrement(item.id)} className='incre-bt'> +</button>
                 </div>
