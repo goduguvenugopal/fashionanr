@@ -61,7 +61,7 @@ const Cart = () => {
     <>
 
       <ToastContainer className="bg-transparent" />
-      {cart.length ? <div className='container pt-2 bg-white' style={{ marginTop: "5rem", marginBottom: "2rem" }}>
+      {cart.length ? <> <div className='container pt-2 bg-white' style={{ marginTop: "5rem", marginBottom: "0.5rem" }}>
 
         {cart.map((item) => {
           return (
@@ -130,7 +130,11 @@ const Cart = () => {
           )
         })}
 
-        <div className='mt-4 pb-3'>
+        
+
+      </div>
+      
+      <div className='bg-white shadow pt-4 pb-2 container'>
           <div className='d-flex justify-content-between bg-white px-3'>
             <h5 className='bg-white '>Price ({cart.length} items)</h5>
             <div className='d-flex bg-white'>
@@ -140,18 +144,18 @@ const Cart = () => {
           </div>
           <div className='d-flex justify-content-between bg-white px-3 pt-2'>
             <h4 className='bg-white'>Toatal Amount</h4>
-            <div className='bg-white d-flex'> 
-               <i class="fa-solid fa-indian-rupee-sign bg-white" id='totalAmount-rupee1'></i>
-            <h5 className='bg-white'>{<TotalAmoFunc />}</h5>
-         </div>
-            </div><hr className='mb-0 mt-0 ' />
-<div className='bg-white pt-3 pb-3 text-end px-3'>
-    <button className='buy-bt '>PLACE ORDER</button>
-    </div>
-           
-        </div>
+            <div className='bg-white d-flex'>
+              <i class="fa-solid fa-indian-rupee-sign bg-white" id='totalAmount-rupee1'></i>
+              <h5 className='bg-white'>{<TotalAmoFunc />}</h5>
+            </div>
+          </div><hr className='mb-0 mt-0 ' />
+          <div className='bg-white pt-3 pb-2 text-end px-3'>
+            <button className='buy-bt '>PLACE ORDER</button>
+          </div>
 
-      </div> :
+        </div>
+      </>
+      :
 
 
         <div className='bg-white d-flex flex-column justify-content-center align-items-center' style={{ height: "100vh", width: "100vw" }} >
