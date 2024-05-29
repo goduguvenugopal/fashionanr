@@ -44,6 +44,10 @@ const Cart = () => {
     setCart([...DecrUpdate])
   }
 
+  // totalAmount of cart items 
+
+
+
 
   return (
     <>
@@ -67,7 +71,7 @@ const Cart = () => {
                   </div>
                   <h6 className='bg-white mt-1'>Rating</h6>
                   <div className=' d-flex justify-content-flex-start align-items-center gap-1 bg-white '>
-                    <i class="fa-solid fa-indian-rupee-sign bg-white mb-1"></i>
+                    <i class="fa-solid fa-indian-rupee-sign bg-white  " id='indian-rupee'></i>
                     <h4 className='fs-5 bg-white'>{item.price * item.quantity}</h4>
                   </div>
 
