@@ -78,6 +78,17 @@
     #indian-rupee{
         margin-bottom: 0.4rem;
     }
+
+    #totalAmount-rupee{
+        font-size: 13px;
+        margin-top: 0.3rem;
+        margin-right: 0.3rem;
+    }
+    #totalAmount-rupee1{
+        font-size: 17px;
+        margin-top: 0.3rem;
+        margin-right: 0.3rem;
+    }
     
 }
 
@@ -120,7 +131,16 @@
     #indian-rupee{
         margin-bottom: 0.3rem;
     }
-    
+    #totalAmount-rupee{
+        font-size: 13px;
+        margin-top: 0.3rem;
+        margin-right: 0.3rem;
+    }
+    #totalAmount-rupee1{
+        font-size: 16px;
+        margin-top: 0.3rem;
+        margin-right: 0.3rem;
+    }
 }
 
 

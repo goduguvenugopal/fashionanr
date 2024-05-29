@@ -33,10 +33,10 @@ const Cart = () => {
 
   // price decremnt function 
 
-  const priceDecrement = (decrID) =>{
-    const DecrUpdate =  cart.map((check) =>{
-      if(check.id === decrID){
-        check.quantity = check.quantity - 1 
+  const priceDecrement = (decrID) => {
+    const DecrUpdate = cart.map((check) => {
+      if (check.id === decrID) {
+        check.quantity = check.quantity - 1
         toast(`You have Changed ${check.title} QUANTITY '${check.quantity}'`);
       }
       return check
@@ -46,13 +46,21 @@ const Cart = () => {
 
   // totalAmount of cart items 
 
+  const TotalAmoFunc = () => {
+    let totalAmount = 0
 
+    cart.map((item => {
+      totalAmount += item.quantity * (item.price)
+    }))
+
+    return totalAmount.toFixed(2)
+  }
 
 
   return (
     <>
-    
-      <ToastContainer className="bg-transparent"/>
+
+      <ToastContainer className="bg-transparent" />
       {cart.length ? <div className='container pt-2 bg-white' style={{ marginTop: "5rem", marginBottom: "2rem" }}>
 
         {cart.map((item) => {
@@ -83,9 +91,9 @@ const Cart = () => {
 
               <div className=' pb-4 pt-3 bg-white cart-bt-card px-3'>
                 <div className='gap-2 increment-card bg-white '>
-                  <button onClick={()=> priceDecrement(item.id)} id={item.quantity === 1 ? "disable-bt" : ""} className='incre-bt'>- </button>
+                  <button onClick={() => priceDecrement(item.id)} id={item.quantity === 1 ? "disable-bt" : ""} className='incre-bt'>- </button>
                   <div className='qty-count-card'> {item.quantity}</div>
-                  <button onClick={()=> priceIncrement(item.id)} className='incre-bt'> +</button>
+                  <button onClick={() => priceIncrement(item.id)} className='incre-bt'> +</button>
                 </div>
                 <div className='d-flex gap-2 bg-white'>
                   <button className='buy-now-bt'>BUY NOW</button>
@@ -116,14 +124,32 @@ const Cart = () => {
 
                 </div>) : ""}
 
-<div className='total-price-card'>
-  
-</div>
+
             </>
 
           )
         })}
 
+        <div className='mt-4 pb-3'>
+          <div className='d-flex justify-content-between bg-white px-3'>
+            <h5 className='bg-white '>Price ({cart.length} items)</h5>
+            <div className='d-flex bg-white'>
+              <i class="fa-solid fa-indian-rupee-sign bg-white" id='totalAmount-rupee'></i>
+              <h6 className='bg-white'>{<TotalAmoFunc />}</h6></div>
+
+          </div>
+          <div className='d-flex justify-content-between bg-white px-3 pt-2'>
+            <h4 className='bg-white'>Toatal Amount</h4>
+            <div className='bg-white d-flex'> 
+               <i class="fa-solid fa-indian-rupee-sign bg-white" id='totalAmount-rupee1'></i>
+            <h5 className='bg-white'>{<TotalAmoFunc />}</h5>
+         </div>
+            </div><hr className='mb-0 mt-0 ' />
+<div className='bg-white pt-3 pb-3 text-end px-3'>
+    <button className='buy-bt '>PLACE ORDER</button>
+    </div>
+           
+        </div>
 
       </div> :
 
