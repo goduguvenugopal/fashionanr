@@ -5,6 +5,8 @@ import "./products.css"
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { cartContext } from '../App'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const SingleProduct = () => {
@@ -17,19 +19,21 @@ const SingleProduct = () => {
     const [blinker, setBlinker] = useState(false)
 
 
+   
     // adding items to the cart function 
 
     const addcartFunc = (product) => {
         setBlinker(true)
         setTimeout(() => {
             setBlinker(false)
+            toast("Item Added To Cart")
         }, 1000);
         const addedItem = products.find((item) => item.id === product)
         if (addedItem) {
             setCart([...cart, { ...addedItem, quantity: 1 }]);
-
+              
         } else {
-            alert("Item not added into the cart")
+            toast("Please Try Again Item Not Added Into The Cart")
         }
     }
 
@@ -145,7 +149,9 @@ const SingleProduct = () => {
 
     const ShowProduct = () => {
         return (
+            
             <>
+            
                 <div className='container bg-white py-5 ' style={{ marginTop: "5rem" }}>
                     <div className='row'>
                         <div className='col-12 col-md-6 bg-white text-center pb-4 '>
@@ -225,6 +231,7 @@ const SingleProduct = () => {
     }
     return (
         <div>
+              <ToastContainer/>
             {loader ? <Loading /> : <ShowProduct />}
 
         </div>
