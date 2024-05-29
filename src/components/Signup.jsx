@@ -17,7 +17,7 @@ const Signup = () => {
     const formFunc = (e) => {
         e.preventDefault()
         try {
-            const passwordPattern = /[@$%&#()?{}\}![+=]/;
+            const passwordPattern = /[@$%&#]/;
             const firstLetterCapitalPattern = /^[A-Z]/;
             const numberPattern = /[0-9]/;
 
