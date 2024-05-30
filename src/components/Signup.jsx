@@ -19,6 +19,8 @@ const Signup = () => {
     const formFunc = (e) => {
         e.preventDefault()
         try {
+
+            // form validation 
             const passwordPattern = /[@$%&#]/;
             const firstLetterCapitalPattern = /^[A-Z]/;
             const numberPattern = /[0-9]/;
@@ -65,7 +67,7 @@ const Signup = () => {
     return (
         <>
             <ToastContainer className="bg-transparent"  />
-            <div className='containe signup-main-card ' style={{ marginTop: "3rem" }}>
+            <div className='containe signup-main-card '>
 
                 <div className=' bg-white signup-card pb-3'>
                     <h4 className='bg-white'>Sign up</h4>
