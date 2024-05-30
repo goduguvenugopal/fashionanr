@@ -39,7 +39,7 @@ const Signup = () => {
             else {
                 const userData = { name, email, password, ConfirmPassword }
                 console.log(userData)
-                toast.success("User Signed Up Successfully")
+                toast.success("Signed Up Successfully")
                 setName("")
                 setEmail("")
                 setPassword("")
@@ -66,16 +66,16 @@ const Signup = () => {
 
                     <form className='bg-white' onSubmit={formFunc}>
                         <label className='input-text'>Name</label><br />
-                        <input type='text' value={name.trim()} onChange={(e) => setName(e.target.value)} id={red ? "redLine" : ""} className='input-box' name='name' /><br />
+                        <input type='text' value={name.trim()} onChange={(e) => setName(e.target.value)} id={red ? "redLine1" : ""} className='input-box' name='name' /><br />
                         <label className='input-text'>Email</label><br />
-                        <input value={email.trim()} onChange={(e) => setEmail(e.target.value)} type='email' id={red ? "redLine" : ""} className='input-box' name='email' /><br />
+                        <input value={email.trim()} onChange={(e) => setEmail(e.target.value)} type='email' id={red ? "redLine2" : ""} className='input-box' name='email' /><br />
                         <label className='input-text'>Password</label><br />
-                        <input value={password.trim()} onChange={(e) => setPassword(e.target.value)} type={eyeOpen ? "text" : "password"} className='input-box' id={red ? "redLine" : ""} name='password' />
-                        {eyeOpen ? <i onClick={() => setEyeOpen(false)} class="fa-solid fa-eye-slash" id='eye-open'></i> : <i onClick={() => setEyeOpen(true)} class="fa-solid fa-eye" id='eye-open'></i>}
+                        <input value={password.trim()} onChange={(e) => setPassword(e.target.value)} type={eyeOpen ? "text" : "password"} className='input-box' id={red ? "redLine3" : ""} name='password' />
+                        {eyeOpen ? <i onClick={() => setEyeOpen(false)} class="fa-solid fa-eye-slash eye-open"></i> : <i onClick={() => setEyeOpen(true)} class="fa-solid fa-eye eye-open"></i>}
                         <br />
                         <label className='input-text'>Confirm Password</label><br />
-                        <input value={ConfirmPassword.trim()} onChange={(e) => setConfirmPassword(e.target.value)} type='password' id={red ? "redLine" : ""} className='input-box mb-3' name='confirmPassword' /><br />
-                        <button type='submit ' className='mt-2 mb-2 btn btn-primary' >Sign up</button>
+                        <input value={ConfirmPassword.trim()} onChange={(e) => setConfirmPassword(e.target.value)} type='password' id={red ? "redLine4" : ""} className='input-box mb-3' name='confirmPassword' /><br />
+                        <button type='submit ' className='mt-2 mb-2 cart-bt bg-success' >Sign up</button>
                     </form>
                     <h6 className='mt-3 bg-white'>Already Existed user ? <span className='text-danger bg-white'>login</span></h6>
                 </div>
