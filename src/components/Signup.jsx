@@ -34,7 +34,7 @@ const Signup = () => {
                 toast.error("Password should contain at least One Number");
             }
             else if (!passwordPattern.test(password)) {
-                toast.error("Password Should Contain at least One Special Character (@, %, $, &, #, !")
+                toast.error("Password Should Contain at least One Special Character (@, %, $, &, #)")
             }
             else {
                 const userData = { name, email, password, ConfirmPassword }
