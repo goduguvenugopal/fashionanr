@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./credentials.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 
 const Signup = () => {
@@ -77,7 +78,7 @@ const Signup = () => {
                         <input value={ConfirmPassword.trim()} onChange={(e) => setConfirmPassword(e.target.value)} type='password' id={red ? "redLine4" : ""} className='input-box mb-3' name='confirmPassword' /><br />
                         <button type='submit ' className='mt-2 mb-2 cart-bt bg-success' >Sign up</button>
                     </form>
-                    <h6 className='mt-3 bg-white'>Already Existed user ? <span className='text-danger bg-white'>login</span></h6>
+                    <h6 className='mt-3 bg-white'>Already Existed user ? <Link to="/loagin" style={{textDecoration:"none"}} className=' bg-white'>login</Link></h6>
                 </div>
 
 

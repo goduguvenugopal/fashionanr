@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './credentials.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -74,7 +75,7 @@ const Login = () => {
                         </div> 
                         <button type='submit ' className='mt-3 mb-2 text-white buy-bt'>Login</button>
                     </form>
-                    <h6 className='mt-3 bg-white'>Don't have an account? <span className='text-primary bg-white'>Signup</span></h6>
+                    <h6 className='mt-3 bg-white'>Don't have an account? <Link to="/signup"  style={{textDecoration:"none"}} className=' bg-white'>Signup</Link></h6>
                 
                     
                        </div>
