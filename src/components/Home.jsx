@@ -3,6 +3,7 @@ import { men, categories } from "../images.js"
 import '../App.css'
 import Carousel from './Carousel.jsx'
 import Products from './Products.jsx'
+import Footer from './Footer.jsx'
 
 
 const Home = () => {
@@ -47,7 +48,7 @@ const Home = () => {
 
         </div>
       </div>
-
+      <Footer />
     </>
   )
 }

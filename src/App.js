@@ -8,6 +8,7 @@ import Cart from "./components/Cart";
 import { createContext, useState } from "react";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+import Footer from "./components/Footer";
 
 export const cartContext = createContext();
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/signup" element={<Signup/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/footer" element={<Footer/>} />
           </Routes>
         </BrowserRouter>
       </cartContext.Provider>

@@ -7,6 +7,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import { cartContext } from '../App'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from './Footer'
 
 
 const SingleProduct = () => {
@@ -230,11 +231,15 @@ const SingleProduct = () => {
         )
     }
     return (
+        <>
         <div>
-              <ToastContainer className="bg-transparent"/>
-            {loader ? <Loading /> : <ShowProduct />}
+        <ToastContainer className="bg-transparent"/>
+      {loader ? <Loading /> : <ShowProduct />}
 
-        </div>
+  </div>
+  <Footer/>
+  </>
+         
     )
 
 }

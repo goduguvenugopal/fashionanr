@@ -3,6 +3,7 @@ import "./cart.css"
 import { cartContext } from '../App'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from './Footer';
 
 const Cart = () => {
   const [cart, setCart] = useContext(cartContext)
@@ -163,6 +164,8 @@ const Cart = () => {
           <img src='\images\men\cart.png' alt='cart' className='bg-white cart-img' />
           <h5 className='text-secondary bg-white' style={{ marginLeft: "1.5rem" }}>Oops, cart is Empty</h5>
         </div>}
+
+        <Footer/>
     </>
   )
 }

@@ -3,6 +3,7 @@ import "./credentials.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 
 const Signup = () => {
@@ -28,14 +29,18 @@ const Signup = () => {
 
             } else if (password !== ConfirmPassword) {
                 toast.error("Passwords do not match. Please Enter the correct Confirm Password");
+                setRed(true)
             }
             else if (!firstLetterCapitalPattern.test(password)) {
                 toast.error("Password should start with a capital letter");
+                setRed(true)
             } else if (!numberPattern.test(password)) {
                 toast.error("Password should contain at least One Number");
+                setRed(true)
             }
             else if (!passwordPattern.test(password)) {
                 toast.error("Password Should Contain at least One Special Character (@, %, $, &, #)")
+                setRed(true)
             }
             else {
                 const userData = { name, email, password, ConfirmPassword }
@@ -51,6 +56,7 @@ const Signup = () => {
 
         } catch (err) {
             console.log(err)
+            toast.error("User already Existed With This Email, Try Another Email")
         }
 
 
@@ -58,7 +64,7 @@ const Signup = () => {
 
     return (
         <>
-            <ToastContainer className="bg-transparent" />
+            <ToastContainer className="bg-transparent"  />
             <div className='containe signup-main-card ' style={{ marginTop: "3rem" }}>
 
                 <div className=' bg-white signup-card pb-3'>
@@ -83,6 +89,7 @@ const Signup = () => {
 
 
             </div>
+            <Footer/>
         </>
     )
 }

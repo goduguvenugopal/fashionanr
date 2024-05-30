@@ -3,6 +3,7 @@ import './credentials.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 
 const Login = () => {
@@ -33,6 +34,8 @@ const Login = () => {
 
         } catch (err) {
             console.log(err)
+            toast.error("You have Entered wrong Email or Password")
+            setRed(true)
         }
 
 
@@ -86,7 +89,7 @@ const Login = () => {
         </div>
         
         </div>
-
+<Footer/>
         </>
   )
 }
