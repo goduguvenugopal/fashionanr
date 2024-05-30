@@ -78,7 +78,7 @@ const Signup = () => {
                         <input value={ConfirmPassword.trim()} onChange={(e) => setConfirmPassword(e.target.value)} type='password' id={red ? "redLine4" : ""} className='input-box mb-3' name='confirmPassword' /><br />
                         <button type='submit ' className='mt-2 mb-2 cart-bt bg-success' >Sign up</button>
                     </form>
-                    <h6 className='mt-3 bg-white'>Already Existed user ? <Link to="/loagin" style={{textDecoration:"none"}} className=' bg-white'>login</Link></h6>
+                    <h6 className='mt-3 bg-white'>Already Existed user ? <Link to="/login" style={{textDecoration:"none"}} className=' bg-white'>login</Link></h6>
                 </div>
 
 
