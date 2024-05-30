@@ -43,7 +43,7 @@ const Login = () => {
         <div className='row row-card shadow'>
             <div className='col-12 col-md-6 logo-login-card bg-primary'>
                 <div className='bg-transparent'>
-                     <img src='favicon.jpg' alt='logo-image' className='logo-at-login bg-transparent'/>
+                     <img src='favicon.jpg' alt='login-logo' className='logo-at-login bg-transparent'/>
                      <h5 className="navbar-brand logo-text bg-transparent">
                             Fashionkart
                         </h5>
