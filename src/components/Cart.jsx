@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./cart.css"
 import { cartContext, tokenContext } from '../App'
 import { ToastContainer, toast } from 'react-toastify';
