@@ -40,7 +40,7 @@ const Navbar = () => {
                                     Products
                                 </h6>
                             </Link>
-                            <Link style={{ fontSize: "17px",textDecoration: "none" }}   to="/about" className="nav-item bg-primary">
+                            <Link style={{ fontSize: "17px",textDecoration: "none" }}   to="/orders" className="nav-item bg-primary">
                                 <h6 className="nav-link bg-primary text-white">
                                    My orders
                                 </h6>
