@@ -63,7 +63,7 @@ const Signup = () => {
 
         } catch (err) {
             console.log(err)
-            toast.error("Try Again or User already Existed With This Email, Try Another Email")
+            toast.error("User already Existed With This Email, Try Another Email")
         }
 
 
