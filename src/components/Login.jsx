@@ -59,7 +59,7 @@ const Login = () => {
             }
          },  1200);
         
-    },[token , navigate])
+    },)
 
 
     return (
