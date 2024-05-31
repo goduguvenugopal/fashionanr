@@ -1,36 +1,49 @@
 import "./App.css";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, json } from "react-router-dom";
 import Products from "./components/Products";
 import SingleProduct from "./components/SingleProduct";
 import Cart from "./components/Cart";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Footer from "./components/Footer";
+import Account from "./components/Account";
 
 export const cartContext = createContext();
+export const tokenContext = createContext();
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setToken(JSON.parse(token));
+    }
+  }, [token]);
 
   return (
     <>
-      <cartContext.Provider value={[cart, setCart]}>
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/products/:id" element={<SingleProduct />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/signup" element={<Signup/>} />
-            <Route path="/login" element={<Login/>} />
-            <Route path="/footer" element={<Footer/>} />
-          </Routes>
-        </BrowserRouter>
-      </cartContext.Provider>
+      <tokenContext.Provider value={[token, setToken]}>
+        <cartContext.Provider value={[cart, setCart]}>
+          <BrowserRouter>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:id" element={<SingleProduct />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/footer" element={<Footer />} />
+              <Route path="/account" element={<Account />} />
+            </Routes>
+          </BrowserRouter>
+        </cartContext.Provider>
+      </tokenContext.Provider>
     </>
   );
 }

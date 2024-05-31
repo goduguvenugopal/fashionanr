@@ -34,25 +34,24 @@
  .cart-items-card {
     position: absolute;
     background-color: red;
-    height: 18px;
+    height: 19px;
     display: flex;
     border-radius: 50%;
     justify-content: center;
-    width: 18px;
-    top: 2px;
-    left: 16px;
+    width: 19px;
+    top: -7px;
+    left: 3px;
 
  }
 
  .bt-nav {
-    border: 1px solid white;
-    padding: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
-    border-radius: 5px;
+   
     background-color: transparent;
     color: white;
     position: relative;
+    border: none;
+    font-weight: 500;
+    font-size: 17px;
  }
 
 

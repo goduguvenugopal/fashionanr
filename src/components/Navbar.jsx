@@ -1,18 +1,18 @@
 import React, { useContext } from 'react'
 import '../App.css'
 import { Link } from 'react-router-dom'
-import { cartContext } from '../App'
+import { cartContext, tokenContext } from '../App'
 
 const Navbar = () => {
-
+    const [token] = useContext(tokenContext)
     const [cart] = useContext(cartContext)
 
     return (
         <div className=''>
-            <nav className="fixed-top navbar shadow navbar-expand-lg navbar-light bg-primary">
-                <div className="container  bg-primary">
+            <nav className="fixed-top navbar shadow navbar-expand-lg navbar-light bg-primary ">
+                <div className="container  bg-primary ">
                     <Link style={{ textDecoration: "none" }} className="bg-primary" to="/">
-                        <h5 className="navbar-brand logo-text bg-primary">
+                        <h5 className="navbar-brand logo-text bg-primary pb-2">
                             Fashionkart
                         </h5>
                     </Link>
@@ -28,42 +28,56 @@ const Navbar = () => {
                     >
                         <span className="navbar-toggler-icon  bg-white" />
                     </button>
-                    <div className="collapse navbar-collapse bg-primary" id="navbarSupportedContent">
+                    <div className="collapse navbar-collapse bg-primary " id="navbarSupportedContent">
                         <ul className="navbar-nav mx-auto bg-primary mb-2 mb-lg-0">
                             <Link style={{ textDecoration: "none" }} to="/" className="nav-item  bg-primary">
-                                <h6 className="nav-link active bg-primary text-white" aria-current="page"  >
+                                <h6 style={{ fontSize: "17px" }} className="nav-link active bg-primary text-white " aria-current="page"  >
                                     Home
                                 </h6>
                             </Link>
                             <Link style={{ textDecoration: "none" }} to="/products" className="nav-item bg-primary">
-                                <h6 className="nav-link bg-primary text-white">
+                                <h6 style={{ fontSize: "17px" }} className="nav-link bg-primary text-white">
                                     Products
                                 </h6>
                             </Link>
-                            <Link style={{ textDecoration: "none" }} to="/about" className="nav-item bg-primary">
+                            <Link style={{ fontSize: "17px" }} style={{ textDecoration: "none" }} to="/about" className="nav-item bg-primary">
                                 <h6 className="nav-link bg-primary text-white">
-                                    Orders
+                                   My orders
                                 </h6>
                             </Link>
-                            
+
                         </ul>
-                        <div className="bg-primary  d-flex justify-content-between gap-4">
-                            <Link style={{ textDecoration: "none" }} className="bg-primary" to="/login">
+                        <div className="bg-primary  d-flex justify-content-between  gap-5 pb-2 ">
+
+                            {token ?
+                            <Link to="/account" style={{ textDecoration: "none" }} className="bg-primary"> 
+                            <button className="bt-nav ">
+                                <i class="fa-solid fa-circle-user bg-transparent" style={{marginRight:"0.5rem"}}></i>
+                                    Account
+                                </button></Link>
+                                
+                                : <Link style={{ textDecoration: "none" }} className="bg-primary" to="/login">
                                 <button className="bt-nav ">
-                                    <i className="nav-icon fa-solid fa-right-to-bracket"></i>
-                                    Login
+                                    <i className="nav-icon fa-solid fa-right-to-bracket" style={{marginRight:"0.5rem"}}></i>
+                                 Login
                                 </button>
-                            </Link>
-                            <Link style={{ textDecoration: "none" }} className="bg-primary" to="/signup">
+                            </Link>}
+
+
+
+                            {token ? "" : <Link style={{ textDecoration: "none" }} className="bg-primary" to="/signup">
                                 <button className="bt-nav  ">
                                     <i className="nav-icon fa-solid fa-user-plus"></i> Signup
                                 </button>
-                            </Link>
+                            </Link>}
+
+
                             <Link style={{ textDecoration: "none" }} className="bg-primary" to="/cart">
                                 <button className="bt-nav  ">
-                                    <div className='cart-items-card'>
-                                        <h6 style={{ fontSize: "12px", marginTop: "2px" }} className='bg-transparent'>{cart.length}</h6>
-                                    </div>
+                                    {token ? <div className='cart-items-card'>
+                                        <h6 style={{ fontSize: "13px", marginTop: "2px" }} className='bg-transparent'>{cart.length}</h6>
+                                    </div> : ""}
+
                                     <i className="nav-icon fa-solid fa-cart-shopping"></i> Cart
                                 </button>
 

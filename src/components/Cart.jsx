@@ -1,13 +1,17 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./cart.css"
-import { cartContext } from '../App'
+import { cartContext, tokenContext } from '../App'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
+
 
 const Cart = () => {
+  const [token] = useContext(tokenContext)
   const [cart, setCart] = useContext(cartContext)
   const [modal, setModal] = useState(false)
+
 
   //cart items removing logic 
   const itemRemoveFunc = (removeId, title) => {
@@ -48,22 +52,23 @@ const Cart = () => {
   // totalAmount of cart items 
 
   const TotalAmoFunc = () => {
-   
+
     const totalAmount = cart.reduce((acc, item) => {
       return acc + item.quantity * item.price;
     }, 0);
-  
-    
+
+
     return totalAmount.toFixed(2);
   };
-  
+
 
 
   return (
     <>
 
       <ToastContainer className="bg-transparent" />
-      {cart.length ? <> <div className='container pt-2 bg-white' style={{ marginTop: "5rem", marginBottom: "0.5rem" }}>
+
+      {token ? <> {cart.length ? <> <div className='container pt-2 bg-white' style={{ marginTop: "5rem", marginBottom: "0.5rem" }}>
 
         {cart.map((item) => {
           return (
@@ -132,11 +137,11 @@ const Cart = () => {
           )
         })}
 
-        
+
 
       </div>
-      
-      <div className='bg-white shadow pt-4 pb-2 container'>
+
+        <div className='bg-white shadow pt-4 pb-2 container'>
           <div className='d-flex justify-content-between bg-white px-3'>
             <h5 className='bg-white '>Price ({cart.length} items)</h5>
             <div className='d-flex bg-white'>
@@ -157,15 +162,32 @@ const Cart = () => {
 
         </div>
       </>
-      :
+        :
 
 
         <div className='bg-white d-flex flex-column justify-content-center align-items-center' style={{ height: "100vh", width: "100vw" }} >
           <img src='\images\men\cart.png' alt='cart' className='bg-white cart-img' />
           <h5 className='text-secondary bg-white' style={{ marginLeft: "1.5rem" }}>Oops, cart is Empty</h5>
         </div>}
+        
+        </> : <>
 
-        <Footer/>
+
+        <div className=' bg-white d-flex justify-content-center align-items-center' style={{height:"100vh", width:"100vw" }}>
+          <div className='text-center bg-white' >
+            <img src='\images\carousel\cart2.webp' alt='cart' className='cart-missing-img mb-2'/>
+            <h4 className='bg-white mt-3'>Missing Cart Items ?</h4>
+            <h6 className='bg-white text-secondary'>Login to see the items you added previously</h6>
+            <Link to="/login"><button className='buy-bt mt-2'>Login</button></Link>
+             
+          </div>
+
+        </div>
+
+      </>}
+
+
+      <Footer />
     </>
   )
 }
