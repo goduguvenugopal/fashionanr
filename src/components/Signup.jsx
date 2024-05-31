@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
+import axios from 'axios';
 
 
 const Signup = () => {
@@ -16,7 +17,7 @@ const Signup = () => {
     const [red, setRed] = useState(false)
 
     // submittimg user details function 
-    const formFunc = (e) => {
+    const formFunc = async (e) => {
         e.preventDefault()
         try {
 
@@ -45,20 +46,24 @@ const Signup = () => {
                 setRed(true)
             }
             else {
-                const userData = { name, email, password, ConfirmPassword }
-                console.log(userData)
+
+                const userData = { name, email, password }
+
+                await axios.post("https://fashionkart-server.onrender.com/authentication/signup", userData)
+
                 toast.success("Signed Up Successfully")
                 setName("")
                 setEmail("")
                 setPassword("")
                 setConfirmPassword("")
                 setRed(false)
+
             }
 
 
         } catch (err) {
             console.log(err)
-            toast.error("User already Existed With This Email, Try Another Email")
+            toast.error("Try Again or User already Existed With This Email, Try Another Email")
         }
 
 
@@ -66,8 +71,8 @@ const Signup = () => {
 
     return (
         <>
-            <ToastContainer className="bg-transparent"  />
-            <div className='containe signup-main-card '>
+            <ToastContainer className="bg-transparent" />
+            <div className='signup-main-card '>
 
                 <div className=' bg-white signup-card pb-3'>
                     <h4 className='bg-white'>Sign up</h4>
@@ -86,12 +91,12 @@ const Signup = () => {
                         <input value={ConfirmPassword.trim()} onChange={(e) => setConfirmPassword(e.target.value)} type='password' id={red ? "redLine4" : ""} className='input-box mb-3' name='confirmPassword' /><br />
                         <button type='submit ' className='mt-2 mb-2 cart-bt bg-success' >Sign up</button>
                     </form>
-                    <h6 className='mt-3 bg-white'>Already Existed user ? <Link to="/login" style={{textDecoration:"none"}} className=' bg-white'>login</Link></h6>
+                    <h6 className='mt-3 bg-white'>Already Existed user ? <Link to="/login" style={{ textDecoration: "none" }} className=' bg-white'>login</Link></h6>
                 </div>
 
 
             </div>
-            <Footer/>
+            <Footer />
         </>
     )
 }
