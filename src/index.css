@@ -29,13 +29,14 @@
 .account-image{
    font-size: 10rem;
    background-color: white;
-   color: rgb(51, 95, 240);
+   color: rgb(51, 155, 240);
 
 }
 
  .orders-text-pro{
     font-size: 15px;
     margin-top: 10px;
+    font-weight: bold;
  }
 
  
@@ -45,7 +46,7 @@
       justify-content: center;
       align-items: center;
       background-color: white;
-      gap: 10px;
+      
       border: 1px solid rgb(101, 100, 100);
       box-shadow: 0 0 7px rgb(124, 123, 123);
       padding: 10px;
@@ -53,12 +54,23 @@
       width: 14rem;
       margin-left: 16px;
       cursor: pointer;
+      column-gap: 15px;
    }
 
    .order-icon{
       font-size: 3rem;
       background-color: white;
-      color: rgb(120, 120, 121);
+      color: rgb(55, 83, 243);
+      }
+
+      .logout-bt{
+         width: 20rem;
+         border: 2px solid rgb(136, 134, 134);
+         padding: 5px;
+         font-weight: 500;
+         color: blue;
+         border-radius: 5px;
+         background-color: white;
       }
 }
 
@@ -66,7 +78,7 @@
    .order-icon{
       font-size: 1.5rem;
       background-color: white;
-      color: rgb(120, 120, 121);
+      color: rgb(55, 83, 243);
       }
       .order-card-profile{
          display: flex;
@@ -82,4 +94,28 @@
          cursor: pointer;
       
       }
+
+      .logout-bt{
+         width: 100%;
+         border: 2px solid rgb(136, 134, 134);
+         padding: 5px;
+         font-weight: 500;
+         color: blue;
+         border-radius: 5px;
+         background-color: white;
+      }
 }
+
+.account-section-icons{
+   margin-bottom:10px;
+   margin-right: 23px;
+   color: rgb(55, 83, 243);
+   background-color: white;
+}
+
+.account-setting-text{
+   color: rgba(87, 86, 86, 0.959);
+}
+
+
+ 
