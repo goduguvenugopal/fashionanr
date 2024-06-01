@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 import axios from 'axios';
+import { tokenContext } from '../App';
 
 
 
 const ForgotPassword = () => {
 
-
+ const [setToken] = useContext(tokenContext)
     const [eyeOpen, setEyeOpen] = useState(false)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -19,7 +20,7 @@ const ForgotPassword = () => {
     const navigate = useNavigate()
 
 
-    // login function
+    // password reset function
     const formFunc = async (e) => {
         e.preventDefault()
         setSpinner(true)
@@ -55,9 +56,7 @@ const ForgotPassword = () => {
             }
             else {
                 const userData = { email, password }
-                await axios.put("https://fashionkart-server.onrender.com/authentication/login", userData)
-
-
+                await axios.put("https://fashionkart-server.onrender.com/authentication/updatepassword", userData)
                 toast.success("Password has been Changed Successfully")
                 setEmail("")
                 setPassword("")
@@ -66,6 +65,8 @@ const ForgotPassword = () => {
                 setSpinner(false)
                 const timer = setTimeout(() => {
                     navigate("/login")
+                    setToken("")
+                    localStorage.removeItem("token")
 
                 }, 1200);
 
@@ -82,8 +83,6 @@ const ForgotPassword = () => {
 
 
     }
-
-
 
 
     return (
@@ -126,13 +125,13 @@ const ForgotPassword = () => {
                                 }} value={confirmPassword.trim()} onChange={(e) => setConfirmPassword(e.target.value)} type="password" className='input-box' id={red ? "redLine2" : ""} name='password' />
 
 
-                                <div className='mt-2 bg-white d-flex align-items-center justify-content-between pass-toggle-card'>
+                                <div className='mt-2  bg-white d-flex align-items-center justify-content-between pass-toggle-card'>
 
 
-                                    {eyeOpen ? <h6 onClick={() => setEyeOpen(false)} class="bg-white" >Hide Password</h6> : <h6 onClick={() => setEyeOpen(true)} class="bg-white" >Show Password</h6>}
+                                    {eyeOpen ? <h6 onClick={() => setEyeOpen(false)} class="bg-white text-success" >Hide Password</h6> : <h6 onClick={() => setEyeOpen(true)} class="bg-white text-primary" >Show Password</h6>}
                                 </div>
 
-                                {spinner ? <button className="buy-bt bg-success mt-2 mb-2" type="button" disabled="">
+                                {spinner ? <button className="buy-bt bg-success mt-1 mb-2" type="button" disabled="">
                                     <span
                                         className="spinner-border text-white bg-transparent spinner-border-sm"
                                         role="status"
@@ -140,7 +139,7 @@ const ForgotPassword = () => {
                                     />
                                     <span className="visually-hidden">Loading...</span>
                                 </button>
-                                    : <button type='submit ' className='mt-2 mb-2 text-white bg-success buy-bt'>Save</button>
+                                    : <button type='submit ' className='mt-1 mb-2 text-white bg-success buy-bt'>Save</button>
                                 }
 
                                 <h6 className='mt-1 bg-white'>Don't have an account? <Link to="/signup" style={{ textDecoration: "none" }} className=' bg-white'>Signup</Link></h6>
