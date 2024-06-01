@@ -26,6 +26,8 @@ console.log(data)
             }
         }
 
+
+
         getUserFunc()
 
         if (!token) {
@@ -34,9 +36,16 @@ console.log(data)
 
     }, [token , navigate])
 
+
+    const logout = () =>{
+        localStorage.removeItem("token")
+    }
+
     return (
         <div className='container text-center fs-4 fw-bold' style={{ marginTop: "5rem" }}>
-            Account owner {data.name}
+            Account owner<br/>
+           <h5 className='text-danger'> {data.name}</h5>
+            <button onClick={logout} className='btn bg-primary text-white'>Logout</button>
         </div>
     )
 }
