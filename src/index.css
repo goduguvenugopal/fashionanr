@@ -52,7 +52,7 @@
       border-radius: 10px;
       width: 14rem;
       margin-left: 16px;
-     
+      cursor: pointer;
    }
 
    .order-icon{
@@ -79,7 +79,7 @@
          padding: 10px;
          border-radius: 10px;
          margin: 10px;
-         
+         cursor: pointer;
       
       }
 }
