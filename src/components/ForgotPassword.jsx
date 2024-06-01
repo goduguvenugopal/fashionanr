@@ -93,7 +93,7 @@ const ForgotPassword = () => {
                     <div className='col-12 col-md-6 logo-login-card bg-primary'>
                         <div className='bg-transparent'>
                             <img src='\images\carousel\password-logo.jpg' alt='login-logo' className='forgot-pass-logo bg-transparent ' />
-                            <h5 className="navbar-brand logo-text bg-transparent">
+                            <h5  className="navbar-brand logo-text bg-transparent">
                                 Forgot Password ?
                             </h5>
 
@@ -122,7 +122,7 @@ const ForgotPassword = () => {
                                 <label className='input-text'>Confirm New Password</label><br />
                                 <input onPaste={(e) => {
                                     e.preventDefault()
-                                }} value={confirmPassword.trim()} onChange={(e) => setConfirmPassword(e.target.value)} type="password" className='input-box' id={red ? "redLine2" : ""} name='password' />
+                                }} value={confirmPassword.trim()} onChange={(e) => setConfirmPassword(e.target.value)} type="password" className='input-box' id={red ? "redLine3" : ""} name='password' />
 
 
                                 <div className='mt-2  bg-white d-flex align-items-center justify-content-between pass-toggle-card'>
