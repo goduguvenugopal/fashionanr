@@ -40,11 +40,13 @@ const Navbar = () => {
                                     Products
                                 </h6>
                             </Link>
-                            <Link style={{ fontSize: "17px",textDecoration: "none" }}   to="/orders" className="nav-item bg-primary">
+
+                            {token ?  <Link style={{ fontSize: "17px",textDecoration: "none" }}   to="/orders" className="nav-item bg-primary">
                                 <h6 className="nav-link bg-primary text-white">
                                    My orders
                                 </h6>
-                            </Link>
+                            </Link> : ""}
+                            
 
                         </ul>
                         <div className="bg-primary  d-flex justify-content-between  gap-5 pb-2 ">
