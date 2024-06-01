@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Account = () => {
     const [data, setData] = useState([])
-    const [token] = useContext(tokenContext)
+    const [token ,setToken] = useContext(tokenContext)
     const navigate = useNavigate()
 console.log(data)
 
@@ -39,6 +39,7 @@ console.log(data)
 
     const logout = () =>{
         localStorage.removeItem("token")
+        setToken("")
     }
 
     return (
