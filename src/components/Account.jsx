@@ -3,7 +3,7 @@ import { tokenContext } from '../App'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import "../index.css"
-import "./cart.css"
+import "../css/cart.css"
 
 const Account = () => {
     const [data, setData] = useState([])
