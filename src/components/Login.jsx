@@ -101,8 +101,10 @@ const Login = () => {
                                 }} value={password.trim()} onChange={(e) => setPassword(e.target.value)} type={eyeOpen ? "text" : "password"} className='input-box' id={red ? "redLine2" : ""} name='password' />
 
 
-                                <div className='bg-white d-flex align-items-center justify-content-between pass-toggle-card'><h6 className='text-primary bg-white mt-2'>Forgot Password?</h6>
-                                    {eyeOpen ? <h6 onClick={() => setEyeOpen(false)} class="bg-white" >Hide</h6> : <h6 onClick={() => setEyeOpen(true)} class="bg-white" >Show</h6>}
+                                <div className='bg-white d-flex align-items-center justify-content-between pass-toggle-card'>
+                                    <Link class="bg-white" style={{textDecoration:"none"}} to="/password"> <h6 className='text-primary bg-white mt-2'>Forgot Password?</h6>
+                                    </Link>
+                                     {eyeOpen ? <h6 onClick={() => setEyeOpen(false)} class="bg-white" >Hide</h6> : <h6 onClick={() => setEyeOpen(true)} class="bg-white" >Show</h6>}
                                 </div>
 
                                 {spinner ? <button className="buy-bt mt-3 mb-2" type="button" disabled="">

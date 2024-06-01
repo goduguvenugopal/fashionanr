@@ -10,6 +10,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Footer from "./components/Footer";
 import Account from "./components/Account";
+import ForgotPassword from "./components/ForgotPassword";
 
 export const cartContext = createContext();
 export const tokenContext = createContext();
@@ -40,6 +41,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/footer" element={<Footer />} />
               <Route path="/account" element={<Account />} />
+              <Route path="/password" element={<ForgotPassword />} />
             </Routes>
           </BrowserRouter>
         </cartContext.Provider>

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { tokenContext } from '../App'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import "../index.css"
 
 const Account = () => {
@@ -126,6 +126,15 @@ const Account = () => {
                     <i class="fa-solid fa-bell account-section-icons"></i>
                     <h5 className='bg-white account-setting-text'>Notification Settings</h5>
                 </div>
+                <Link style={{textDecoration:"none"}} to="/password">
+                  <div className='bg-white d-flex align-items-center mt-3 pt-1'>
+                   
+                   
+                   <i class="fa-solid fa-key account-section-icons"></i>
+                   <h5 className='bg-white account-setting-text'>Change Password</h5>
+               </div>
+               </Link>
+               
             </div><hr />
 
             <div className='text-start m bg-white p-3'>
