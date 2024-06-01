@@ -53,13 +53,15 @@ const Login = () => {
 
  
     useEffect(()=>{
-         setTimeout(() => {
+       const timer =  setTimeout(() => {
             if(token){
                 navigate("/")
             }
          },  1200);
+
+         return ()=> clearTimeout(timer)
         
-    },[token])
+    },[token , navigate])
 
 
     return (

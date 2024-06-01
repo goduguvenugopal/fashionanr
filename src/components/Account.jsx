@@ -32,7 +32,7 @@ console.log(data)
             navigate("/login")
         }
 
-    }, [token])
+    }, [token , navigate])
 
     return (
         <div className='container text-center fs-4 fw-bold' style={{ marginTop: "5rem" }}>

@@ -52,13 +52,13 @@ const Navbar = () => {
                             {token ?
                             <Link to="/account" style={{ textDecoration: "none" }} className="bg-primary"> 
                             <button className="bt-nav ">
-                                <i class="fa-solid fa-circle-user bg-transparent" style={{marginRight:"0.5rem"}}></i>
+                                <i class="fa-solid fa-circle-user bg-transparent" style={{marginRight:"0.4rem"}}></i>
                                     Account
                                 </button></Link>
                                 
                                 : <Link style={{ textDecoration: "none" }} className="bg-primary" to="/login">
                                 <button className="bt-nav ">
-                                    <i className="nav-icon fa-solid fa-right-to-bracket" style={{marginRight:"0.5rem"}}></i>
+                                    <i className="nav-icon fa-solid fa-right-to-bracket" style={{marginRight:"0.4rem"}}></i>
                                  Login
                                 </button>
                             </Link>}
@@ -67,7 +67,7 @@ const Navbar = () => {
 
                             {token ? "" : <Link style={{ textDecoration: "none" }} className="bg-primary" to="/signup">
                                 <button className="bt-nav  ">
-                                    <i className="nav-icon fa-solid fa-user-plus"></i> Signup
+                                    <i className="nav-icon fa-solid fa-user-plus" style={{marginRight:"0.1rem"}}></i> Signup
                                 </button>
                             </Link>}
 
@@ -78,7 +78,7 @@ const Navbar = () => {
                                         <h6 style={{ fontSize: "13px", marginTop: "2px" }} className='bg-transparent'>{cart.length}</h6>
                                     </div> : ""}
 
-                                    <i className="nav-icon fa-solid fa-cart-shopping"></i> Cart
+                                    <i className="nav-icon fa-solid fa-cart-shopping" style={{marginRight:"0.1rem"}}></i> Cart
                                 </button>
 
                             </Link>
