@@ -67,6 +67,7 @@ const Account = () => {
             <div className='row bg-white'>
                 <div className='col-6 col-md-3 bg-white'>
                     <div className='order-card-profile'>
+                        
                         <i class="fa-solid fa-box order-icon"></i>
                         <h5 className='bg-white orders-text-pro'>Orders</h5>
 
