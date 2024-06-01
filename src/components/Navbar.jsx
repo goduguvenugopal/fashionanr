@@ -52,7 +52,7 @@ const Navbar = () => {
                             {token ?
                             <Link to="/account" style={{ textDecoration: "none" }} className="bg-primary"> 
                             <button className="bt-nav ">
-                                <i class="fa-solid fa-circle-user bg-transparent" style={{marginRight:"0.4rem"}}></i>
+                                <i class="fa-regular fa-circle-user bg-transparent" style={{marginRight:"0.4rem"}}></i>
                                     Account
                                 </button></Link>
                                 

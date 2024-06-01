@@ -21,3 +21,65 @@
  }
 
 }
+
+
+/* account component styling  */
+
+
+.account-image{
+   font-size: 10rem;
+   background-color: white;
+   color: rgb(51, 95, 240);
+
+}
+
+ .orders-text-pro{
+    font-size: 15px;
+    margin-top: 10px;
+ }
+
+ 
+@media only screen and (min-width : 769px){
+   .order-card-profile{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      gap: 10px;
+      border: 1px solid rgb(101, 100, 100);
+      box-shadow: 0 0 7px rgb(124, 123, 123);
+      padding: 10px;
+      border-radius: 10px;
+      width: 14rem;
+      margin-left: 16px;
+     
+   }
+
+   .order-icon{
+      font-size: 3rem;
+      background-color: white;
+      color: rgb(120, 120, 121);
+      }
+}
+
+@media only screen and (max-width : 769px){
+   .order-icon{
+      font-size: 2rem;
+      background-color: white;
+      color: rgb(120, 120, 121);
+      }
+      .order-card-profile{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background-color: white;
+         gap: 10px;
+         border: 1px solid rgb(101, 100, 100);
+         box-shadow: 0 0 7px rgb(124, 123, 123);
+         padding: 10px;
+         border-radius: 10px;
+         margin: 10px;
+         
+      
+      }
+}

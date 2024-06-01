@@ -68,7 +68,7 @@ const Cart = () => {
 
       <ToastContainer className="bg-transparent" />
 
-      {token ? <> {cart.length ? <> <div className='container pt-2 bg-white' style={{ marginTop: "5rem", marginBottom: "0.5rem" }}>
+      {token ? <> {cart.length ? <> <div className='container pt-2 bg-white' style={{ marginTop: "4.5rem", marginBottom: "0.5rem" }}>
 
         {cart.map((item) => {
           return (
@@ -111,7 +111,7 @@ const Cart = () => {
 
               {modal ?
                 (<div className='modal-card px-3'>
-                  <div className="card" style={{ width: "21rem" }}>
+                  <div className="card shadow" style={{ width: "21rem" }}>
                     <div className="bg-white card-header fw-bold d-flex justify-content-between align-items-center">Remove Item
                       <i style={{ cursor: "pointer" }} onClick={() => setModal(false)} class="fa-solid fa-xmark bg-white"></i></div>
 
