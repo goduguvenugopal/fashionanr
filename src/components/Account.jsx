@@ -119,7 +119,7 @@ const Account = () => {
                     <h5 className='bg-white account-setting-text'>Saved Cards & Wallets</h5>
                 </div>
                 <div className='bg-white d-flex align-items-center mt-3 pt-1'>
-                    <i class="fa-solid fa-location-dot account-section-icons"></i>
+                    <i class="fa-solid fa-location-dot account-section-icons"  style={{ marginRight: "1.6rem" }}></i>
                     <h5 className='bg-white account-setting-text'>Saved Addresses</h5>
                 </div>
                 <div className='bg-white d-flex align-items-center mt-3 pt-1'>
@@ -137,7 +137,7 @@ const Account = () => {
                     <h5 className='bg-white account-setting-text'>Terms, policies and licenses</h5>
                 </div>
                 <div className='bg-white d-flex align-items-center mt-3 pt-1'>
-                    <i class="fa-solid fa-circle-question account-section-icons"  ></i>
+                    <i class="fa-solid fa-circle-question account-section-icons" style={{ fontSize: "19px" }} ></i>
                     <h5 className='bg-white account-setting-text'>Saved Cards & Wallets</h5>
                 </div>
 
