@@ -45,6 +45,7 @@ const Account = () => {
         setSpinner(true)
         const timer = setTimeout(() => {
             localStorage.removeItem("token")
+            localStorage.removeItem("userName")
             setToken("")
         }, 1300);
 
@@ -143,9 +144,9 @@ const Account = () => {
             </div><hr />
 
             <div className='p-4 bg-white'>
-                {spinner ? <button className="logout-bt" type="button" disabled="">
+                {spinner ? <button  className="logout-bt" type="button" disabled="">
                                     <span
-                                        className="spinner-border text-primary bg-transparent spinner-border-sm"
+                                        className="spinner-border bg-transparent spinner-border-sm "
                                         role="status"
                                         aria-hidden="true"
                                     />
