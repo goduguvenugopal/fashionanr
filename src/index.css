@@ -64,16 +64,16 @@
 
 @media only screen and (max-width : 769px){
    .order-icon{
-      font-size: 2rem;
+      font-size: 1.5rem;
       background-color: white;
       color: rgb(120, 120, 121);
       }
       .order-card-profile{
          display: flex;
-         justify-content: center;
+         justify-content: space-evenly;
          align-items: center;
          background-color: white;
-         gap: 10px;
+         column-gap:2px ;
          border: 1px solid rgb(101, 100, 100);
          box-shadow: 0 0 7px rgb(124, 123, 123);
          padding: 10px;

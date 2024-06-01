@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import "../index.css"
 
 const Account = () => {
-    const [ setData] = useState([])
+     
     const [token] = useContext(tokenContext)
     const navigate = useNavigate()
 
@@ -23,7 +23,7 @@ const Account = () => {
                 })
 
                 localStorage.setItem("userName", JSON.stringify(response.data.name))
-                setData(response.data)
+                 
 
             } catch (error) {
                 console.log(error)
@@ -77,7 +77,7 @@ const Account = () => {
     <div className='col-6  col-md-3 bg-white'>
         <div className='order-card-profile'>
         <i class="fa-solid fa-gift order-icon"></i>
-        <h5 className='bg-white orders-text-pro'>Orders</h5>
+        <h5 className='bg-white orders-text-pro'>Coupons</h5>
 
         </div>
 
@@ -86,7 +86,7 @@ const Account = () => {
         <div className='order-card-profile'>
         
         <i class="fa-solid fa-headset order-icon"></i>
-        <h5 className='bg-white orders-text-pro'>Orders</h5>
+        <h5 className='bg-white orders-text-pro'>Help Center</h5>
 
         </div>
 
