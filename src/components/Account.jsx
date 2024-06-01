@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import "../index.css"
 
 const Account = () => {
-    const [data, setData] = useState([])
-    const [token, setToken] = useContext(tokenContext)
+    const [ setData] = useState([])
+    const [token] = useContext(tokenContext)
     const navigate = useNavigate()
 
 
