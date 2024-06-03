@@ -44,7 +44,8 @@ const SingleProduct = () => {
 
     useEffect(() => {
         const localStorageCart = localStorage.getItem("cart")
-        const existed = JSON.parse(localStorageCart).some((item) => item._id === data._id)
+        const checkedCart = JSON.parse(localStorageCart)
+        const existed =  checkedCart.some((item) => item._id === data._id)
         if (existed) {
             setExist(true)
         }
