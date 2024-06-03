@@ -11,12 +11,14 @@ const Products = () => {
     const [loader, setLoader] = useState(false)
 
 
+const API = "https://fashionkart-server.onrender.com"
+
     // fetching the products 
     useEffect(() => {
         const fetchProducts = async () => {
             setLoader(true);
             try {
-                const response = await axios.get("https://fakestoreapi.com/products");
+                const response = await axios.get(`${API}/product/getproducts`);
                 setData(response.data)
                 setFilter(response.data)
                 setLoader(false);
@@ -67,17 +69,18 @@ const Products = () => {
                     {filter.map((item) => {
                         return (
                             <>
-                                <Link className='text-dark' style={{ textDecoration: "none" }} to={`/products/${item.id}`}>
+                                <Link className='text-dark' style={{ textDecoration: "none" }} to={`/products/${item._id}`}>
                                     <div className='cat-sub-card bg-white'>
-                                        <img key={item.id} src={item.image} className='cat-images bg-white' alt='products' />
-                                        <h5 className='title'>{item.title.substring(0, 12)}</h5>
+                                        {item.image && (<img key={item._id} src={`${API}/uploads/${item.image}`} className='cat-images bg-white' alt='products' />
+                                        )}
+                                         <h5 className='title'>{item.title.substring(0, 12)}</h5>
                                         <div className='d-flex justify-content-center align-items-center gap-1 bg-white '>
                                             <i class="fa-solid fa-indian-rupee-sign bg-white " style={{ fontSize: "13px", marginBottom: "0.4rem" }}></i>
                                             <h4 className='cost bg-white'>{item.price}</h4>
                                         </div>
 
                                         <div className='bg-success rating-card' >
-                                            <h6 className='bg-success text-white mt-2'>{item.rating && item.rating.rate}</h6>
+                                            <h6 className='bg-success text-white mt-2'>{item.rating}</h6>
                                             <i className='fa fa-star bg-success text-white ' style={{ fontSize: "13px" }}></i>
                                         </div>
 

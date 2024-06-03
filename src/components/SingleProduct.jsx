@@ -18,9 +18,11 @@ const SingleProduct = () => {
     const [products, setProducts] = useState([])
     const [exist, setExist] = useState(false)
     const [blinker, setBlinker] = useState(false)
+  
 
 
-   
+
+
     // adding items to the cart function 
 
     const addcartFunc = (product) => {
@@ -29,10 +31,10 @@ const SingleProduct = () => {
             setBlinker(false)
             toast.success("Item Added To Cart")
         }, 1000);
-        const addedItem = products.find((item) => item.id === product)
+        const addedItem = products.find((item) => item._id === product)
         if (addedItem) {
             setCart([...cart, { ...addedItem, quantity: 1 }]);
-              
+
         } else {
             toast.error("Please Try Again Item Not Added Into The Cart")
         }
@@ -41,13 +43,14 @@ const SingleProduct = () => {
     // checking products already in cart 
 
     useEffect(() => {
-        const existed = cart.some((item) => item.id === data.id)
+        const existed = cart.some((item) => item._id === data._id)
         if (existed) {
             setExist(true)
         }
     }, [cart, data])
 
 
+    const API = "https://fashionkart-server.onrender.com"
 
     // fetching single product by id 
     useEffect(() => {
@@ -55,8 +58,8 @@ const SingleProduct = () => {
         const getSingle = async () => {
             setLoader(true)
             try {
-                const response = await axios.get(`https://fakestoreapi.com/products/${id}`)
-                setData(response.data)
+                const response = await axios.get(`${API}/product/findproduct/${id}`)
+                setData(response.data.data)
                 setLoader(false)
 
             } catch (err) {
@@ -70,9 +73,9 @@ const SingleProduct = () => {
         const getAll = async () => {
 
             try {
-                const response = await axios.get(`https://fakestoreapi.com/products`)
+                const response = await axios.get(`${API}/product/getproducts`)
                 setProducts(response.data)
-
+ 
             } catch (err) {
 
                 console.log(err)
@@ -150,27 +153,30 @@ const SingleProduct = () => {
 
     const ShowProduct = () => {
         return (
-            
+
             <>
-            
+
                 <div className='container bg-white py-5 ' style={{ marginTop: "5rem" }}>
                     <div className='row'>
                         <div className='col-12 col-md-6 bg-white text-center pb-4 '>
-                            <img height="330px" width="320px" src={data.image} className='single-img' alt={data.category} />
+
+                            {data.image && (<img height="330px" width="320px" key={data._id} src={`${API}/uploads/${data.image}`} className='single-img' alt={data.category} />
+                            )}
+
 
                         </div><hr className='d-md-none mb-0 ' />
 
                         <div className='pb-3 col-12 col-md-6 bg-white pt-3 px-3'>
-                            <h5 className='text-uppercase text-black-50 bg-white' >{data.category}</h5>
-                            <h4 className='display-5 bg-white' >{data.title}</h4>
+                            <h5  key={data._id} className='text-uppercase text-black-50 bg-white' >{data.category}</h5>
+                            <h4  key={data._id} className='display-5 bg-white' >{data.title}</h4>
                             <div className='bg-success mr-2 rating-card mt-3' >
-                                <h6 className='bg-success text-white mt-2'>{data.rating && data.rating.rate}</h6>
+                                <h6  key={data._id} className='bg-success text-white mt-2'>{data.rating}</h6>
                                 <i className='fa fa-star bg-success text-white ' style={{ fontSize: "13px" }}></i>
                             </div>
                             <h6 className='bg-white mt-1'>Rating</h6>
                             <div className=' d-flex justify-content-flex-start align-items-center gap-1 bg-white '>
                                 <i class="fa-solid fa-indian-rupee-sign bg-white " id='rupee-icon'></i>
-                                <h4 className='fs-1 bg-white'>{data.price}</h4>
+                                <h4  key={data._id} className='fs-1 bg-white'>{data.price}</h4>
                             </div>
 
 
@@ -208,7 +214,7 @@ const SingleProduct = () => {
                                         <Link className='bg-white' to="/cart" style={{ textDecoration: "none" }
                                         } >
                                             <button className='cart-bt bg-success'> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>GO TO CART</button></Link> :
-                                        <button onClick={() => addcartFunc(data.id)} className='cart-bt  '> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>
+                                        <button onClick={() => addcartFunc(data._id)} className='cart-bt  '> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>
 
                                 }
 
@@ -218,7 +224,7 @@ const SingleProduct = () => {
                         <div className='col-12 bg-white py-3  px-3'>
                             <div className='bg-white'>
                                 <h5 className='bg-white '>Product Description</h5>
-                                <h6 className='bg-white text-secondary mt-3'>{data.description}</h6>
+                                <h6  key={data._id} className='bg-white text-secondary mt-3'>{data.description}</h6>
                             </div>
                         </div>
 
@@ -232,14 +238,14 @@ const SingleProduct = () => {
     }
     return (
         <>
-        <div>
-        <ToastContainer className="bg-transparent"/>
-      {loader ? <Loading /> : <ShowProduct />}
+            <div>
+                <ToastContainer className="bg-transparent" />
+                {loader ? <Loading /> : <ShowProduct />}
 
-  </div>
-  <Footer/>
-  </>
-         
+            </div>
+            <Footer />
+        </>
+
     )
 
 }

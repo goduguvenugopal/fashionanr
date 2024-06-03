@@ -16,7 +16,7 @@ const Cart = () => {
   //cart items removing logic 
   const itemRemoveFunc = (removeId, title) => {
     setModal(false)
-    const remainedItems = cart.filter((item) => item.id !== removeId);
+    const remainedItems = cart.filter((item) => item._id !== removeId);
     setCart(remainedItems);
     toast.success(`${title} has been removed successfully`);
 
@@ -26,7 +26,7 @@ const Cart = () => {
 
   const priceIncrement = (itemId) => {
     const updated = cart.map((product) => {
-      if (product.id === itemId) {
+      if (product._id === itemId) {
         product.quantity = product.quantity + 1;
         toast.success(`You have Changed ${product.title} QUANTITY '${product.quantity}'`);
       }
@@ -73,7 +73,7 @@ const Cart = () => {
         {cart.map((item) => {
           return (
             <>
-              <div key={item.id} className='cart-item-card bg-white px-3 pt-2'>
+              <div key={item._id} className='cart-item-card bg-white px-3 pt-2'>
                 <div>
                   <img src={item.image} alt={item.category} className='cart-item-img' />
                 </div>
@@ -98,9 +98,9 @@ const Cart = () => {
 
               <div className=' pb-4 pt-3 bg-white cart-bt-card px-3'>
                 <div className='gap-2 increment-card bg-white '>
-                  <button onClick={() => priceDecrement(item.id)} id={item.quantity === 1 ? "disable-bt" : ""} className='incre-bt'>- </button>
+                  <button onClick={() => priceDecrement(item._id)} id={item.quantity === 1 ? "disable-bt" : ""} className='incre-bt'>- </button>
                   <div className='qty-count-card'> {item.quantity}</div>
-                  <button onClick={() => priceIncrement(item.id)} className='incre-bt'> +</button>
+                  <button onClick={() => priceIncrement(item._id)} className='incre-bt'> +</button>
                 </div>
                 <div className='d-flex gap-2 bg-white'>
                   <button className='buy-now-bt'>BUY NOW</button>
@@ -124,7 +124,7 @@ const Cart = () => {
                       <button onClick={() => setModal(false)} style={{ width: "8.5rem" }} className="btn btn-outline-dark">
                         CANCEL
                       </button>
-                      <button onClick={() => itemRemoveFunc(item.id, item.title)} style={{ width: "8.5rem" }} className="btn btn-danger">
+                      <button onClick={() => itemRemoveFunc(item._id, item.title)} style={{ width: "8.5rem" }} className="btn btn-danger">
                         REMOVE
                       </button></div>
                   </div>
