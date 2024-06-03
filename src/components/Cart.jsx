@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
 
+ const API = "https://fashionkart-server.onrender.com"
 
 const Cart = () => {
   const [token] = useContext(tokenContext)
@@ -75,7 +76,8 @@ const Cart = () => {
             <>
               <div key={item._id} className='cart-item-card bg-white px-3 pt-2'>
                 <div>
-                  <img src={item.image} alt={item.category} className='cart-item-img' />
+                  {item.image && ( <img src={`${API}/uploads/${item.image}`} alt={item.category} className='cart-item-img' />)}
+                  
                 </div>
                 <div className=' bg-white pt-3 px-3'>
                   <h5 className='text-uppercase bg-white cat-txt' >{item.category}</h5>
