@@ -83,7 +83,7 @@ const Cart = () => {
                   <h5 className='text-uppercase bg-white cat-txt' >{item.category}</h5>
                   <h4 className=' bg-white cat-title-text' >{item.title}</h4>
                   <div className='bg-success mr-2 rating-card mt-3' >
-                    <h6 className='bg-success text-white mt-2 '>{item.rating && item.rating.rate}</h6>
+                    <h6 className='bg-success text-white mt-2 '>{item.rating}</h6>
                     <i className='fa fa-star bg-success text-white ' style={{ fontSize: "13px" }}></i>
                   </div>
                   <h6 className='bg-white mt-1'>Rating</h6>
@@ -102,7 +102,7 @@ const Cart = () => {
                 <div className='gap-2 increment-card bg-white '>
                   <button onClick={() => priceDecrement(item._id)} id={item.quantity === 1 ? "disable-bt" : ""} className='incre-bt'>- </button>
                   <div className='qty-count-card'> {item.quantity}</div>
-                  <button onClick={() => priceIncrement(item._id)} className='incre-bt'> +</button>
+                  <button onClick={() => priceIncrement(item._id)} className='incre-bt '> +</button>
                 </div>
                 <div className='d-flex gap-2 bg-white'>
                   <button className='buy-now-bt'>BUY NOW</button>
