@@ -87,7 +87,7 @@ const Cart = () => {
             <>
               <div key={item._id} className='cart-item-card bg-white px-3 pt-2'>
                 <div>
-                  {item.image && (<img src={`${API}/uploads/${item.image}`} alt={item.category} className='cart-item-img bg-white' />)}
+                  {item.image && (<img src={`${API}/${item.image}`} alt={item.category} className='cart-item-img bg-white' />)}
 
                 </div>
                 <div className=' bg-white pt-3 px-3'>

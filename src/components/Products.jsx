@@ -9,8 +9,7 @@ const Products = () => {
     const [data, setData] = useState([])
     const [filter, setFilter] = useState(data)
     const [loader, setLoader] = useState(false)
-console.log(data)
-
+ 
 const API = "https://fashionkart-server.onrender.com"
 
     // fetching the products 
@@ -71,7 +70,7 @@ const API = "https://fashionkart-server.onrender.com"
                             <>
                                 <Link className='text-dark' style={{ textDecoration: "none" }} to={`/products/${item._id}`}>
                                     <div className='cat-sub-card bg-white'>
-                                        {item.image && (<img key={item._id} src={`${API}/uploads/${item.image}`} className='cat-images bg-white' alt='products' />
+                                        {item.image && (<img key={item._id} src={`${API}/${item.image}`} className='cat-images bg-white' alt='products' />
                                         )}
                                          <h5 className='title'>{item.title.substring(0, 12)}</h5>
                                         <div className='d-flex justify-content-center align-items-center gap-1 bg-white '>
