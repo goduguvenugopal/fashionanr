@@ -18,7 +18,7 @@ const SingleProduct = () => {
     const [products, setProducts] = useState([])
     const [exist, setExist] = useState(false)
     const [blinker, setBlinker] = useState(false)
-  
+
 
 
 
@@ -34,7 +34,7 @@ const SingleProduct = () => {
         const addedItem = products.find((item) => item._id === product)
         if (addedItem) {
             setCart([...cart, { ...addedItem, quantity: 1 }]);
-
+            localStorage.setItem("cart", JSON.stringify([...cart, { ...addedItem, quantity: 1 }]))
         } else {
             toast.error("Please Try Again Item Not Added Into The Cart")
         }
@@ -43,10 +43,13 @@ const SingleProduct = () => {
     // checking products already in cart 
 
     useEffect(() => {
-        const existed = cart.some((item) => item._id === data._id)
+        const localStorageCart = localStorage.getItem("cart")
+        const existed = JSON.parse(localStorageCart).some((item) => item._id === data._id)
         if (existed) {
             setExist(true)
         }
+
+
     }, [cart, data])
 
 
@@ -75,7 +78,7 @@ const SingleProduct = () => {
             try {
                 const response = await axios.get(`${API}/product/getproducts`)
                 setProducts(response.data)
- 
+
             } catch (err) {
 
                 console.log(err)
@@ -167,16 +170,16 @@ const SingleProduct = () => {
                         </div><hr className='d-md-none mb-0 ' />
 
                         <div className='pb-3 col-12 col-md-6 bg-white pt-3 px-3'>
-                            <h5  key={data._id} className='text-uppercase text-black-50 bg-white' >{data.category}</h5>
-                            <h4  key={data._id} className='display-5 bg-white' >{data.title}</h4>
+                            <h5 key={data._id} className='text-uppercase text-black-50 bg-white' >{data.category}</h5>
+                            <h4 key={data._id} className='display-5 bg-white' >{data.title}</h4>
                             <div className='bg-success mr-2 rating-card mt-3' >
-                                <h6  key={data._id} className='bg-success text-white mt-2'>{data.rating}</h6>
+                                <h6 key={data._id} className='bg-success text-white mt-2'>{data.rating}</h6>
                                 <i className='fa fa-star bg-success text-white ' style={{ fontSize: "13px" }}></i>
                             </div>
                             <h6 className='bg-white mt-1'>Rating</h6>
                             <div className=' d-flex justify-content-flex-start align-items-center gap-1 bg-white '>
                                 <i class="fa-solid fa-indian-rupee-sign bg-white " id='rupee-icon'></i>
-                                <h4  key={data._id} className='fs-1 bg-white'>{data.price}</h4>
+                                <h4 key={data._id} className='fs-1 bg-white'>{data.price}</h4>
                             </div>
 
 
@@ -224,7 +227,7 @@ const SingleProduct = () => {
                         <div className='col-12 bg-white py-3  px-3'>
                             <div className='bg-white'>
                                 <h5 className='bg-white '>Product Description</h5>
-                                <h6  key={data._id} className='bg-white text-secondary mt-3'>{data.description}</h6>
+                                <h6 key={data._id} className='bg-white text-secondary mt-3'>{data.description}</h6>
                             </div>
                         </div>
 

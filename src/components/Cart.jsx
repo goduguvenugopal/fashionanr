@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
 
- const API = "https://fashionkart-server.onrender.com"
+const API = "https://fashionkart-server.onrender.com"
 
 const Cart = () => {
   const [token] = useContext(tokenContext)
@@ -16,10 +16,21 @@ const Cart = () => {
 
   //cart items removing logic 
   const itemRemoveFunc = (removeId, title) => {
-    setModal(false)
-    const remainedItems = cart.filter((item) => item._id !== removeId);
-    setCart(remainedItems);
-    toast.success(`${title} has been removed successfully`);
+    const localstorageCart = localStorage.getItem("cart")
+    if (localstorageCart) {
+
+      const parsedcart = JSON.parse(localstorageCart)
+      const remainedItems = parsedcart.filter((item) => item._id !== removeId);
+
+      localStorage.setItem("cart", JSON.stringify(remainedItems))
+
+      setCart(remainedItems);
+      setModal(false)
+      toast.success(`${title} has been removed successfully`);
+    }
+
+
+
 
   }
 
@@ -76,8 +87,8 @@ const Cart = () => {
             <>
               <div key={item._id} className='cart-item-card bg-white px-3 pt-2'>
                 <div>
-                  {item.image && ( <img src={`${API}/uploads/${item.image}`} alt={item.category} className='cart-item-img bg-white' />)}
-                  
+                  {item.image && (<img src={`${API}/uploads/${item.image}`} alt={item.category} className='cart-item-img bg-white' />)}
+
                 </div>
                 <div className=' bg-white pt-3 px-3'>
                   <h5 className='text-uppercase bg-white cat-txt' >{item.category}</h5>
@@ -171,17 +182,17 @@ const Cart = () => {
           <img src='\images\men\cart.png' alt='cart' className='bg-white cart-img' />
           <h5 className='text-secondary bg-white' style={{ marginLeft: "1.5rem" }}>Oops, cart is Empty</h5>
         </div>}
-        
-        </> : <>
+
+      </> : <>
 
 
-        <div className=' bg-white d-flex justify-content-center align-items-center' style={{height:"100vh", width:"100vw" }}>
+        <div className=' bg-white d-flex justify-content-center align-items-center' style={{ height: "100vh", width: "100vw" }}>
           <div className='text-center bg-white' >
-            <img src='\images\carousel\cart2.webp' alt='cart' className='cart-missing-img mb-2'/>
+            <img src='\images\carousel\cart2.webp' alt='cart' className='cart-missing-img mb-2' />
             <h4 className='bg-white mt-3'>Missing Cart Items ?</h4>
             <h6 className='bg-white text-secondary'>Login to see the items you added previously</h6>
             <Link to="/login"><button className='buy-bt mt-2'>Login</button></Link>
-             
+
           </div>
 
         </div>

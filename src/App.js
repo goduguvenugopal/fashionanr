@@ -24,6 +24,11 @@ function App() {
     if (token) {
       setToken(JSON.parse(token));
     }
+
+    const localStorageCart = localStorage.getItem("cart")
+    if(localStorageCart){
+      setCart(JSON.parse(localStorageCart))
+    } 
   }, [token]);
 
   return (
