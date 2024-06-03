@@ -41,7 +41,7 @@ const Cart = () => {
 
   const priceDecrement = (decrID) => {
     const DecrUpdate = cart.map((check) => {
-      if (check.id === decrID) {
+      if (check._id === decrID) {
         check.quantity = check.quantity - 1
         toast.success(`You have Changed ${check.title} QUANTITY '${check.quantity}'`);
       }
