@@ -90,9 +90,17 @@
     }
 
     .cat-images {
+         
         width: 7rem;
         height: 7rem;
+        
+        
+        background-blend-mode: darken;
+        background-color: white;
+        
     }
+
+     
 
     .skeleton {
         height: 15rem;

@@ -9,7 +9,7 @@ const Products = () => {
     const [data, setData] = useState([])
     const [filter, setFilter] = useState(data)
     const [loader, setLoader] = useState(false)
-
+console.log(data)
 
 const API = "https://fashionkart-server.onrender.com"
 
@@ -59,10 +59,10 @@ const API = "https://fashionkart-server.onrender.com"
                 <div className='bg-white filter-card'>
 
                     <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => setFilter(data)}>All</button>
-                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("Men's Clothing")}>Men'sClothing</button>
-                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("women's clothing")}>Women'sClothing</button>
-                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("jewelery")}>JeweleryClothing</button>
-                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("electronics")}>Electronics</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("men clothing")}>Men'sClothing</button>
+                
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("goggles")}>Goggles</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("sliders")}>Sliders</button>
 
                 </div>
                 <div className='products-cont pt-5 pb-3 px-3'>
