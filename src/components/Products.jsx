@@ -59,7 +59,7 @@ const API = "https://fashionkart-server.onrender.com"
                 <div className='bg-white filter-card'>
 
                     <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => setFilter(data)}>All</button>
-                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("men's clothing")}>Men'sClothing</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("Men's Clothing")}>Men'sClothing</button>
                     <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("women's clothing")}>Women'sClothing</button>
                     <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("jewelery")}>JeweleryClothing</button>
                     <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("electronics")}>Electronics</button>
