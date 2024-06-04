@@ -6,28 +6,30 @@ import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
 
-const API = "https://fashionkart-server.onrender.com"
+ 
 
 const Cart = () => {
   const [token] = useContext(tokenContext)
   const [cart, setCart] = useContext(cartContext)
-  const [modal, setModal] = useState(false)
+  // const [modal, setModal] = useState(false)
 
 
   //cart items removing logic 
   const itemRemoveFunc = (removeId, title) => {
-    const localstorageCart = localStorage.getItem("cart")
-    if (localstorageCart) {
-
-      const parsedcart = JSON.parse(localstorageCart)
-      const remainedItems = parsedcart.filter((item) => item._id !== removeId);
-
-      localStorage.setItem("cart", JSON.stringify(remainedItems))
-
-      setCart(remainedItems);
-      setModal(false)
-      toast.success(`${title} has been removed successfully`);
-    }
+    const sure =  confirm("Are You Sure Want to Remove Item ?")
+    if(sure){ const localstorageCart = localStorage.getItem("cart")
+      if (localstorageCart) {
+  
+        const parsedcart = JSON.parse(localstorageCart)
+        const remainedItems = parsedcart.filter((item) => item._id !== removeId);
+  
+        localStorage.setItem("cart", JSON.stringify(remainedItems))
+  
+        setCart(remainedItems);
+       
+        toast.success(`${title} has been removed successfully`);
+      }}
+    
 
 
 
@@ -117,12 +119,12 @@ const Cart = () => {
                 </div>
                 <div className='d-flex gap-2 bg-white'>
                   <button className='buy-now-bt'>BUY NOW</button>
-                  <button onClick={() => setModal(true)} className='remove-bt'>REMOVE</button>
+                  <button onClick={() => itemRemoveFunc(item._id, item.title) } className='remove-bt'>REMOVE</button>
                 </div>
               </div>
               <hr className='mb-0 mt-0 ' />
 
-              {modal ?
+              {/* {modal ?
                 (<div className='modal-card px-3'>
                   <div className="card shadow" style={{ width: "21rem" }}>
                     <div className="bg-white card-header fw-bold d-flex justify-content-between align-items-center">Remove Item
@@ -142,7 +144,7 @@ const Cart = () => {
                       </button></div>
                   </div>
 
-                </div>) : ""}
+                </div>) : ""} */}
 
 
             </>

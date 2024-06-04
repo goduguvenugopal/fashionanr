@@ -205,7 +205,7 @@ const Account = () => {
             {modal ?
                 (<div className='modal-card px-3'>
                   <div className="card shadow" style={{ width: "21rem" }}>
-                    <div className="bg-white card-header fw-bold d-flex justify-content-between align-items-center">Remove Item
+                    <div className="bg-white card-header fw-bold d-flex justify-content-between align-items-center">Delete Account
                       <i style={{ cursor: "pointer" }} onClick={() => setModal(false)} class="fa-solid fa-xmark bg-white"></i></div>
 
                     <div className="card-body  bg-white pb-0">
