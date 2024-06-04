@@ -16,8 +16,8 @@ const Cart = () => {
 
   //cart items removing logic 
   const itemRemoveFunc = (removeId, title) => {
-    const sure =  confirm("Are You Sure Want to Remove Item ?")
-    if(sure){ const localstorageCart = localStorage.getItem("cart")
+   
+  const localstorageCart = localStorage.getItem("cart")
       if (localstorageCart) {
   
         const parsedcart = JSON.parse(localstorageCart)
@@ -28,9 +28,7 @@ const Cart = () => {
         setCart(remainedItems);
        
         toast.success(`${title} has been removed successfully`);
-      }}
-    
-
+      }
 
 
 
