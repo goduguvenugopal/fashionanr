@@ -167,7 +167,7 @@ const SingleProduct = () => {
                     <div className='row'>
                         <div className='col-12 col-md-6 bg-white text-center pb-4 '>
 
-                            {data.image && (<img height="330px" width="320px" key={data._id} src={`${API}/${data.image}`} className='single-img bg-white' alt={data.category} />
+                            {data.image && (<img height="330px" width="320px" key={data._id} src={`${API}/uploads/${data.image}`} className='single-img bg-white' alt={data.category} />
                             )}
 
 
