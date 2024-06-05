@@ -156,6 +156,22 @@ const SingleProduct = () => {
 
     let date = dayafter.toDateString()
 
+
+
+// share Function 
+const shareFunc = async () =>{
+    try{
+        await navigator.share({
+            text: "Check out this amazing product!",
+            url : "https://fashionanr.netlify.app/"
+           
+        })
+    }catch(err){
+        console.log(err)
+    }
+}
+
+
     // single product mapping function 
 
     const ShowProduct = () => {
@@ -165,10 +181,10 @@ const SingleProduct = () => {
 
                 <div className='container bg-white py-5 ' style={{ marginTop: "5rem" }}>
                     <div className='row'>
-                        <div className='col-12 col-md-6 bg-white text-center pb-4 '>
+                        <div className='col-12 col-md-6 bg-white text-center pb-4 ' style={{position:"relative"}}>
 
                             <img height="330px" width="320px" key={data._id} src={data.image} className='single-img bg-white' alt={data.category} />
-
+                            <i onClick={shareFunc} className="fa-solid fa-share-nodes share-icon"></i>
 
 
                         </div><hr className='d-md-none mb-0 ' />

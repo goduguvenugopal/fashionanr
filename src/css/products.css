@@ -31,6 +31,18 @@
 
 
 
+.share-icon{
+font-size: 20px;
+position: absolute;
+background-color: white;
+box-shadow: 0 0 7px rgb(129, 127, 127);
+padding: 10px;
+top: -30px;
+border-radius: 50%;
+cursor: pointer;
+
+}
+
 .filter-card::-webkit-scrollbar {
     display: none;
 }
@@ -73,6 +85,20 @@
 }
 
 @media only screen and (max-width : 762px) {
+    .share-icon{
+        right: 19px;
+        font-size: 17px;
+        position: absolute;
+        background-color: rgb(12, 12, 12);
+        box-shadow: 0 0 7px rgb(129, 127, 127);
+        padding: 7px;
+        top: -30px;
+        border-radius: 50%;
+        cursor: pointer;
+        color: white;
+        
+        }
+
     .products-cont {
         display: flex;
         justify-content: space-around;
