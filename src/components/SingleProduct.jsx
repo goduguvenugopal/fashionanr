@@ -162,9 +162,8 @@ const SingleProduct = () => {
 const shareFunc = async () =>{
     try{
         await navigator.share({
-            text: "Check out this amazing product!",
-            url : "https://fashionanr.netlify.app/"
-           
+            text: `Check out this amazing product! : ${data.image}`,
+            url :  "https://fashionanr.netlify.app/"
         })
     }catch(err){
         console.log(err)
