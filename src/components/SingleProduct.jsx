@@ -157,13 +157,13 @@ const SingleProduct = () => {
     let date = dayafter.toDateString()
 
 
-
+const url = "https://fashionanr.netlify.app/"
 // share Function 
 const shareFunc = async () =>{
     try{
         await navigator.share({
             text: `Check out this amazing product! : ${data.image}`,
-            url :  "https://fashionanr.netlify.app/"
+            title  : `Check out Fashionanr Website : ${url}`
         })
     }catch(err){
         console.log(err)
