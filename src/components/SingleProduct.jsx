@@ -45,14 +45,14 @@ const SingleProduct = () => {
     useEffect(() => {
         const localStorageCart = localStorage.getItem("cart")
         const checkedCart = JSON.parse(localStorageCart)
-        if(checkedCart){
-            const existed =  checkedCart.some((item) => item._id === data._id)
-           if(existed){
-            setExist(true)
-           }
-            
+        if (checkedCart) {
+            const existed = checkedCart.some((item) => item._id === data._id)
+            if (existed) {
+                setExist(true)
+            }
+
         }
-    
+
 
     }, [cart, data])
 
@@ -168,7 +168,7 @@ const SingleProduct = () => {
                         <div className='col-12 col-md-6 bg-white text-center pb-4 '>
 
                             <img height="330px" width="320px" key={data._id} src={data.image} className='single-img bg-white' alt={data.category} />
-                            
+
 
 
                         </div><hr className='d-md-none mb-0 ' />
@@ -224,8 +224,8 @@ const SingleProduct = () => {
                                         <button onClick={() => addcartFunc(data._id)} className='cart-bt  '> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>
 
                                 }
-
-                                <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>
+                                <Link to="/buynow"> <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>
+                                </Link>
                             </div>
                         </div> <hr className=' mb-0 ' />
                         <div className='col-12 bg-white py-3  px-3'>

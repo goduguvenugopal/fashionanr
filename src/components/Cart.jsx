@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
   const [token] = useContext(tokenContext)
   const [cart, setCart] = useContext(cartContext)
-  // const [modal, setModal] = useState(false)
+  
 
 
   //cart items removing logic 
@@ -116,34 +116,14 @@ const Cart = () => {
                   <button onClick={() => priceIncrement(item._id)} className='incre-bt '> +</button>
                 </div>
                 <div className='d-flex gap-2 bg-white'>
-                  <button className='buy-now-bt'>BUY NOW</button>
+                  <Link to="/buynow"> <button className='buy-now-bt'>BUY NOW</button></Link>
+                  
                   <button onClick={() => itemRemoveFunc(item._id, item.title) } className='remove-bt'>REMOVE</button>
                 </div>
               </div>
               <hr className='mb-0 mt-0 ' />
 
-              {/* {modal ?
-                (<div className='modal-card px-3'>
-                  <div className="card shadow" style={{ width: "21rem" }}>
-                    <div className="bg-white card-header fw-bold d-flex justify-content-between align-items-center">Remove Item
-                      <i style={{ cursor: "pointer" }} onClick={() => setModal(false)} class="fa-solid fa-xmark bg-white"></i></div>
-
-                    <div className="card-body  bg-white pb-0">
-                      <h6 className="text-secondary bg-white ">
-                        Are You Sure Want To Remove This ?
-                      </h6>
-                    </div>
-                    <div className='card-body  d-flex justify-content-between pb-3  bg-white'>
-                      <button onClick={() => setModal(false)} style={{ width: "8.5rem" }} className="btn btn-outline-dark">
-                        CANCEL
-                      </button>
-                      <button onClick={() => itemRemoveFunc(item._id, item.title)} style={{ width: "8.5rem" }} className="btn btn-danger">
-                        REMOVE
-                      </button></div>
-                  </div>
-
-                </div>) : ""} */}
-
+              
 
             </>
 
@@ -170,7 +150,8 @@ const Cart = () => {
             </div>
           </div><hr className='mb-0 mt-0 ' />
           <div className='bg-white pt-3 pb-2 text-end px-3'>
-            <button className='buy-bt '>PLACE ORDER</button>
+            <Link to="/buynow">  <button className='buy-bt '>PLACE ORDER</button></Link>
+           
           </div>
 
         </div>
