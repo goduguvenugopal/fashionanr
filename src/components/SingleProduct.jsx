@@ -163,7 +163,8 @@ const shareFunc = async () =>{
     try{
         await navigator.share({
             text: `Check out this amazing product! : ${data.image}`,
-            title  : `Check out Fashionanr Website : ${url}`
+            title  : 'Check out this Website ',
+            url : url 
         })
     }catch(err){
         console.log(err)
