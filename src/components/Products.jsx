@@ -9,8 +9,9 @@ const Products = () => {
     const [data, setData] = useState([])
     const [filter, setFilter] = useState(data)
     const [loader, setLoader] = useState(false)
+   
  
-const API = "https://fashionkart-server.onrender.com"
+  const API = "https://fashionkart-server.onrender.com"
 
     // fetching the products 
     useEffect(() => {
@@ -50,19 +51,30 @@ const API = "https://fashionkart-server.onrender.com"
         )
     }
 
+  const date = new Date().toLocaleDateString("en-Gb")
+  
+ 
     // mapping the products 
     const ShowProducts = () => {
         return (
             <>
 
-                <div className='bg-white filter-card'>
+                <div className='bg-white filter-card pb-1'>
 
-                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => setFilter(data)}>All</button>
-                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("men clothing")}>Men'sClothing</button>
-                
-                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("goggles")}>Goggles</button>
-                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("sliders")}>Sliders</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt  ' onClick={() => setFilter(data)}>All</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt fw-bold text-danger' onClick={() => filterDate(date)}>LatestCollection</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("saree")}>Saree</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("dress")}>Dress</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("inner")}>Innerwear's</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("leggings")}>Leggings</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("children")}>Childrenwear's</button>
 
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("bag")}>PlasticWireBag's</button>
+
+              
+
+              
+              
                 </div>
                 <div className='products-cont pt-5 pb-3 px-3'>
                     {filter.map((item) => {
@@ -101,9 +113,15 @@ const API = "https://fashionkart-server.onrender.com"
     // products filter function
 
     const filterFunc = (filterPro) => {
-
-        const filtered = data.filter((item) => item.category === filterPro)
+         const filtered = data.filter((item) => item.category === filterPro)
         setFilter(filtered)
+        
+    }
+
+    const filterDate = (filterPro) => {
+        const filteredDate = data.filter((item) => item.date === filterPro)
+        
+        setFilter(filteredDate)
     }
 
     return (

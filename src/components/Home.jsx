@@ -1,48 +1,99 @@
-import React from 'react'
-import { men, categories } from "../images.js"
+import React, { useEffect, useState } from 'react'
+ 
 import '../App.css'
 import Carousel from './Carousel.jsx'
 import Products from './Products.jsx'
 import Footer from './Footer.jsx'
+import axios from 'axios';
+import { Link } from 'react-router-dom'
+
 
 
 const Home = () => {
 
+  const [data, setData] = useState([])
+ 
+
+
+const API = "https://fashionkart-server.onrender.com"
+
+  // fetching the products 
+  useEffect(() => {
+      const fetchProducts = async () => {
+        
+          try {
+              const response = await axios.get(`${API}/product/getproducts`);
+              setData(response.data)
+               
+          } catch (err) {
+              console.log(err)
+          }
+
+      }
+      fetchProducts()
+
+  }, [])
+
+
+  // loader 
+  const Loading = () => {
+      return (
+          <>
+              <div className="container bg-white d-flex align-items-center justify-content-center " style={{height:"13rem", marginTop:"4.5rem"}}>
+                  <h5 className='bg-white text-secondary' style={{ marginRight: "0.7rem" }}>Hang on, Loading Products</h5>
+                  <div style={{ height: "25px", width: "25px", }} className=" bg-white spinner-border text-primary " role="status">
+                      <span className="visually-hidden ">Loading...</span>
+
+                  </div>
+
+              </div>
+
+
+          </>
+      )
+  }
+
   return (
 
     <>
-      <div className='image-card container bg-white'>
-        {categories.map((item) => {
+    {data.length ?  <div className='image-card container bg-white'>
+        {data.map((item) => {
           return (
-            <div className='d-flex flex-column justify-content-between align-items-center bg-white'>
-              <img key={item.id} src={item.image} className='category-img bg-white' alt='category-products' />
-              <h5 className='title bg-white'>{item.title}</h5>
+            
+            <div key={item._id} className='d-flex flex-column justify-content-between align-items-center bg-white'>
+                <Link className='bg-white' to={`/products/${item._id}`}>
+              <img  src={item.image} className='category-img bg-white' alt='category-products' />
+              </Link>
+               <Link style={{textDecoration:"none"}} className='bg-white text-dark' to={`/products/${item._id}`}>
+              <h5 className='title bg-white'>{item.title.substring(0,12)}</h5>
+              </Link>
             </div>
-
+            
           )
         })}
 
-      </div>
+      </div> : <Loading/> }
+      
 
       <Carousel />
       <Products />
 
       <div className='container mt-3 bg-white pt-4'>
-        <h5 className='bg-white'>Men's Collection</h5>
+        <h5 className='bg-white'>Latest Collection's</h5>
         <div className='image-card mt-2 bg-white px-3'>
 
-          {men.map((item) => {
+          {data.map((item) => {
             return (
-              <div className='img-sub-card bg-white'>
-                <img key={item.id} src={item.Image} className='home-images bg-white' alt='products' />
-                <h5 className='title'>{item.title}</h5>
-                <div className='d-flex justify-content-center align-items-center gap-1 bg-white'>
+              <Link style={{textDecoration:"none"}}  to={`/products/${item._id}`}> 
+              <div key={item._id} className='img-sub-card bg-white'>
+                <img   src={item.image} className='home-images bg-white' alt='products' />
+                <h5 className='title text-dark'>{item.title.substring(0, 12)}</h5>
+                <div className='text-dark d-flex justify-content-center align-items-center gap-1 bg-white'>
                   <i class="fa-solid fa-indian-rupee-sign bg-white" style={{ fontSize: "13px", marginBottom: "0.4rem" }}></i>
-                  <h4 className='cost bg-white'>{item.cost}</h4>
+                  <h4 className='cost bg-white'>{item.price}</h4>
                 </div>
-
-
               </div>
+              </Link>
             )
           })}
 

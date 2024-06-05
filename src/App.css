@@ -79,12 +79,14 @@
     width: 15rem;
     text-align: center;
     background-color: white;
+   /* border: 1px solid black; */
 
 
  }
 
  .home-images {
     width: 15rem;
+    height: 15rem;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background-color: white;

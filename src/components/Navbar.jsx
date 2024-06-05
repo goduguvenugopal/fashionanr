@@ -13,7 +13,7 @@ const Navbar = () => {
                 <div className="container  bg-primary ">
                     <Link style={{ textDecoration: "none" }} className="bg-primary" to="/">
                         <h5 className="navbar-brand logo-text bg-primary pb-2">
-                            Fashionkart
+                            Fashionanr
                         </h5>
                     </Link>
 
