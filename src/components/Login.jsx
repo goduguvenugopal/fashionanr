@@ -73,7 +73,7 @@ const Login = () => {
                         <div className='bg-transparent'>
                             <img src='favicon.jpg' alt='login-logo' className='logo-at-login bg-transparent' />
                             <h5 className="navbar-brand logo-text bg-transparent">
-                                Fashionkart
+                                Fashionanr
                             </h5>
                             <h5 className='bg-transparent your-text'>your every wish fulfill here</h5>
                         </div>
