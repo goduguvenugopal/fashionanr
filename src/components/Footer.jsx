@@ -8,7 +8,7 @@ const Footer = () => {
     const shareFunc = async () => {
         try {
             await navigator.share({
-                text: 'Check out this amazing product!',
+                text: 'Check out this amazing Website!',
                 url: "https://fashionanr.netlify.app/"
             })
         } catch (err) {
@@ -29,7 +29,7 @@ const Footer = () => {
                         <Link to="/buynow" style={{ textDecoration: "none" }} href='mailto:venuiti97@gmail.com'><h6 className='bg-dark  text-white footer-text'>Contact Us</h6></Link>
                         <Link to="/buynow" style={{ textDecoration: "none" }} href='mailto:venuiti97@gmail.com'><h6 className='bg-dark  text-white footer-text'>Shop Address</h6></Link>
                         <a style={{ textDecoration: "none" }} href='mailto:venuiti97@gmail.com'><h6 className='bg-dark  text-white footer-text'>Careers</h6></a>
-                        <h6 style={{textDecoration:"none"}} onClick={shareFunc} className='bg-dark  text-white footer-text'>Share Fashionanr</h6>
+                        <h6 style={{cursor:"pointer"}} onClick={shareFunc} className='bg-dark  text-white footer-text'>Share Fashionanr</h6>
                         <a style={{ textDecoration: "none" }} target='_self' href='https://maps.app.goo.gl/GL8UJFUHJZ3pzGT99'><h6 className='bg-dark  text-white footer-text'>Location</h6></a>
 
 
