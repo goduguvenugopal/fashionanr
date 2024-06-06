@@ -162,9 +162,8 @@ const url = "https://fashionanr.netlify.app/"
 const shareFunc = async () =>{
     try{
         await navigator.share({
-            text: `Check out this amazing product! : ${data.image}`,
-            title  : 'Check out this Website ',
-            url : url 
+            text: `Check out this amazing product! : ${data.image} Check out this Website : ${url} `
+            
         })
     }catch(err){
         console.log(err)
