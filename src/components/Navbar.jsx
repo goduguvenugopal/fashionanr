@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../App.css'
 import { Link } from 'react-router-dom'
 import { cartContext, tokenContext } from '../App'
@@ -10,12 +10,23 @@ const Navbar = () => {
     const [data, setData] = useState([])
     const [search, setSearch] = useState("")
     const [result, setResult] = useState(false)
+   
 
 
     const API = "https://fashionkart-server.onrender.com"
 
-    // search fetching data function
-    useEffect(() => {
+    //results card toggle function
+    document.body.addEventListener('click', () => {
+        setResult(false)
+        setSearch('')
+    })
+
+
+    // onchange function
+    const onChangeFunc = (event) => {
+        const inputData = event.target.value
+
+        // fetching data 
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${API}/product/getproducts`)
@@ -24,30 +35,17 @@ const Navbar = () => {
                 console.log(error)
             }
         }
-        searchFunc()
+
         fetchData()
-    }, [search])
-
-
-
-//results card toggle function
-    document.body.addEventListener('click', () => {
-        setResult(false)
-        setSearch('')
-    })
-
-
-// onchange function
-    const onChangeFunc = (event) => {
-        const inputData = event.target.value
         setSearch(inputData)
         setResult(true)
-         
+        searchFunc(inputData)
+
     }
 
     // search filter 
-    const searchFunc = () => {
-        const filteredData = data.filter((item) => item.category === search)
+    const searchFunc = (input) => {
+        const filteredData = data.filter((item) => item.category === input)
         setData(filteredData)
     }
 
@@ -67,11 +65,11 @@ const Navbar = () => {
                         {result ? <div className='search-results-card'>
                             {data.map((item) => {
                                 return (
-                                    <Link className='text-dark' style={{ textDecoration: "none" }} to={`/products/${item._id}`}> 
-                                    <div onClick={() => setResult(false)} key={item._id} className='search-res'>
-                                        <img src={item.image} alt={item.category} className='results-img' />
-                                        <h5 className='results-title'>{item.title}</h5>
-                                    </div></Link>
+                                    <Link className='text-dark' style={{ textDecoration: "none" }} to={`/products/${item._id}`}>
+                                        <div onClick={() => setResult(false)} key={item._id} className='search-res'>
+                                            <img src={item.image} alt={item.category} className='results-img' />
+                                            <h5 className='results-title'>{item.title}</h5>
+                                        </div></Link>
 
 
                                 )
