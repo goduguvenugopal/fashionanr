@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import "../css/products.css"
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import { cartContext } from '../App'
+import { cartContext, tokenContext } from '../App'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Footer'
@@ -12,6 +12,7 @@ import Footer from './Footer'
 
 const SingleProduct = () => {
     const [cart, setCart] = useContext(cartContext)
+    const [token, setToken] = useContext(tokenContext)
     const [data, setData] = useState([])
     const [loader, setLoader] = useState(false)
     const { id } = useParams()
@@ -26,19 +27,37 @@ const SingleProduct = () => {
     // adding items to the cart function 
 
     const addcartFunc = (product) => {
-        setBlinker(true)
-        setTimeout(() => {
-            setBlinker(false)
-            toast.success("Item Added To Cart")
-        }, 1000);
-        const addedItem = products.find((item) => item._id === product)
-        if (addedItem) {
-            setCart([...cart, { ...addedItem, quantity: 1 }]);
-            localStorage.setItem("cart", JSON.stringify([...cart, { ...addedItem, quantity: 1 }]))
-        } else {
-            toast.error("Please Try Again Item Not Added Into The Cart")
+
+        try {
+            if (token) {
+                setBlinker(true)
+                setTimeout(() => {
+                    setBlinker(false)
+                    toast.success("Item Added To Cart")
+                }, 1000);
+                const addedItem = products.find((item) => item._id === product)
+                if (addedItem) {
+                    setCart([...cart, { ...addedItem, quantity: 1 }]);
+                    localStorage.setItem("cart", JSON.stringify([...cart, { ...addedItem, quantity: 1 }]))
+                } else {
+                    toast.error("Please Try Again Item Not Added Into The Cart")
+                }
+            }
+            toast.error("Please Login To Add Product To The Cart")
+
+        } catch (err){
+         console.log(err)    
+
         }
+
+
+
+
+
     }
+
+
+
 
     // checking products already in cart 
 
@@ -157,18 +176,18 @@ const SingleProduct = () => {
     let date = dayafter.toDateString()
 
 
-const url = "https://fashionanr.netlify.app/"
-// share Function 
-const shareFunc = async () =>{
-    try{
-        await navigator.share({
-            text: `Check out this amazing product! : ${data.image} Check out this Website : ${url} `
-            
-        })
-    }catch(err){
-        console.log(err)
+    const url = "https://fashionanr.netlify.app/"
+    // share Function 
+    const shareFunc = async () => {
+        try {
+            await navigator.share({
+                text: `Check out this amazing product! : ${data.image} Check out this Website : ${url} `
+
+            })
+        } catch (err) {
+            console.log(err)
+        }
     }
-}
 
 
     // single product mapping function 
@@ -180,7 +199,7 @@ const shareFunc = async () =>{
 
                 <div className='container bg-white py-5 ' id='single-product-main-card'>
                     <div className='row'>
-                        <div className='col-12 col-md-6 bg-white text-center pb-4 ' style={{position:"relative"}}>
+                        <div className='col-12 col-md-6 bg-white text-center pb-4 ' style={{ position: "relative" }}>
 
                             <img height="330px" width="320px" key={data._id} src={data.image} className='single-img bg-white' alt={data.category} />
                             <i onClick={shareFunc} className="fa-solid fa-share-nodes share-icon"></i>
