@@ -12,7 +12,7 @@ import Footer from './Footer'
 
 const SingleProduct = () => {
     const [cart, setCart] = useContext(cartContext)
-    const [token, setToken] = useContext(tokenContext)
+    const [token] = useContext(tokenContext)
     const [data, setData] = useState([])
     const [loader, setLoader] = useState(false)
     const { id } = useParams()
