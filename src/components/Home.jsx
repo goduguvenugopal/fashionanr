@@ -15,7 +15,6 @@ const Home = () => {
   const [data, setData] = useState([])
 
 
-
   const API = "https://fashionkart-server.onrender.com"
 
   // fetching the products 
@@ -61,7 +60,7 @@ const Home = () => {
         {data.map((item) => {
           return (
 
-            <div key={item._id} className='d-flex flex-column justify-content-between align-items-center bg-white'>
+            <div key={item._id} className='d-flex flex-column justify-content-between align-items-center bg-white scrolling-card'>
               <Link className='bg-white' to={`/products/${item._id}`}>
                 <img src={item.image} className='category-img bg-white' alt='category-products' />
               </Link>

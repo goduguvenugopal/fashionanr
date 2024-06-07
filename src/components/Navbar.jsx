@@ -1,14 +1,62 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../App.css'
 import { Link } from 'react-router-dom'
 import { cartContext, tokenContext } from '../App'
+import axios from 'axios'
 
 const Navbar = () => {
     const [token] = useContext(tokenContext)
     const [cart] = useContext(cartContext)
+    const [data, setData] = useState([])
+    const [search, setSearch] = useState("")
+    const [result, setResult] = useState(false)
+
+
+    const API = "https://fashionkart-server.onrender.com"
+
+    // search fetching data function
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`${API}/product/getproducts`)
+                setData(response.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        searchFunc(search)
+        fetchData()
+    }, [search])
+
+
+
+//results card toggle function
+    document.body.addEventListener('click', () => {
+        setResult(false)
+        setSearch('')
+    })
+
+
+// onchange function
+    const onChangeFunc = (event) => {
+        const inputData = event.target.value
+        setSearch(inputData)
+        setResult(true)
+         
+    }
+
+    
+     
+ 
+
+    // search filter 
+    const searchFunc = (inputData) => {
+        const filteredData = data.filter((item) => item.category === inputData)
+        setData(filteredData)
+    }
 
     return (
-        <div className=''>
+        <>
             <nav className="fixed-top navbar shadow navbar-expand-lg navbar-light bg-primary ">
                 <div className="container  bg-primary ">
                     <Link style={{ textDecoration: "none" }} className="bg-primary" to="/">
@@ -16,6 +64,31 @@ const Navbar = () => {
                             Fashionanr
                         </h5>
                     </Link>
+                    <div className='search-card'>
+                        <i className="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input value={search.trim()} onChange={onChangeFunc} type='text' placeholder='Search for Products' alt='' className='search-box' />
+
+                        {result ? <div className='search-results-card'>
+                            {data.map((item) => {
+                                return (
+                                    <Link className='text-dark' style={{ textDecoration: "none" }} to={`/products/${item._id}`}> 
+                                    <div onClick={() => setResult(false)} key={item._id} className='search-res'>
+                                        <img src={item.image} alt={item.category} className='results-img' />
+                                        <h5 className='results-title'>{item.title}</h5>
+                                    </div></Link>
+
+
+                                )
+                            })}
+
+                        </div> : ""}
+
+                    </div>
+
+
+
+
+
 
                     <button
                         className="navbar-toggler  bg-white"
@@ -41,35 +114,35 @@ const Navbar = () => {
                                 </h6>
                             </Link>
 
-                            {token ?  <Link style={{ fontSize: "17px",textDecoration: "none" }}   to="/orders" className="nav-item bg-primary">
+                            {token ? <Link style={{ fontSize: "17px", textDecoration: "none" }} to="/orders" className="nav-item bg-primary">
                                 <h6 className="nav-link bg-primary text-white">
-                                   My orders
+                                    My orders
                                 </h6>
                             </Link> : ""}
-                            
+
 
                         </ul>
                         <div className="bg-primary  d-flex justify-content-between  gap-5 pb-2 ">
 
                             {token ?
-                            <Link to="/account" style={{ textDecoration: "none" }} className="bg-primary"> 
-                            <button className="bt-nav ">
-                                <i class="fa-regular fa-circle-user bg-transparent" style={{marginRight:"0.4rem"}}></i>
-                                    Account
-                                </button></Link>
-                                
+                                <Link to="/account" style={{ textDecoration: "none" }} className="bg-primary">
+                                    <button className="bt-nav ">
+                                        <i class="fa-regular fa-circle-user bg-transparent" style={{ marginRight: "0.4rem" }}></i>
+                                        Account
+                                    </button></Link>
+
                                 : <Link style={{ textDecoration: "none" }} className="bg-primary" to="/login">
-                                <button className="bt-nav ">
-                                    <i className="nav-icon fa-solid fa-right-to-bracket" style={{marginRight:"0.4rem"}}></i>
-                                 Login
-                                </button>
-                            </Link>}
+                                    <button className="bt-nav ">
+                                        <i className="nav-icon fa-solid fa-right-to-bracket" style={{ marginRight: "0.4rem" }}></i>
+                                        Login
+                                    </button>
+                                </Link>}
 
 
 
                             {token ? "" : <Link style={{ textDecoration: "none" }} className="bg-primary" to="/signup">
                                 <button className="bt-nav  ">
-                                    <i className="nav-icon fa-solid fa-user-plus" style={{marginRight:"0.1rem"}}></i> Signup
+                                    <i className="nav-icon fa-solid fa-user-plus" style={{ marginRight: "0.1rem" }}></i> Signup
                                 </button>
                             </Link>}
 
@@ -80,7 +153,7 @@ const Navbar = () => {
                                         <h6 style={{ fontSize: "13px", marginTop: "2px" }} className='bg-transparent'>{cart.length}</h6>
                                     </div> : ""}
 
-                                    <i className="nav-icon fa-solid fa-cart-shopping" style={{marginRight:"0.1rem"}}></i> Cart
+                                    <i className="nav-icon fa-solid fa-cart-shopping" style={{ marginRight: "0.1rem" }}></i> Cart
                                 </button>
 
                             </Link>
@@ -89,7 +162,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-        </div>
+        </>
     )
 }
 
