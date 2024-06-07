@@ -45,10 +45,6 @@ const Navbar = () => {
          
     }
 
-    
-     
- 
-
     // search filter 
     const searchFunc = () => {
         const filteredData = data.filter((item) => item.category === search)
