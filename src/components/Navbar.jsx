@@ -51,7 +51,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="fixed-top navbar shadow navbar-expand-lg navbar-light bg-primary ">
+            <nav className="fixed-top navbar shadow navbar-expand-lg navbar-light bg-primary "  >
                 <div className="container  bg-primary ">
                     <Link style={{ textDecoration: "none" }} className="bg-primary" to="/">
                         <h5 className="navbar-brand logo-text bg-primary pb-2">

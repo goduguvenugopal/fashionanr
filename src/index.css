@@ -39,7 +39,9 @@
     font-weight: bold;
  }
 
- 
+ #account-main-card{
+   margin-top: 4.5rem;
+ }
 @media only screen and (min-width : 769px){
    .order-card-profile{
       display: flex;
@@ -76,6 +78,11 @@
 }
 
 @media only screen and (max-width : 769px){
+
+   #account-main-card{
+      margin-top: 6.5rem;
+    }
+
    .order-icon{
       font-size: 1.5rem;
       background-color: white;

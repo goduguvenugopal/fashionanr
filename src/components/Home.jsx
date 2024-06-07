@@ -39,7 +39,7 @@ const Home = () => {
   const Loading = () => {
     return (
       <>
-        <div className="container bg-white d-flex align-items-center justify-content-center " style={{ height: "12.8rem", marginTop: "4.5rem" }}>
+        <div className="container bg-white d-flex align-items-center justify-content-center " style={{ height: "12.8rem", marginTop: "5.5rem" }}>
           <h5 className='bg-white text-secondary' style={{ marginRight: "0.7rem" }}>Hang on, Loading Products</h5>
           <div style={{ height: "25px", width: "25px", }} className=" bg-white spinner-border text-primary " role="status">
             <span className="visually-hidden ">Loading...</span>

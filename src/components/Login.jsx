@@ -67,7 +67,7 @@ const Login = () => {
     return (
         <>
             <ToastContainer className="bg-transparent" />
-            <div className='login-main-card container-fluid' style={{ width: "100vw", marginTop: "5rem" }}>
+            <div className='login-main-card container-fluid' style={{ width: "100vw"}}>
                 <div className='row row-card shadow'>
                     <div className='col-12 col-md-6 logo-login-card bg-primary'>
                         <div className='bg-transparent'>

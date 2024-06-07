@@ -84,7 +84,24 @@ cursor: pointer;
     height: 12rem;
 }
 
+.latest-product-card{
+    margin-top: 1rem;
+}
+
+#single-product-main-card{
+    margin-top: 5rem;
+}
+
 @media only screen and (max-width : 762px) {
+
+    #single-product-main-card{
+        margin-top: 6rem;
+    }
+
+    .latest-product-card{
+        margin-top: 1.6rem;
+    }
+
     .share-icon{
         right: 19px;
         font-size: 17px;
@@ -174,3 +191,6 @@ cursor: pointer;
     color: white;
 
 }
+
+
+ 

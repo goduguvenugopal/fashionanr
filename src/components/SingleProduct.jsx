@@ -178,7 +178,7 @@ const shareFunc = async () =>{
 
             <>
 
-                <div className='container bg-white py-5 ' style={{ marginTop: "5rem" }}>
+                <div className='container bg-white py-5 ' id='single-product-main-card'>
                     <div className='row'>
                         <div className='col-12 col-md-6 bg-white text-center pb-4 ' style={{position:"relative"}}>
 

@@ -125,8 +125,8 @@ const Products = () => {
     }
 
     return (
-        <div className='container bg-white text-center py-3'>
-            <h4 className='bg-white'>Latest Products</h4>
+        <div className='container bg-white text-center py-3 latest-product-card'>
+            <h4 className='bg-white '>Latest Products</h4>
             <hr className='mb-4' />
             {loader ? <Loading /> : <ShowProducts />}
         </div>

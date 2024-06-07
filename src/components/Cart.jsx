@@ -80,7 +80,7 @@ const Cart = () => {
 
       <ToastContainer className="bg-transparent" />
 
-      {token ? <> {cart.length ? <> <div className='container pt-2 bg-white' style={{ marginTop: "4.5rem", marginBottom: "0.5rem" }}>
+      {token ? <> {cart.length ? <> <div className='container pt-2 bg-white' style={{ marginTop: "5.5rem", marginBottom: "0.5rem" }}>
 
         {cart.map((item) => {
           return (

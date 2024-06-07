@@ -78,7 +78,7 @@ const Account = () => {
     }
 
     return (
-        <div className='container bg-white text-center fs-4 fw-bold pt-3 pb-3' style={{ marginTop: "4.5rem" }}>
+        <div className='container bg-white text-center fs-4 fw-bold pt-3 pb-3  ' id='account-main-card'>
             <h5 className='text-start bg-white'>Hey ! Fashionkart Customer</h5>
             <div className=' bg-white pt-3 pb-2'>
 

@@ -22,7 +22,7 @@ const Carousel = () => {
     }, [])
 
     return (
-        <div className='container my-3 carousel-card'>
+        <div className='container mb-4 mt-4 carousel-card'>
             <button className='inc-bt' onClick={decrFunc}><i className="fa-solid fa-less-than bg-white"></i></button>
             <img src={carousel[increment]} className='carousel-img' alt='carousel' />
             <button className='dec-bt' onClick={incrFunc}><i className="fa-solid fa-greater-than bg-white"></i></button>

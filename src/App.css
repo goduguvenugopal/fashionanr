@@ -19,6 +19,7 @@
     font-weight: bold;
     color: white !important;
     font-style: italic;
+    
 
 
 
@@ -143,7 +144,7 @@
     display: flex;
     overflow-x: auto;
     gap: 3rem;
-    margin-top: 4.5rem;
+    margin-top: 5.5rem;
     padding-bottom: 1.5rem;
     padding-top: 2.5rem;
 
@@ -262,10 +263,19 @@
        width: 15.5rem;
     }
 
+    .search-box {
+     
+      width: 12.5rem;
+  
+   }
+
     .search-results-card {
 
        width: 20rem;
 
 
     }
+
+
+
  }
