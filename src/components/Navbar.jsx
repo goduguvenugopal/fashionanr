@@ -24,7 +24,7 @@ const Navbar = () => {
                 console.log(error)
             }
         }
-        searchFunc(search)
+        searchFunc()
         fetchData()
     }, [search])
 
@@ -50,8 +50,8 @@ const Navbar = () => {
  
 
     // search filter 
-    const searchFunc = (inputData) => {
-        const filteredData = data.filter((item) => item.category === inputData)
+    const searchFunc = () => {
+        const filteredData = data.filter((item) => item.category === search)
         setData(filteredData)
     }
 

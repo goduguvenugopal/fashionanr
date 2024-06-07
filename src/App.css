@@ -98,7 +98,7 @@
     z-index: 1000;
     height: 20rem;
     width: 23rem;
-    overflow-y: auto;
+    overflow-y: scroll;
     align-content: center;
     padding: 10px;
     background-color: white;
