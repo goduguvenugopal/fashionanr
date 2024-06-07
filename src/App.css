@@ -19,7 +19,7 @@
     font-weight: bold;
     color: white !important;
     font-style: italic;
-    
+
 
 
 
@@ -75,7 +75,7 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-left: 5px;
     border-radius: 4px;
-   
+
 
  }
 
@@ -92,7 +92,7 @@
 
  .search-results-card {
     display: flex;
-    justify-content: center;
+    
     flex-direction: column;
     position: absolute;
     top: 2.5rem;
@@ -100,13 +100,13 @@
     height: 20rem;
     width: 23rem;
     overflow-y: scroll;
-    align-content: center;
     padding: 10px;
     background-color: white;
     row-gap: 1rem;
     box-shadow: 0 0 8px rgb(162, 160, 160);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+     
 
  }
 
@@ -264,10 +264,10 @@
     }
 
     .search-box {
-     
-      width: 12.5rem;
-  
-   }
+
+       width: 12.5rem;
+
+    }
 
     .search-results-card {
 

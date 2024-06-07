@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../App.css'
 import { Link } from 'react-router-dom'
 import { cartContext, tokenContext } from '../App'
@@ -10,33 +10,45 @@ const Navbar = () => {
     const [data, setData] = useState([])
     const [search, setSearch] = useState("")
     const [result, setResult] = useState(false)
+    const [orginalData , setOriginalData] = useState([])
    
 
 
     const API = "https://fashionkart-server.onrender.com"
 
-    //results card toggle function
-    document.body.addEventListener('click', () => {
-        setResult(false)
-        setSearch('')
-    })
+
+      // Fetch data 
+      useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`${API}/product/getproducts`);
+                setData(response.data);
+                setOriginalData(response.data); 
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, []);
+
+ 
+
+       // clicks to close the result dropdown
+       useEffect(() => {
+        const handleClickOutside = () => {
+            setResult(false);
+            setSearch('');
+        };
+        document.body.addEventListener('click', handleClickOutside);
+        return () => {
+            document.body.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
 
 
     // onchange function
     const onChangeFunc = (event) => {
         const inputData = event.target.value
-
-        // fetching data 
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(`${API}/product/getproducts`)
-                setData(response.data)
-            } catch (error) {
-                console.log(error)
-            }
-        }
-
-        fetchData()
         setSearch(inputData)
         setResult(true)
         searchFunc(inputData)
@@ -45,7 +57,7 @@ const Navbar = () => {
 
     // search filter 
     const searchFunc = (input) => {
-        const filteredData = data.filter((item) => item.category === input)
+        const filteredData = orginalData.filter((item) => item.category.toLowerCase().includes(input.toLowerCase()));
         setData(filteredData)
     }
 
