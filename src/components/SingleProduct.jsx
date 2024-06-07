@@ -29,7 +29,11 @@ const SingleProduct = () => {
     const addcartFunc = (product) => {
 
         try {
-            if (token) {
+            if (!token) {
+
+                toast.error("Please Login To Add Product To The Cart")
+
+            } else if (token) {
                 setBlinker(true)
                 setTimeout(() => {
                     setBlinker(false)
@@ -42,11 +46,12 @@ const SingleProduct = () => {
                 } else {
                     toast.error("Please Try Again Item Not Added Into The Cart")
                 }
-            }
-            toast.error("Please Login To Add Product To The Cart")
 
-        } catch (err){
-         console.log(err)    
+            }
+
+
+        } catch (err) {
+            console.log(err)
 
         }
 
