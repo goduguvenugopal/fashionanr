@@ -84,7 +84,7 @@ const SingleProduct = () => {
         
 
 
-    }, [cart, data])
+    }, [cart, data , token])
 
 
     const API = "https://fashionkart-server.onrender.com"
