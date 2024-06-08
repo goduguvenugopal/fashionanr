@@ -97,11 +97,10 @@ cursor: pointer;
     #single-product-main-card{
         margin-top: 6rem;
     }
-
-    .latest-product-card{
-        margin-top: 1.6rem;
+ .latest-product-card{
+        margin-top: 0.5rem;
     }
-
+    
     .share-icon{
         right: 19px;
         font-size: 17px;
@@ -136,14 +135,10 @@ cursor: pointer;
          
         width: 7rem;
         height: 7rem;
-        
-        
         background-blend-mode: darken;
         background-color: white;
         
     }
-
-     
 
     .skeleton {
         height: 15rem;
@@ -158,7 +153,12 @@ cursor: pointer;
     }
 }
 
+@media only screen and (max-width:450px){
+    .latest-product-card{
+        margin-top: 1.5rem;
+    }
 
+}
 
 .rating-card {
     width: 55px;

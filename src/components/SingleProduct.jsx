@@ -67,15 +67,21 @@ const SingleProduct = () => {
     // checking products already in cart 
 
     useEffect(() => {
-        const localStorageCart = localStorage.getItem("cart")
-        const checkedCart = JSON.parse(localStorageCart)
-        if (checkedCart) {
-            const existed = checkedCart.some((item) => item._id === data._id)
-            if (existed) {
-                setExist(true)
-            }
-
+        if(!token){
+            setExist(false)
         }
+        else if(token){
+            const localStorageCart = localStorage.getItem("cart")
+            const checkedCart = JSON.parse(localStorageCart)
+            if (checkedCart) {
+                const existed = checkedCart.some((item) => item._id === data._id)
+                if (existed) {
+                    setExist(true)
+                }
+    
+            }
+        }
+        
 
 
     }, [cart, data])
