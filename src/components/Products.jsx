@@ -65,9 +65,9 @@ const Products = () => {
                     <button className='btn btn-outline-dark me-2 filter-bt fw-bold ' onClick={() => filterDate(date)}>LatestCollection</button>
                     <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("saree")}>Saree</button>
                     <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("dress")}>Dress</button>
-                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("inner")}>Innerwear's</button>
-                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("leggings")}>Leggings</button>
-                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("children")}>Childrenwear's</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("mobile")}>Mobile</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("men")}>Menwear</button>
+                    <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("children")}>Childrenwear</button>
 
                     <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("bag")}>PlasticWireBag's</button>
 

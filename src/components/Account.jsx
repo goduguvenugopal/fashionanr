@@ -161,6 +161,23 @@ const Account = () => {
                 </Link>
 
             </div><hr />
+            <div className='text-start m bg-white p-3'>
+                <h4 className='fw-bold bg-white'>Earn with Fashionanr</h4>
+
+
+                <div className='bg-white d-flex align-items-center mt-3 pt-3'>
+                    <i className="fa-solid fa-star account-section-icons" style={{ marginRight: "1.0rem" }}></i>
+                    <h5 className='bg-white account-setting-text'>Fashionanr Creator Studio</h5>
+                </div>
+
+                <a style={{textDecoration:"none"}} href='https://fashionkart-dashboard.netlify.app/' target='_self' className='bg-white d-flex align-items-center mt-3 pt-1'>
+                    <span class="material-symbols-outlined bg-white account-section-icons" style={{ marginRight: "1.0rem" }}>
+                        storefront
+                    </span>
+                    <h5 className='bg-white account-setting-text'>Sell on Fashionanr</h5>
+                </a>
+
+            </div><hr />
 
             <div className='text-start m bg-white p-3'>
                 <h4 className='fw-bold bg-white'>Feedback & Information</h4>
@@ -197,30 +214,30 @@ const Account = () => {
                         aria-hidden="true"
                     />
                     <span className="visually-hidden">Loading...</span>
-                </button> : <button onClick={()=>setModal(true)} className='logout-bt text-danger'><i className="fa-solid fa-trash bg-white text-danger" style={{ marginRight: "0.5rem" }}></i>Delete Account</button>
+                </button> : <button onClick={() => setModal(true)} className='logout-bt text-danger'><i className="fa-solid fa-trash bg-white text-danger" style={{ marginRight: "0.5rem" }}></i>Delete Account</button>
                 }
             </div>
 
 
             {modal ?
                 (<div className='modal-card px-3'>
-                  <div className="card shadow" style={{ width: "21rem" }}>
-                    <div className="bg-white card-header fw-bold d-flex justify-content-between align-items-center">Delete Account
-                      <i style={{ cursor: "pointer" }} onClick={() => setModal(false)} class="fa-solid fa-xmark bg-white"></i></div>
+                    <div className="card shadow" style={{ width: "21rem" }}>
+                        <div className="bg-white card-header fw-bold d-flex justify-content-between align-items-center">Delete Account
+                            <i style={{ cursor: "pointer" }} onClick={() => setModal(false)} class="fa-solid fa-xmark bg-white"></i></div>
 
-                    <div className="card-body  bg-white pb-0">
-                      <h6 className="text-secondary bg-white ">
-                        Are You Sure Want To Delete This Account ?
-                      </h6>
+                        <div className="card-body  bg-white pb-0">
+                            <h6 className="text-secondary bg-white ">
+                                Are You Sure Want To Delete This Account ?
+                            </h6>
+                        </div>
+                        <div className='card-body  d-flex justify-content-between pb-3  bg-white'>
+                            <button onClick={() => setModal(false)} style={{ width: "8.5rem" }} className="btn btn-outline-dark">
+                                CANCEL
+                            </button>
+                            <button onClick={() => deleteUser(data._id)} style={{ width: "8.5rem" }} className="btn btn-danger">
+                                DELETE
+                            </button></div>
                     </div>
-                    <div className='card-body  d-flex justify-content-between pb-3  bg-white'>
-                      <button onClick={() => setModal(false)} style={{ width: "8.5rem" }} className="btn btn-outline-dark">
-                        CANCEL
-                      </button>
-                      <button onClick={() => deleteUser(data._id)} style={{ width: "8.5rem" }} className="btn btn-danger">
-                        DELETE
-                      </button></div>
-                  </div>
 
                 </div>) : ""}
 
