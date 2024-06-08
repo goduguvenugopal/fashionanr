@@ -155,7 +155,7 @@ const Account = () => {
                     <div className='bg-white d-flex align-items-center mt-3 pt-1'>
 
 
-                        <i className="fa-solid fa-key account-section-icons"></i>
+                        <i className="fa-solid fa-key account-section-icons" style={{ marginRight: "1.2rem" }}></i>
                         <h5 className='bg-white account-setting-text'>Change Password</h5>
                     </div>
                 </Link>
