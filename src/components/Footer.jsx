@@ -26,7 +26,7 @@ const Footer = () => {
                     <div className='col-3 bg-dark '>
                         <h5 className='bg-dark footer-head-text ' style={{ marginBottom: "1.5rem" }}>ABOUT</h5>
 
-                        <Link to="/buynow" style={{ textDecoration: "none" }} ><h6 className='bg-dark  text-white footer-text'>Contact Us</h6></Link>
+                        <Link to="/contact" style={{ textDecoration: "none" }} ><h6 className='bg-dark  text-white footer-text'>Contact Us</h6></Link>
                         <Link to="/address" style={{ textDecoration: "none" }} ><h6 className='bg-dark  text-white footer-text'>Address</h6></Link>
                         <a style={{ textDecoration: "none" }} href='mailto:venuiti97@gmail.com'><h6 className='bg-dark  text-white footer-text'>Careers</h6></a>
                         <h6 style={{cursor:"pointer"}} onClick={shareFunc} className='bg-dark  text-white footer-text'>Share Fashionanr</h6>

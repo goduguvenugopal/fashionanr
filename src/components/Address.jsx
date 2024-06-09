@@ -6,7 +6,7 @@ const Address = () => {
     return (
         <>
             <div className='container bg-white address-main-card' >
-                <iframe className='iframe-card ' src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3836.2956670428493!2d78.3383933!3d15.9459288!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5934e9c3b394b%3A0x29ffe6db5d2210f7!2sBharathi%20Tailoring%20and%20ladies%20clothe%20shop!5e0!3m2!1sen!2sin!4v1717921208204!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                <iframe title='google-map' className='iframe-card ' src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3836.2956670428493!2d78.3383933!3d15.9459288!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5934e9c3b394b%3A0x29ffe6db5d2210f7!2sBharathi%20Tailoring%20and%20ladies%20clothe%20shop!5e0!3m2!1sen!2sin!4v1717921208204!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
 
 

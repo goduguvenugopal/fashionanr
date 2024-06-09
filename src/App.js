@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import Account from "./components/Account";
 import ForgotPassword from "./components/ForgotPassword";
 import Address from "./components/Address";
+import ContactUs from "./components/ContactUs";
  
 
 export const cartContext = createContext();
@@ -50,6 +51,7 @@ function App() {
               <Route path="/account" element={<Account />} />
               <Route path="/password" element={<ForgotPassword />} />
               <Route path="/address" element={<Address/>} />
+              <Route path="/contact" element={<ContactUs/>}/>
             </Routes>
           </BrowserRouter>
         </cartContext.Provider>
