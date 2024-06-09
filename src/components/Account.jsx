@@ -121,7 +121,7 @@ const Account = () => {
                     <div className='order-card-profile'>
 
                         <i class="fa-solid fa-headset order-icon"></i>
-                        <h5 className='bg-white orders-text-pro'>Help Center</h5>
+                        <h5 className='bg-white orders-text-pro'>Contact Us</h5>
 
                     </div>
 

@@ -17,6 +17,9 @@ const ContactUs = () => {
         try {
             await axios.post("https://fashionkart-server.onrender.com/mail/sendmail", formData)
             toast.success("Thank You for contacting us")
+            setText("")
+            setSubject("")
+
         }
         catch (error) {
             console.log(error)
