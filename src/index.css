@@ -130,4 +130,30 @@
 }
 
 
- 
+ /* address styling  */
+.address-main-card{
+   height: 100%;
+   width: 100%;
+   margin-top: 5rem;
+   padding: 10px;
+
+
+}
+
+ .iframe-card{
+   width: 100%;
+   height: 500px;
+   box-shadow: 0 0 7px rgb(98, 97, 97);
+   border-radius: 10px;
+ }
+
+ @media only screen and (max-width : 769px){
+
+   .address-main-card{
+      height: 100%;
+      width: 100%;
+      margin-top: 7rem;
+      padding: 16px;
+   
+   }
+ }

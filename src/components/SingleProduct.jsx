@@ -269,8 +269,8 @@ const SingleProduct = () => {
                                         <button onClick={() => addcartFunc(data._id)} className='cart-bt  '> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>
 
                                 }
-                                <Link to="/buynow"> <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>
-                                </Link>
+                                 <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>
+                                 
                             </div>
                         </div> <hr className=' mb-0 ' />
                         <div className='col-12 bg-white py-3  px-3'>
