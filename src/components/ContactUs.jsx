@@ -9,19 +9,22 @@ const ContactUs = () => {
     const [subject, setSubject] = useState("")
     const [to] = useState("venuiti97@gmail.com")
     const [text, setText] = useState("")
+    const [spinner, setSpinner] = useState(false)
 
     const formData = { to: to, subject: subject, text: text }
-    console.log(formData)
+
     const formFunc = async (e) => {
         e.preventDefault();
+        setSpinner(true)
         try {
             await axios.post("https://fashionkart-server.onrender.com/mail/sendmail", formData)
             toast.success("Thank You for contacting us")
             setText("")
             setSubject("")
-
+            setSpinner(false)
         }
         catch (error) {
+            setSpinner(false)
             console.log(error)
             toast.error("Please try again message not send")
         }
@@ -62,8 +65,11 @@ const ContactUs = () => {
 
                         />
                     </div>
+                    {spinner ? <button style={{width:"100px"}} className="btn btn-primary " type="button" disabled>
+                        <span className="spinner-border bg-primary spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <span className="visually-hidden">Loading...</span>
+                    </button> : <button style={{width:"100px"}} type='submit' className='btn bg-primary text-white '>Send</button>}
 
-                    <button type='submit' className='btn bg-primary text-white '>Send</button>
 
                 </form>
 

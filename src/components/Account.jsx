@@ -118,12 +118,15 @@ const Account = () => {
 
                 </div>
                 <div className='col-6 col-md-3 bg-white'>
-                    <div className='order-card-profile'>
+                    <Link style={{textDecoration:"none"}} to="/contact"> 
+                    <div className='order-card-profile text-dark'>
 
                         <i class="fa-solid fa-headset order-icon"></i>
                         <h5 className='bg-white orders-text-pro'>Contact Us</h5>
 
                     </div>
+                    </Link>
+
 
                 </div>
 
@@ -170,7 +173,7 @@ const Account = () => {
                     <h5 className='bg-white account-setting-text'>Fashionanr Creator Studio</h5>
                 </div>
 
-                <a style={{textDecoration:"none"}} href='https://fashionkart-dashboard.netlify.app/' target='_self' className='bg-white d-flex align-items-center mt-3 pt-1'>
+                <a style={{ textDecoration: "none" }} href='https://fashionkart-dashboard.netlify.app/' target='_self' className='bg-white d-flex align-items-center mt-3 pt-1'>
                     <span class="material-symbols-outlined bg-white account-section-icons" style={{ marginRight: "1.0rem" }}>
                         storefront
                     </span>
