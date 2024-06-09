@@ -80,7 +80,7 @@ const Navbar = () => {
                                     <Link className='text-dark' style={{ textDecoration: "none" }} to={`/products/${item._id}`}>
                                         <div onClick={() => setResult(false)} key={item._id} className='search-res'>
                                             <img src={item.image} alt={item.category} className='results-img' />
-                                            <h5 className='results-title'>{item.title}</h5>
+                                            <h5 className='results-title'>{item.title.substring(0,12)}</h5>
                                         </div></Link>
 
 

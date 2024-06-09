@@ -1,159 +1,197 @@
  /* footer styling goes here  */
 
- .footer-text{
+ .footer-text {
     font-size: 0.9rem;
  }
 
- .footer-head-text{
+ .footer-head-text {
     font-size: 1rem;
     color: rgb(182, 183, 185);
  }
 
- @media only screen and (max-width:760px){
+ @media only screen and (max-width:760px) {
 
- .footer-text{
-    font-size: 0.7rem;
+    .footer-text {
+       font-size: 0.7rem;
+    }
+
+    .footer-head-text {
+       font-size: 0.8rem;
+
+    }
+
  }
 
- .footer-head-text{
-    font-size: 0.8rem;
-    
+
+ /* account component styling  */
+
+
+ .account-image {
+    font-size: 10rem;
+    background-color: white;
+    color: rgb(51, 155, 240);
+
  }
 
-}
-
-
-/* account component styling  */
-
-
-.account-image{
-   font-size: 10rem;
-   background-color: white;
-   color: rgb(51, 155, 240);
-
-}
-
- .orders-text-pro{
+ .orders-text-pro {
     font-size: 15px;
     margin-top: 10px;
     font-weight: bold;
  }
 
- #account-main-card{
-   margin-top: 4.5rem;
+ #account-main-card {
+    margin-top: 4.5rem;
  }
-@media only screen and (min-width : 769px){
-   .order-card-profile{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: white;
-      
-      border: 1px solid rgb(101, 100, 100);
-      box-shadow: 0 0 7px rgb(124, 123, 123);
-      padding: 10px;
-      border-radius: 10px;
-      width: 14rem;
-      margin-left: 16px;
-      cursor: pointer;
-      column-gap: 15px;
-   }
 
-   .order-icon{
-      font-size: 3rem;
-      background-color: white;
-      color: rgb(55, 83, 243);
-      }
+ @media only screen and (min-width : 769px) {
+    .order-card-profile {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       background-color: white;
 
-      .logout-bt{
-         width: 20rem;
-         border: 2px solid rgb(136, 134, 134);
-         padding: 5px;
-         font-weight: 500;
-         color: blue;
-         border-radius: 5px;
-         background-color: white;
-         
-      }
-}
-
-@media only screen and (max-width : 769px){
-
-   #account-main-card{
-      margin-top: 6.5rem;
+       border: 1px solid rgb(101, 100, 100);
+       box-shadow: 0 0 7px rgb(124, 123, 123);
+       padding: 10px;
+       border-radius: 10px;
+       width: 14rem;
+       margin-left: 16px;
+       cursor: pointer;
+       column-gap: 15px;
     }
 
-   .order-icon{
-      font-size: 1.5rem;
-      background-color: white;
-      color: rgb(55, 83, 243);
-     
-      margin-left: 0.5rem;
-      }
-      .order-card-profile{
-         display: flex;
-         justify-content: flex-start;
-         align-items: center;
-         background-color: white;
-         border: 1px solid rgb(101, 100, 100);
-         box-shadow: 0 0 7px rgb(124, 123, 123);
-         padding: 10px;
-         column-gap: 12px;
-         border-radius: 10px;
-         margin-top: 10px;
-         margin-bottom: 10px;
-         cursor: pointer;
-      
-      }
+    .order-icon {
+       font-size: 3rem;
+       background-color: white;
+       color: rgb(55, 83, 243);
+    }
 
-      .logout-bt{
-         width: 100%;
-         border: 2px solid rgb(136, 134, 134);
-         padding: 5px;
-         font-weight: 500;
-         color: blue;
-         border-radius: 5px;
-         background-color: white;
-          
-      }
-}
+    .logout-bt {
+       width: 20rem;
+       border: 2px solid rgb(136, 134, 134);
+       padding: 5px;
+       font-weight: 500;
+       color: blue;
+       border-radius: 5px;
+       background-color: white;
 
-.account-section-icons{
-   margin-bottom:10px;
-   margin-right: 23px;
-   color: rgb(55, 83, 243);
-   background-color: white;
-}
+    }
+ }
 
-.account-setting-text{
-   color: rgba(87, 86, 86, 0.959);
-}
+ @media only screen and (max-width : 769px) {
+
+    #account-main-card {
+       margin-top: 6.5rem;
+    }
+
+    .order-icon {
+       font-size: 1.5rem;
+       background-color: white;
+       color: rgb(55, 83, 243);
+
+       margin-left: 0.5rem;
+    }
+
+    .order-card-profile {
+       display: flex;
+       justify-content: flex-start;
+       align-items: center;
+       background-color: white;
+       border: 1px solid rgb(101, 100, 100);
+       box-shadow: 0 0 7px rgb(124, 123, 123);
+       padding: 10px;
+       column-gap: 12px;
+       border-radius: 10px;
+       margin-top: 10px;
+       margin-bottom: 10px;
+       cursor: pointer;
+
+    }
+
+    .logout-bt {
+       width: 100%;
+       border: 2px solid rgb(136, 134, 134);
+       padding: 5px;
+       font-weight: 500;
+       color: blue;
+       border-radius: 5px;
+       background-color: white;
+
+    }
+ }
+
+ .account-section-icons {
+    margin-bottom: 10px;
+    margin-right: 23px;
+    color: rgb(55, 83, 243);
+    background-color: white;
+ }
+
+ .account-setting-text {
+    color: rgba(87, 86, 86, 0.959);
+ }
 
 
  /* address styling  */
-.address-main-card{
-   height: 100%;
-   width: 100%;
-   margin-top: 5rem;
-   padding: 10px;
+ .address-main-card {
+    height: 100%;
+    width: 100%;
+    margin-top: 5rem;
+    padding: 10px;
 
 
-}
-
- .iframe-card{
-   width: 100%;
-   height: 500px;
-   box-shadow: 0 0 7px rgb(98, 97, 97);
-   border-radius: 10px;
  }
 
- @media only screen and (max-width : 769px){
+ .iframe-card {
+    width: 100%;
+    height: 500px;
+    box-shadow: 0 0 7px rgb(98, 97, 97);
+    border-radius: 10px;
+ }
 
-   .address-main-card{
-      height: 100%;
-      width: 100%;
-      margin-top: 7rem;
-      padding: 16px;
-   
-   }
+ @media only screen and (max-width : 769px) {
+
+    .address-main-card {
+       height: 100%;
+       width: 100%;
+       margin-top: 6.5rem;
+       padding: 16px;
+
+    }
+ }
+
+
+ /* contactus styling  */
+
+ .contactus-main-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 4.5rem;
+    background-color: white;
+
+
+ }
+
+ .contact-sub-card {
+    width: 40%;
+    background-color: white;
+    box-shadow: 0 0 8px rgb(124, 122, 122);
+    padding: 15px;
+    border-radius: 10px;
+ }
+
+ @media only screen and (max-width : 769px) {
+    .contactus-main-card {
+       margin-top: 6rem;
+    }
+
+    .contact-sub-card {
+       width: 100%;
+       background-color: white;
+    }
+
+
  }
