@@ -67,10 +67,10 @@ const SingleProduct = () => {
     // checking products already in cart 
 
     useEffect(() => {
-        if(!token){
+        if (!token) {
             setExist(false)
         }
-        else if(token){
+        else if (token) {
             const localStorageCart = localStorage.getItem("cart")
             const checkedCart = JSON.parse(localStorageCart)
             if (checkedCart) {
@@ -78,13 +78,13 @@ const SingleProduct = () => {
                 if (existed) {
                     setExist(true)
                 }
-    
+
             }
         }
-        
 
 
-    }, [cart, data , token])
+
+    }, [cart, data, token])
 
 
     const API = "https://fashionkart-server.onrender.com"
@@ -269,8 +269,10 @@ const SingleProduct = () => {
                                         <button onClick={() => addcartFunc(data._id)} className='cart-bt  '> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>
 
                                 }
-                                 <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>
-                                 
+                                {token ? <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button> : 
+                                <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>}
+
+
                             </div>
                         </div> <hr className=' mb-0 ' />
                         <div className='col-12 bg-white py-3  px-3'>
@@ -293,6 +295,43 @@ const SingleProduct = () => {
             <div>
                 <ToastContainer className="bg-transparent" />
                 {loader ? <Loading /> : <ShowProduct />}
+
+                {/* modal  */}
+                <div
+                    className="offcanvas offcanvas-bottom"
+                    tabIndex={-1}
+                    id="offcanvasBottom"
+                    aria-labelledby="offcanvasBottomLabel"
+                >
+                    <div className="offcanvas-header bg-white mb-0 pb-0  container">
+                        <h5 className="offcanvas-title bg-white" id="offcanvasBottomLabel">
+                          
+                        </h5>
+
+                        <button
+                            type="button"
+                            className="btn-close text-reset bg-white"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                        />
+                    </div>
+                    
+                     <div className="  offcanvas-body small bg-white d-flex flex-column justify-content-center align-items-center container">
+                     <h5 className=" bg-white">
+                            Log in to complete your shopping
+                        </h5>
+                        <h6 className=" bg-white text-secondary ">
+                            Shop and track your orders easily
+                        </h6>
+                        <Link to="/login">
+                        <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" className='mt-1 mb-2 btn bg-primary fw-bold text-white'>Login</button>
+                        
+                        </Link>
+
+                         
+                    </div>
+                </div>
+
 
             </div>
             <Footer />

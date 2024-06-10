@@ -36,6 +36,7 @@ const DeliveryAddress = () => {
             setCode("")
             setAddress("")
             setSpinner(false)
+             
         }
         catch (error) {
             setSpinner(false)
@@ -46,6 +47,7 @@ const DeliveryAddress = () => {
 
 
     useEffect(() => {
+        
         // fetching user id function 
         const getUserFunc = async () => {
 
@@ -73,7 +75,7 @@ const DeliveryAddress = () => {
 
             } catch (error) {
                 console.log(error)
-                setLoader(false)
+                
             }
         }
 
@@ -82,7 +84,7 @@ const DeliveryAddress = () => {
         getUserFunc()
 
 
-    }, [token , userId])
+    }, [token , userId , spinner])
 
 
 
