@@ -303,7 +303,7 @@ const SingleProduct = () => {
                     id="offcanvasBottom"
                     aria-labelledby="offcanvasBottomLabel"
                 >
-                    <div className="offcanvas-header bg-white mb-0 pb-0  container">
+                    <div className="offcanvas-header bg-white   container">
                         <h5 className="offcanvas-title bg-white" id="offcanvasBottomLabel">
                           
                         </h5>
@@ -317,14 +317,14 @@ const SingleProduct = () => {
                     </div>
                     
                      <div className="  offcanvas-body small bg-white d-flex flex-column justify-content-center align-items-center container">
-                     <h5 className=" bg-white">
+                     <h5 className="mb-0 bg-white mb-1">
                             Log in to complete your shopping
                         </h5>
                         <h6 className=" bg-white text-secondary ">
                             Shop and track your orders easily
                         </h6>
-                        <Link to="/login">
-                        <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" className='mt-1 mb-2 btn bg-primary fw-bold text-white'>Login</button>
+                        <Link className='bg-white' to="/login">
+                        <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" className=' btn bg-primary fw-bold text-white'>Login</button>
                         
                         </Link>
 
