@@ -13,6 +13,7 @@ import Account from "./components/Account";
 import ForgotPassword from "./components/ForgotPassword";
 import Address from "./components/Address";
 import ContactUs from "./components/ContactUs";
+import DeliveryAddress  from "./components/DeliveryAddress";
  
 
 export const cartContext = createContext();
@@ -52,6 +53,8 @@ function App() {
               <Route path="/password" element={<ForgotPassword />} />
               <Route path="/address" element={<Address/>} />
               <Route path="/contact" element={<ContactUs/>}/>
+              <Route path="/delivery" element={<DeliveryAddress/>}/>
+
             </Routes>
           </BrowserRouter>
         </cartContext.Provider>

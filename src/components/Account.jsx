@@ -146,10 +146,13 @@ const Account = () => {
                     <i className="fa-solid fa-credit-card account-section-icons" style={{ fontSize: "17px" }}></i>
                     <h5 className='bg-white account-setting-text'>Saved Cards & Wallets</h5>
                 </div>
+                <Link style={{ textDecoration: "none" }} to="/delivery">
                 <div className='bg-white d-flex align-items-center mt-3 pt-1'>
                     <i className="fa-solid fa-location-dot account-section-icons" style={{ marginRight: "1.6rem" }}></i>
                     <h5 className='bg-white account-setting-text'>Saved Addresses</h5>
                 </div>
+                </Link>
+
                 <div className='bg-white d-flex align-items-center mt-3 pt-1'>
                     <i className="fa-solid fa-bell account-section-icons"></i>
                     <h5 className='bg-white account-setting-text'>Notification Settings</h5>
