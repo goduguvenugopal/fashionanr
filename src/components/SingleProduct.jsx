@@ -236,7 +236,7 @@ const SingleProduct = () => {
 
                         </div>
                         <hr className=' mb-0 ' />
-                        {token ? <> <div className='col-12 bg-white py-2 d-flex align-items-center justify-content-between  px-3'>
+                        {token ? <> <div className='col-12 bg-white py-3 d-flex align-items-center justify-content-between  px-3'>
                             <div className='bg-white '>
                                 <h5 class="bg-white mb-1 fw-bold" style={{ marginRight: "1rem" }}>
                                     <span className='fw-normal bg-white text-secondary'>Delivery to:</span>  {deliveryAddress.name}.. <span style={{ fontSize: "1rem" }} className='bg-white'>{deliveryAddress.code}</span> </h5>

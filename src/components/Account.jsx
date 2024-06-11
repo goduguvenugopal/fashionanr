@@ -220,11 +220,11 @@ const Account = () => {
                         aria-hidden="true"
                     />
                     <span className="visually-hidden">Loading...</span>
-                </button> : <button onClick={() => setModal(true)} className='logout-bt text-danger'><i className="fa-solid fa-trash bg-white text-danger" style={{ marginRight: "0.5rem" }}></i>Delete Account</button>
+                </button> : <button onClick={() => setModal(true)} className='logout-bt text-danger'><i className="fa-solid fa-trash bg-white text-danger fs-5" style={{ marginRight: "0.5rem" }}></i>Delete Account</button>
                 }
             </div>
 
-
+{/* delete account modal  */}
             {modal ?
                 (<div className='modal-card px-3'>
                     <div className="card shadow" style={{ width: "21rem" }}>

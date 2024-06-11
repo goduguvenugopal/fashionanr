@@ -19,6 +19,7 @@ const DeliveryAddress = () => {
     const [toggle1, setToggle1] = useState(true)
     const [code, setCode] = useState("")
     const [loader, setLoader] = useState(false)
+    const [remov, setRemov] = useState(false)
     const [deliveryAddress, setDeliveryAddress] = useContext(addressContext)
 
 
@@ -37,6 +38,7 @@ const DeliveryAddress = () => {
             setCode("")
             setAddress("")
             setSpinner(false)
+
 
         }
         catch (error) {
@@ -89,6 +91,23 @@ const DeliveryAddress = () => {
 
 
 
+    // delete address function 
+
+    const deleteAddress = async (delelteId) => {
+        setRemov(true)
+        try {
+            await axios.delete(`https://fashionkart-server.onrender.com/address/delete-address/${delelteId}`)
+            toast.success("Address has deleted Successfully")
+            const deleted = data.filter((item) => item._id !== delelteId)
+            setData(deleted)
+            setRemov(false)
+        } catch (error) {
+            console.log(error)
+            toast.error("Address has not deleted")
+            setRemov(false)
+        }
+    }
+
 
 
     // toggle function 
@@ -110,8 +129,11 @@ const DeliveryAddress = () => {
     const setDefaultFunc = (defAddress) => {
         const defaulted = data.find((item) => item._id === defAddress)
         setDeliveryAddress(defaulted)
-        localStorage.setItem("address", JSON.stringify(defaulted))
+        localStorage.setItem("userAddress", JSON.stringify(defaulted))
+
         toast.success("This is the Default Address for All Delivery")
+
+
     }
 
 
@@ -221,6 +243,12 @@ const DeliveryAddress = () => {
                                         {deliveryAddress._id === item._id ? <button className='default-bt'>Default</button> :
 
                                             <button onClick={() => setDefaultFunc(item._id)} className='set-default-bt'>Set Default</button>
+                                        }
+
+                                        {remov ? <h6 style={{ border: "none" }} className="del-delete-icon " type="button" disabled>
+                                            <span className="spinner-border bg-white text-primary spinner-border-sm" role="status" aria-hidden="true"></span>
+                                            <span className="visually-hidden">Loading...</span>
+                                        </h6> : <h6 onClick={() => deleteAddress(item._id)} className=" del-delete-icon">Remove</h6>
                                         }
 
                                     </div>
