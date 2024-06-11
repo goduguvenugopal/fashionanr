@@ -236,7 +236,7 @@ const DeliveryAddress = () => {
                                 : data.map((item) => (
                                     <div key={item._id} className='p-3 bg-white results-address-card '>
 
-                                        <h4 className='bg-white'>{item.name}</h4>
+                                        <h5 className='bg-white mt-3'>{item.name}</h5>
                                         <h6 className='bg-white my-3'>{item.address} {item.code}</h6>
                                         <h6 style={{ fontSize: "0.9rem" }} className='bg-white text-secondary'>{item.mobile}</h6>
 

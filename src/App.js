@@ -37,7 +37,7 @@ function App() {
       setCart(JSON.parse(localStorageCart));
     }
     // address retriveing from localStorage
-    const address = localStorage.getItem("userAddres")
+    const address = localStorage.getItem("userAddress")
     if(address){
       setDeliveryAddress(JSON.parse(address))
     }
