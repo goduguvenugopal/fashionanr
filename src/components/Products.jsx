@@ -87,7 +87,7 @@ const Products = () => {
                                         <h5 className='title'>{item.title.substring(0, 12)}</h5>
                                         <div className='d-flex justify-content-center align-items-center gap-1 bg-white '>
                                             <i class="fa-solid fa-indian-rupee-sign bg-white " style={{ fontSize: "13px", marginBottom: "0.4rem" }}></i>
-                                            <h4 className='cost bg-white'>{item.price}</h4>
+                                            <h4 className='cost bg-white'>{item.price.toLocaleString('en-US')}</h4>
                                         </div>
 
                                         <div className='bg-success rating-card' >

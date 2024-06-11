@@ -4,7 +4,7 @@ import axios from 'axios'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Footer';
-import { tokenContext } from '../App';
+import { addressContext, tokenContext } from '../App';
 
 
 const DeliveryAddress = () => {
@@ -19,6 +19,7 @@ const DeliveryAddress = () => {
     const [toggle1, setToggle1] = useState(true)
     const [code, setCode] = useState("")
     const [loader, setLoader] = useState(false)
+    const [deliveryAddress, setDeliveryAddress] = useContext(addressContext)
 
 
     // save delivery address function 
@@ -36,7 +37,7 @@ const DeliveryAddress = () => {
             setCode("")
             setAddress("")
             setSpinner(false)
-             
+
         }
         catch (error) {
             setSpinner(false)
@@ -47,7 +48,7 @@ const DeliveryAddress = () => {
 
 
     useEffect(() => {
-        
+
         // fetching user id function 
         const getUserFunc = async () => {
 
@@ -75,7 +76,7 @@ const DeliveryAddress = () => {
 
             } catch (error) {
                 console.log(error)
-                
+
             }
         }
 
@@ -84,7 +85,7 @@ const DeliveryAddress = () => {
         getUserFunc()
 
 
-    }, [token , userId , spinner])
+    }, [token, userId, spinner])
 
 
 
@@ -102,6 +103,19 @@ const DeliveryAddress = () => {
         setToggle(false)
         setToggle1(true)
     }
+
+
+    // set default address function 
+
+    const setDefaultFunc = (defAddress) => {
+        const defaulted = data.find((item) => item._id === defAddress)
+        setDeliveryAddress(defaulted)
+        localStorage.setItem("address", JSON.stringify(defaulted))
+        toast.success("This is the Default Address for All Delivery")
+    }
+
+
+
 
     return (
         <>
@@ -201,8 +215,13 @@ const DeliveryAddress = () => {
                                     <div key={item._id} className='p-3 bg-white results-address-card '>
 
                                         <h4 className='bg-white'>{item.name}</h4>
-                                        <h6 className='bg-white'>{item.address} {item.code}</h6>
+                                        <h6 className='bg-white my-3'>{item.address} {item.code}</h6>
                                         <h6 style={{ fontSize: "0.9rem" }} className='bg-white text-secondary'>{item.mobile}</h6>
+
+                                        {deliveryAddress._id === item._id ? <button className='default-bt'>Default</button> :
+
+                                            <button onClick={() => setDefaultFunc(item._id)} className='set-default-bt'>Set Default</button>
+                                        }
 
                                     </div>
                                 ))

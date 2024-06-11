@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import "../css/products.css"
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import { cartContext, tokenContext } from '../App'
+import { addressContext, cartContext, tokenContext } from '../App'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Footer'
@@ -19,6 +19,7 @@ const SingleProduct = () => {
     const [products, setProducts] = useState([])
     const [exist, setExist] = useState(false)
     const [blinker, setBlinker] = useState(false)
+    const [deliveryAddress] = useContext(addressContext)
 
 
 
@@ -200,6 +201,7 @@ const SingleProduct = () => {
         }
     }
 
+    let formattedPrice = parseFloat(data.price).toLocaleString('en-US');
 
     // single product mapping function 
 
@@ -228,12 +230,28 @@ const SingleProduct = () => {
                             <h6 className='bg-white mt-1'>Rating</h6>
                             <div className=' d-flex justify-content-flex-start align-items-center gap-1 bg-white '>
                                 <i class="fa-solid fa-indian-rupee-sign bg-white " id='rupee-icon'></i>
-                                <h4 key={data._id} className='fs-1 bg-white'>{data.price}</h4>
+                                <h4 key={data._id} className='fs-1 bg-white'>{formattedPrice}</h4>
                             </div>
 
 
                         </div>
                         <hr className=' mb-0 ' />
+
+
+                        <div className='col-12 bg-white py-3  px-3'>
+                            <div style={{position:"relative" , height:"5rem"}} className='bg-white '>
+                                <h5 class="bg-white mb-1 fw-bold" style={{ marginRight: "1rem" }}>
+                                    <span className='fw-normal bg-white text-secondary'>Delivery to:</span>  {deliveryAddress.name}.. <span style={{fontSize:"1rem"}} className='bg-white'>{deliveryAddress.code}</span> </h5>
+                                <h5 className='bg-white text-secondary'>{deliveryAddress.address}</h5>
+                              
+                              {deliveryAddress.length === 0 ? 
+                               <Link to="/delivery"> <button style={{width:"110px", border : "none"}} className='single-address-bt bg-primary text-white'>Add address</button></Link> : 
+                                <Link to="/delivery"><button className='single-address-bt'>Change</button> </Link> 
+                              }
+                            </div>
+                        </div> <hr className=' mb-0 ' />
+
+
                         <div className='col-12 bg-white py-3  px-3'>
                             <div className='bg-white d-flex align-items-center'>
                                 <i class="fa-solid fa-truck bg-white mb-1 text-secondary" style={{ marginRight: "1rem" }}></i>

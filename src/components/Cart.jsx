@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "../css/cart.css"
 import { cartContext, tokenContext } from '../App'
 import { ToastContainer, toast } from 'react-toastify';
@@ -6,29 +6,30 @@ import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
 
- 
+
 
 const Cart = () => {
   const [token] = useContext(tokenContext)
   const [cart, setCart] = useContext(cartContext)
-  
+  const [totalAmount, setTotalAmount] = useState("")
+
 
 
   //cart items removing logic 
   const itemRemoveFunc = (removeId, title) => {
-   
-  const localstorageCart = localStorage.getItem("cart")
-      if (localstorageCart) {
-  
-        const parsedcart = JSON.parse(localstorageCart)
-        const remainedItems = parsedcart.filter((item) => item._id !== removeId);
-  
-        localStorage.setItem("cart", JSON.stringify(remainedItems))
-  
-        setCart(remainedItems);
-       
-        toast.success(`${title} has been removed successfully`);
-      }
+
+    const localstorageCart = localStorage.getItem("cart")
+    if (localstorageCart) {
+
+      const parsedcart = JSON.parse(localstorageCart)
+      const remainedItems = parsedcart.filter((item) => item._id !== removeId);
+
+      localStorage.setItem("cart", JSON.stringify(remainedItems))
+
+      setCart(remainedItems);
+
+      toast.success(`${title} has been removed successfully`);
+    }
 
 
 
@@ -67,13 +68,18 @@ const Cart = () => {
 
     const totalAmount = cart.reduce((acc, item) => {
       return acc + item.quantity * item.price;
+
     }, 0);
 
+    setTotalAmount(totalAmount)
 
-    return totalAmount.toFixed(2);
+
+
   };
 
-
+  useEffect(() => {
+    TotalAmoFunc()
+  }, [cart])
 
   return (
     <>
@@ -100,7 +106,7 @@ const Cart = () => {
                   <h6 className='bg-white mt-1'>Rating</h6>
                   <div className=' d-flex justify-content-flex-start align-items-center gap-1 bg-white '>
                     <i class="fa-solid fa-indian-rupee-sign bg-white  " id='indian-rupee'></i>
-                    <h4 className='fs-5 bg-white'>{item.price * item.quantity}</h4>
+                    <h4 className='fs-5 bg-white'>{(item.price * item.quantity).toLocaleString()}</h4>
                   </div>
 
 
@@ -116,14 +122,14 @@ const Cart = () => {
                   <button onClick={() => priceIncrement(item._id)} className='incre-bt '> +</button>
                 </div>
                 <div className='d-flex gap-2 bg-white'>
-              <button className='buy-now-bt'>BUY NOW</button>
-                  
-                  <button onClick={() => itemRemoveFunc(item._id, item.title) } className='remove-bt'>REMOVE</button>
+                  <button className='buy-now-bt'>BUY NOW</button>
+
+                  <button onClick={() => itemRemoveFunc(item._id, item.title)} className='remove-bt'>REMOVE</button>
                 </div>
               </div>
               <hr className='mb-0 mt-0 ' />
 
-              
+
 
             </>
 
@@ -139,19 +145,19 @@ const Cart = () => {
             <h5 className='bg-white '>Price ({cart.length} items)</h5>
             <div className='d-flex bg-white'>
               <i class="fa-solid fa-indian-rupee-sign bg-white" id='totalAmount-rupee'></i>
-              <h6 className='bg-white'>{<TotalAmoFunc />}</h6></div>
+              <h6 className='bg-white'>{totalAmount.toLocaleString()}</h6></div>
 
           </div>
           <div className='d-flex justify-content-between bg-white px-3 pt-2'>
             <h4 className='bg-white'>Toatal Amount</h4>
             <div className='bg-white d-flex'>
               <i class="fa-solid fa-indian-rupee-sign bg-white" id='totalAmount-rupee1'></i>
-              <h5 className='bg-white'>{<TotalAmoFunc />}</h5>
+              <h5 className='bg-white'>{totalAmount.toLocaleString()}</h5>
             </div>
-          </div><hr className='mb-0 mt-0 ' />
+          </div><hr className='mb-0 mt-0' />
           <div className='bg-white pt-3 pb-2 text-end px-3'>
-           <button className='buy-bt '>PLACE ORDER</button>
-           
+            <button className='buy-bt '>PLACE ORDER</button>
+
           </div>
 
         </div>
