@@ -63,23 +63,25 @@ const Cart = () => {
   }
 
   // totalAmount of cart items 
-
-  const TotalAmoFunc = () => {
-
-    const totalAmount = cart.reduce((acc, item) => {
-      return acc + item.quantity * item.price;
-
-    }, 0);
-
-    setTotalAmount(totalAmount)
-
-
-
-  };
+ 
 
   useEffect(() => {
-    TotalAmoFunc()
-  }, [cart , TotalAmoFunc])
+
+    const totalAmoFunc = () => {
+
+      const totalAmount = cart.reduce((acc, item) => {
+        return acc + item.quantity * item.price;
+  
+      }, 0);
+  
+      setTotalAmount(totalAmount)
+  
+  
+  
+    };
+
+    totalAmoFunc()
+  }, [cart])
 
   return (
     <>
