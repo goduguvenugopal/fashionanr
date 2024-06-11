@@ -79,7 +79,7 @@ const Cart = () => {
 
   useEffect(() => {
     TotalAmoFunc()
-  }, [cart])
+  }, [cart , TotalAmoFunc])
 
   return (
     <>
