@@ -236,20 +236,21 @@ const SingleProduct = () => {
 
                         </div>
                         <hr className=' mb-0 ' />
-
-
-                        <div className='col-12 bg-white py-3  px-3'>
-                            <div style={{position:"relative" , height:"5rem"}} className='bg-white '>
+                        {token ? <> <div className='col-12 bg-white py-2 d-flex align-items-center justify-content-between  px-3'>
+                            <div className='bg-white '>
                                 <h5 class="bg-white mb-1 fw-bold" style={{ marginRight: "1rem" }}>
-                                    <span className='fw-normal bg-white text-secondary'>Delivery to:</span>  {deliveryAddress.name}.. <span style={{fontSize:"1rem"}} className='bg-white'>{deliveryAddress.code}</span> </h5>
+                                    <span className='fw-normal bg-white text-secondary'>Delivery to:</span>  {deliveryAddress.name}.. <span style={{ fontSize: "1rem" }} className='bg-white'>{deliveryAddress.code}</span> </h5>
                                 <h5 className='bg-white text-secondary'>{deliveryAddress.address}</h5>
-                              
-                              {deliveryAddress.length === 0 ? 
-                               <Link to="/delivery"> <button style={{width:"110px", border : "none"}} className='single-address-bt bg-primary text-white'>Add address</button></Link> : 
-                                <Link to="/delivery"><button className='single-address-bt'>Change</button> </Link> 
-                              }
                             </div>
-                        </div> <hr className=' mb-0 ' />
+                            <div className='bg-white'> {deliveryAddress.length === 0 ?
+                                <Link to="/delivery"> <button style={{ width: "110px", border: "none" }} className='single-address-bt bg-primary text-white'>Add address</button></Link> :
+                                <Link to="/delivery"><button className='single-address-bt'>Change</button> </Link>
+                            }</div>
+
+
+                        </div> <hr className=' mb-0 ' /></> : ""}
+
+
 
 
                         <div className='col-12 bg-white py-3  px-3'>
@@ -287,8 +288,8 @@ const SingleProduct = () => {
                                         <button onClick={() => addcartFunc(data._id)} className='cart-bt  '> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>
 
                                 }
-                                {token ? <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button> : 
-                                <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>}
+                                {token ? <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button> :
+                                    <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>}
 
 
                             </div>
@@ -323,7 +324,7 @@ const SingleProduct = () => {
                 >
                     <div className="offcanvas-header bg-white   container">
                         <h5 className="offcanvas-title bg-white" id="offcanvasBottomLabel">
-                          
+
                         </h5>
 
                         <button
@@ -333,20 +334,20 @@ const SingleProduct = () => {
                             aria-label="Close"
                         />
                     </div>
-                    
-                     <div className="  offcanvas-body small bg-white d-flex flex-column justify-content-center align-items-center container">
-                     <h5 className="mb-0 bg-white mb-1">
+
+                    <div className="  offcanvas-body small bg-white d-flex flex-column justify-content-center align-items-center container">
+                        <h5 className="mb-0 bg-white mb-1">
                             Log in to complete your shopping
                         </h5>
                         <h6 className=" bg-white text-secondary ">
                             Shop and track your orders easily
                         </h6>
                         <Link className='bg-white' to="/login">
-                        <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" className=' btn bg-primary fw-bold text-white'>Login</button>
-                        
+                            <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" className=' btn bg-primary fw-bold text-white'>Login</button>
+
                         </Link>
 
-                         
+
                     </div>
                 </div>
 
