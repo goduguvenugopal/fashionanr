@@ -3,13 +3,13 @@
 .quanty-text {
     position: absolute;
     top: -10px;
-    left: 82px;
+    left: 66px;
 }
 
 @media only screen and (max-width:760px) {
     .quanty-text {
         position: absolute;
         top: -15px;
-        left: 56px;
+        left: 42px;
     }
 }

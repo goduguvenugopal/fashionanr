@@ -68,11 +68,11 @@ const OrderSummary = () => {
 
 
   return (
-    <div className='container bg-white py-5 pb-3 pt-3 ' id='single-product-main-card'>
+    <div className='container bg-white py-5 pb-3 pt-3 px-3' id='single-product-main-card'>
       <h5 className='bg-white'>Order Summary</h5>
       <hr className=' mb-0 ' />
       <div className='bg-white row'>
-        {token ? <> <div className='col-12 bg-white py-3 d-flex align-items-center justify-content-between  px-3'>
+        {token ? <> <div className='col-12 bg-white py-3 d-flex align-items-center justify-content-between  '>
           <div className='bg-white '>
             <h5 class="bg-white mb-2 fw-bold" style={{ marginRight: "1rem" }}>
               Delivery to:   </h5>
@@ -90,7 +90,7 @@ const OrderSummary = () => {
 
       </div>
 
-      <div className='cart-item-card bg-white px-3 pt-2'>
+      <div className='cart-item-card bg-white  pt-2'>
         <div>
           {loader ? <div className="cart-item-img  d-flex align-items-center justify-content-center " disabled>
             <span className="spinner-border bg-white text-primary spinner-border-sm " style={{ height: "25px", width: "25px" }} role="status" aria-hidden="true"></span>
@@ -118,7 +118,7 @@ const OrderSummary = () => {
 
       </div>
 
-      <div style={{ position: "relative" }} className=' pb-4 pt-3 bg-white cart-bt-card  px-3'>
+      <div style={{ position: "relative" }} className=' pb-4 pt-3 bg-white cart-bt-card  '>
         <h6 className='bg-white quanty-text'>Qty</h6>
         <div className='gap-2 increment-card bg-white '>
           <button onClick={() => decrementFunc(1)} id={data.quantity === 1 ? "disable-bt" : ""} className='incre-bt'>- </button>
@@ -129,7 +129,7 @@ const OrderSummary = () => {
       </div>
       <hr className='mb-0 mt-0 ' />
 
-      <div className='bg-white  pt-4 pb-2 container'>
+      <div className='bg-white  pt-4 pb-2 '>
         <h4 className='bg-white mb-4'>Price Details</h4>
         <div className='d-flex justify-content-between bg-white  '>
           <h5 className='bg-white '>Price ({data.length} items)</h5>
