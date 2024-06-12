@@ -222,10 +222,7 @@ const DeliveryAddress = () => {
 
                         </form> : ""}
 
-                    {toggle1 ?
-
-
-                        <div className='bg-white all-address-card'>
+                    {toggle1 ? <> {data.length === 0 ? <div style={{height:"80vh"}} className='container d-flex justify-content-center align-items-center bg-white fs-5'>No Saved Addresses</div> : <> <div className='bg-white all-address-card'>
                             <h5 className='bg-white text-start'>Saved Addresses ({data.length})</h5>
 
                             {loader ? <div className="d-flex justify-content-center align-items-center bg-white" style={{ height: "20rem" }}>
@@ -258,7 +255,10 @@ const DeliveryAddress = () => {
                             }
 
 
-                        </div>
+                        </div></>}</>
+
+ 
+                        
                         : ""}
 
 
