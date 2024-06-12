@@ -222,43 +222,43 @@ const DeliveryAddress = () => {
 
                         </form> : ""}
 
-                    {toggle1 ? <> {data.length === 0 ? <div style={{height:"80vh"}} className='container d-flex justify-content-center align-items-center bg-white fs-5'>No Saved Addresses</div> : <> <div className='bg-white all-address-card'>
-                            <h5 className='bg-white text-start'>Saved Addresses ({data.length})</h5>
+                    {toggle1 ? <> {data.length === 0 ? <div style={{ height: "80vh" }} className='container d-flex justify-content-center align-items-center bg-white fs-5'>No Saved Addresses</div> : <> <div className='bg-white all-address-card'>
+                        <h5 className='bg-white text-start'>Saved Addresses ({data.length})</h5>
 
-                            {loader ? <div className="d-flex justify-content-center align-items-center bg-white" style={{ height: "20rem" }}>
-                                <div className="spinner-border bg-white text-primary" role="status">
-                                    <span className="visually-hidden">Loading...</span>
-                                </div>
+                        {loader ? <div className="d-flex justify-content-center align-items-center bg-white" style={{ height: "20rem" }}>
+                            <div className="spinner-border bg-white text-primary" role="status">
+                                <span className="visually-hidden">Loading...</span>
                             </div>
-                                : data.map((item) => (
-                                    <div key={item._id} className='p-3 bg-white results-address-card '>
+                        </div>
+                            : data.map((item) => (
+                                <div key={item._id} className='p-3 bg-white results-address-card '>
 
-                                        <h5 className='bg-white mt-3'>{item.name}</h5>
-                                        <h6 className='bg-white my-3'>{item.address} {item.code}</h6>
-                                        <h6 style={{ fontSize: "0.9rem" }} className='bg-white text-secondary'>{item.mobile}</h6>
+                                    <h5 className='bg-white mt-3'>{item.name}</h5>
+                                    <h6 className='bg-white my-3'>{item.address} {item.code}</h6>
+                                    <h6 style={{ fontSize: "0.9rem" }} className='bg-white text-secondary'>{item.mobile}</h6>
 
-                                        {deliveryAddress._id === item._id ? <button className='default-bt'>Default</button> :
+                                    {deliveryAddress._id === item._id ? <button className='default-bt'>Default</button> :
 
-                                            <button onClick={() => setDefaultFunc(item._id)} className='set-default-bt'>Set Default</button>
-                                        }
+                                        <button onClick={() => setDefaultFunc(item._id)} className='set-default-bt'>Set Default</button>
+                                    }
 
-                                        {remov ? <h6 style={{ border: "none" }} className="del-delete-icon " type="button" disabled>
-                                            <span className="spinner-border bg-white text-primary spinner-border-sm" role="status" aria-hidden="true"></span>
-                                            <span className="visually-hidden">Loading...</span>
-                                        </h6> : <h6 onClick={() => deleteAddress(item._id)} className=" del-delete-icon">Remove</h6>
-                                        }
+                                    {remov ? <h6 style={{ border: "none" }} className="del-delete-icon " type="button" disabled>
+                                        <span className="spinner-border bg-white text-primary spinner-border-sm" role="status" aria-hidden="true"></span>
+                                        <span className="visually-hidden">Loading...</span>
+                                    </h6> : <h6 onClick={() => deleteAddress(item._id)} className=" del-delete-icon">Remove</h6>
+                                    }
 
-                                    </div>
-                                ))
-
-
-                            }
+                                </div>
+                            ))
 
 
-                        </div></>}</>
+                        }
 
- 
-                        
+
+                    </div></>}</>
+
+
+
                         : ""}
 
 
