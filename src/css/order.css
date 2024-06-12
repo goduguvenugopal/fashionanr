@@ -1,0 +1,15 @@
+/* order summary styling  */
+
+.quanty-text {
+    position: absolute;
+    top: -10px;
+    left: 82px;
+}
+
+@media only screen and (max-width:760px) {
+    .quanty-text {
+        position: absolute;
+        top: -15px;
+        left: 56px;
+    }
+}
