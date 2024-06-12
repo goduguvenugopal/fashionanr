@@ -132,8 +132,6 @@ const DeliveryAddress = () => {
         localStorage.setItem("userAddress", JSON.stringify(defaulted))
 
         toast.success("This is the Default Address for All Delivery")
-
-
     }
 
 
@@ -222,15 +220,29 @@ const DeliveryAddress = () => {
 
                         </form> : ""}
 
-                    {toggle1 ? <> {data.length === 0 ? <div style={{ height: "80vh" }} className='container d-flex justify-content-center align-items-center bg-white fs-5'>No Saved Addresses</div> : <> <div className='bg-white all-address-card'>
-                        <h5 className='bg-white text-start'>Saved Addresses ({data.length})</h5>
+                    {toggle1 ? <> {data.length === 0 ?
 
-                        {loader ? <div className="d-flex justify-content-center align-items-center bg-white" style={{ height: "20rem" }}>
-                            <div className="spinner-border bg-white text-primary" role="status">
-                                <span className="visually-hidden">Loading...</span>
-                            </div>
+                        <div style={{ height: "80vh" }} className='container d-flex justify-content-center align-items-center bg-white fs-5'>
+                            {loader && <div className="d-flex justify-content-center align-items-center bg-white" style={{ height: "20rem" }}>
+                                <div className="spinner-border bg-white text-primary" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                </div>
+                            </div>}
+
+                            {!loader ? <h5 className='bg-white'>No Saved Addresses</h5> : ""}
+
+
+
+
                         </div>
-                            : data.map((item) => (
+                        :
+                        <> <div className='bg-white all-address-card'>
+
+
+                            <h5 className='bg-white text-start'>Saved Addresses ({data.length})</h5>
+
+
+                            {data.map((item) => (
                                 <div key={item._id} className='p-3 bg-white results-address-card '>
 
                                     <h5 className='bg-white mt-3'>{item.name}</h5>
@@ -249,13 +261,13 @@ const DeliveryAddress = () => {
                                     }
 
                                 </div>
-                            ))
+                            ))}
 
 
-                        }
 
 
-                    </div></>}</>
+
+                        </div></>}</>
 
 
 
