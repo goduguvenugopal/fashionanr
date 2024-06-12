@@ -57,19 +57,18 @@ const OrderSummary = () => {
   }
 
   // decrement function 
-  const decrementFunc = (dec) =>{
+  const decrementFunc = (dec) => {
     setData(prevData => ({
-      ...prevData ,
-      quantity : Math.max(1 , prevData.quantity - dec)
+      ...prevData,
+      quantity: Math.max(1, prevData.quantity - dec)
     }))
   }
 
 
- 
 
 
   return (
-    <div className='container bg-white py-5 pt-2 ' id='single-product-main-card'>
+    <div className='container bg-white py-5 pb-3 pt-3 ' id='single-product-main-card'>
       <h5 className='bg-white'>Order Summary</h5>
       <hr className=' mb-0 ' />
       <div className='bg-white row'>
@@ -77,7 +76,7 @@ const OrderSummary = () => {
           <div className='bg-white '>
             <h5 class="bg-white mb-2 fw-bold" style={{ marginRight: "1rem" }}>
               Delivery to:   </h5>
-              <h5 className='bg-white'>{deliveryAddress.name}</h5>
+            <h5 className='bg-white'>{deliveryAddress.name}</h5>
             <h5 className='bg-white '>{deliveryAddress.address} <span style={{ fontSize: "1rem" }} className='bg-white'>{deliveryAddress.code}</span></h5>
             <h6 className='bg-white '>{deliveryAddress.mobile}</h6>
           </div>
@@ -93,7 +92,11 @@ const OrderSummary = () => {
 
       <div className='cart-item-card bg-white px-3 pt-2'>
         <div>
-          <img src={data.image} alt={data.category} className='cart-item-img bg-white' />
+          {loader ? <div className="cart-item-img  d-flex align-items-center justify-content-center " disabled>
+            <span className="spinner-border bg-white text-primary spinner-border-sm " style={{ height: "25px", width: "25px" }} role="status" aria-hidden="true"></span>
+            <span className="visually-hidden">Loading...</span>
+          </div> : <img src={data.image} alt={data.category} className='cart-item-img bg-white' />}
+
 
         </div>
         <div className=' bg-white pt-3 px-3 '>
@@ -115,12 +118,12 @@ const OrderSummary = () => {
 
       </div>
 
-      <div  style={{position:"relative"}} className=' pb-4 pt-3 bg-white cart-bt-card  px-3'>
+      <div style={{ position: "relative" }} className=' pb-4 pt-3 bg-white cart-bt-card  px-3'>
         <h6 className='bg-white quanty-text'>Qty</h6>
         <div className='gap-2 increment-card bg-white '>
-          <button onClick={()=> decrementFunc(1)} id={data.quantity === 1 ? "disable-bt" : ""} className='incre-bt'>- </button>
+          <button onClick={() => decrementFunc(1)} id={data.quantity === 1 ? "disable-bt" : ""} className='incre-bt'>- </button>
           <div className='qty-count-card'> {data.quantity}</div>
-          <button onClick={()=> incrementFunc(1)} className='incre-bt '> +</button>
+          <button onClick={() => incrementFunc(1)} className='incre-bt '> +</button>
         </div>
 
       </div>
@@ -128,41 +131,41 @@ const OrderSummary = () => {
 
       <div className='bg-white  pt-4 pb-2 container'>
         <h4 className='bg-white mb-4'>Price Details</h4>
-          <div className='d-flex justify-content-between bg-white  '>
-            <h5 className='bg-white '>Price ({data.length} items)</h5>
-            <div className='d-flex bg-white'>
-              <i class="fa-solid fa-indian-rupee-sign bg-white" id='totalAmount-rupee'></i>
-              <h6 className='bg-white'>{ (data.price * data.quantity).toLocaleString('en-IN')}</h6></div>
-
-          </div>
-          <div className='d-flex justify-content-between bg-white  '>
-            <h5 className='bg-white '>Discount</h5>
-            <div className='d-flex bg-white'>
-              <i class="fa-solid fa-indian-rupee-sign text-success bg-white" id='totalAmount-rupee'></i>
-              <h6 className='bg-white text-success'>-100</h6></div>
-
-          </div>
-          <div className='d-flex justify-content-between bg-white  '>
-            <h5 className='bg-white '>Delivery Charges</h5>
-            <div className='d-flex bg-white'>
-              
-              <h6 className='bg-white text-success'>FREE Delivery</h6></div>
-
-          </div>
-          <hr className='mb-0 mt-3 ' />
-          <div className='d-flex justify-content-between bg-white   pt-2'>
-            <h4 className='bg-white'>Toatal Amount</h4>
-            <div className='bg-white d-flex'>
-              <i class="fa-solid fa-indian-rupee-sign bg-white" id='totalAmount-rupee1'></i>
-              <h5 className='bg-white'>{(data.price * data.quantity - 100).toLocaleString('en-IN') }</h5>
-            </div>
-          </div><hr className='mb-0 mt-0' />
-          <div className='bg-white pt-4 text-end '>
-            <button className='buy-bt bg-warning text-dark fw-bold'>Continue</button>
-
-          </div>
+        <div className='d-flex justify-content-between bg-white  '>
+          <h5 className='bg-white '>Price ({data.length} items)</h5>
+          <div className='d-flex bg-white'>
+            <i class="fa-solid fa-indian-rupee-sign bg-white" id='totalAmount-rupee'></i>
+            <h6 className='bg-white'>{(data.price * data.quantity).toLocaleString('en-IN')}</h6></div>
 
         </div>
+        <div className='d-flex justify-content-between bg-white  '>
+          <h5 className='bg-white '>Discount</h5>
+          <div className='d-flex bg-white'>
+            <i class="fa-solid fa-indian-rupee-sign text-success bg-white" id='totalAmount-rupee'></i>
+            <h6 className='bg-white text-success'>-100</h6></div>
+
+        </div>
+        <div className='d-flex justify-content-between bg-white  '>
+          <h5 className='bg-white '>Delivery Charges</h5>
+          <div className='d-flex bg-white'>
+
+            <h6 className='bg-white text-success'>FREE Delivery</h6></div>
+
+        </div>
+        <hr className='mb-0 mt-3 ' />
+        <div className='d-flex justify-content-between bg-white   pt-2'>
+          <h4 className='bg-white'>Toatal Amount</h4>
+          <div className='bg-white d-flex'>
+            <i class="fa-solid fa-indian-rupee-sign bg-white" id='totalAmount-rupee1'></i>
+            <h5 className='bg-white'>{(data.price * data.quantity - 100).toLocaleString('en-IN')}</h5>
+          </div>
+        </div><hr className='mb-0 mt-0' />
+        <div className='bg-white pt-4 text-end '>
+          <button className='buy-bt bg-warning text-dark fw-bold'>Continue</button>
+
+        </div>
+
+      </div>
 
     </div>
   )
