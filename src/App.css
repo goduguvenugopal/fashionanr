@@ -92,7 +92,6 @@
 
  .search-results-card {
     display: flex;
-    
     flex-direction: column;
     position: absolute;
     top: 2.5rem;
@@ -106,7 +105,7 @@
     box-shadow: 0 0 8px rgb(162, 160, 160);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-     
+
 
  }
 
@@ -138,7 +137,7 @@
  .results-title {
     font-size: 14px;
     background-color: transparent;
-    
+
     text-align: start;
     width: 150px;
  }
@@ -147,11 +146,13 @@
     display: flex;
     overflow-x: auto;
     gap: 3rem;
-    margin-top: 5.5rem;
+    margin-top: 4.5rem;
     padding-bottom: 1.5rem;
     padding-top: 2.5rem;
 
  }
+
+
 
 
  .image-card::-webkit-scrollbar {
@@ -239,6 +240,13 @@
  }
 
  @media only screen and (max-width : 762px) {
+    .image-card {
+
+       margin-top: 5.5rem;
+
+
+    }
+
     .dec-bt {
        width: 25px;
        height: 40px;
@@ -274,11 +282,22 @@
 
     .search-results-card {
 
-      width: 15.5rem;
+       width: 15.5rem;
 
 
     }
 
+
+
+ }
+
+ @media only screen and (min-width: 500px) and (max-width: 760px) {
+    .image-card {
+
+       margin-top: 4.3rem;
+
+
+    }
 
 
  }

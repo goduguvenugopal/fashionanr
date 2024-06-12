@@ -86,7 +86,7 @@ const Cart = () => {
 
       <ToastContainer className="bg-transparent" />
 
-      {token ? <> {cart.length ? <> <div className='container pt-2 bg-white' style={{ marginTop: "5.5rem", marginBottom: "0.5rem" }}>
+      {token ? <> {cart.length ? <> <div className='container pt-2 bg-white' id='cart-main-cont' >
 
         {cart.map((item) => {
           return (
@@ -106,7 +106,7 @@ const Cart = () => {
                   <h6 className='bg-white mt-1'>Rating</h6>
                   <div className=' d-flex justify-content-flex-start align-items-center gap-1 bg-white '>
                     <i class="fa-solid fa-indian-rupee-sign bg-white  " id='indian-rupee'></i>
-                    <h4 className='fs-5 bg-white'>{(item.price * item.quantity).toLocaleString()}</h4>
+                    <h4 className='fs-5 bg-white'>{(item.price * item.quantity).toLocaleString('en-IN')}</h4>
                   </div>
 
 
@@ -145,14 +145,14 @@ const Cart = () => {
             <h5 className='bg-white '>Price ({cart.length} items)</h5>
             <div className='d-flex bg-white'>
               <i class="fa-solid fa-indian-rupee-sign bg-white" id='totalAmount-rupee'></i>
-              <h6 className='bg-white'>{totalAmount.toLocaleString()}</h6></div>
+              <h6 className='bg-white'>{totalAmount.toLocaleString('en-IN')}</h6></div>
 
           </div>
           <div className='d-flex justify-content-between bg-white px-3 pt-2'>
             <h4 className='bg-white'>Toatal Amount</h4>
             <div className='bg-white d-flex'>
               <i class="fa-solid fa-indian-rupee-sign bg-white" id='totalAmount-rupee1'></i>
-              <h5 className='bg-white'>{totalAmount.toLocaleString()}</h5>
+              <h5 className='bg-white'>{totalAmount.toLocaleString('en-IN')}</h5>
             </div>
           </div><hr className='mb-0 mt-0' />
           <div className='bg-white pt-3 pb-2 text-end px-3'>

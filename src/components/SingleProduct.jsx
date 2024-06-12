@@ -201,7 +201,7 @@ const SingleProduct = () => {
         }
     }
 
-    let formattedPrice = parseFloat(data.price).toLocaleString('en-US');
+    let formattedPrice = parseFloat(data.price).toLocaleString('en-IN');
 
     // single product mapping function 
 
@@ -288,7 +288,7 @@ const SingleProduct = () => {
                                         <button onClick={() => addcartFunc(data._id)} className='cart-bt  '> <i style={{ marginRight: "8px" }} class="fa-solid fa-cart-shopping bg-transparent"></i>ADD TO CART</button>
 
                                 }
-                                {token ? <button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button> :
+                                {token ? <Link to={`/products/id/${data._id}`}><button className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button> </Link> :
                                     <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" className='buy-bt'><i style={{ marginRight: "8px" }} class="fa-solid fa-bolt bg-transparent"></i>BUY NOW</button>}
 
 

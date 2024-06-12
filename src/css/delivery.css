@@ -81,6 +81,13 @@
 
 }
 
+@media only screen and (min-width: 500px) and (max-width: 760px) {
+    .delivery-main-card  {
+        margin-top: 4.3rem;
+    }
+}
+
+
 
 
 .set-default-bt {

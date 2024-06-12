@@ -14,6 +14,7 @@ import ForgotPassword from "./components/ForgotPassword";
 import Address from "./components/Address";
 import ContactUs from "./components/ContactUs";
 import DeliveryAddress from "./components/DeliveryAddress";
+import OrderSummary from "./components/OrderSummary";
 
 export const cartContext = createContext();
 export const tokenContext = createContext();
@@ -63,6 +64,7 @@ function App() {
                 <Route path="/address" element={<Address />} />
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/delivery" element={<DeliveryAddress />} />
+                <Route path="/products/id/:itemId" element={<OrderSummary/>}/>
               </Routes>
             </BrowserRouter>
           </cartContext.Provider>

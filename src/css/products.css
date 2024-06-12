@@ -89,7 +89,7 @@ cursor: pointer;
 }
 
 #single-product-main-card{
-    margin-top: 5rem;
+    margin-top: 4.5rem;
 }
 
 @media only screen and (max-width : 762px) {
@@ -157,8 +157,16 @@ cursor: pointer;
     .latest-product-card{
         margin-top: 1.5rem;
     }
+    
 
 }
+
+@media only screen and (min-width: 500px) and (max-width: 760px) {
+    #single-product-main-card {
+        margin-top: 4.3rem;
+    }
+}
+
 
 .rating-card {
     width: 55px;

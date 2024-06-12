@@ -1,3 +1,9 @@
+
+#cart-main-cont{
+    margin-top: 4.6rem;
+    margin-bottom: 0.5rem;
+}
+
 .cart-img {
     width: 13rem;
 
@@ -19,7 +25,13 @@
     color: rgb(133, 128, 128);
 }
 
+
+
 @media only screen and (max-width : 762px) {
+    #cart-main-cont{
+        margin-top: 5.5rem;
+    }
+
     .cart-img {
         width: 10rem;
 
@@ -91,6 +103,14 @@
     }
     
 }
+
+@media only screen and (min-width: 500px) and (max-width: 760px) {
+     #cart-main-cont{
+        margin-top: 4.3rem;
+    }
+}
+
+
 
 @media only screen and (min-width : 762px) {
     .cart-bt-card {
