@@ -15,6 +15,7 @@ import Address from "./components/Address";
 import ContactUs from "./components/ContactUs";
 import DeliveryAddress from "./components/DeliveryAddress";
 import OrderSummary from "./components/OrderSummary";
+import Payment from "./components/Payment";
 
 export const cartContext = createContext();
 export const tokenContext = createContext();
@@ -66,6 +67,7 @@ function App() {
                 <Route path="/delivery" element={<DeliveryAddress />} />
                 <Route path="/products/id/:itemId" element={<OrderSummary/>}/>
                 <Route path="/cart/:itemId" element={<OrderSummary/>}/>
+                <Route path="/product/id/itemId/:paymentId" element={<Payment/>} />
               </Routes>
             </BrowserRouter>
           </cartContext.Provider>
