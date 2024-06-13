@@ -310,7 +310,7 @@ const Payment = () => {
                         className="accordion-collapse collapse show"
                         aria-labelledby="panelsStayOpen-headingOne"
                     >
-                        <div className="accordion-body row d-flex justify-content-center py-5">
+                        <div className="accordion-body  d-flex justify-content-center py-5">
                             <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
                                 Place Order
                             </div>
