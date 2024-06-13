@@ -61,7 +61,7 @@ const Payment = () => {
                             {loader ? <div className=" bg-transparent mb-1" disabled>
                                 <span className="spinner-border bg-transparent text-primary spinner-border-sm " style={{ height: "20px", width: "20px" }} role="status" aria-hidden="true"></span>
                                 <span className="visually-hidden">Loading...</span>
-                            </div> : <div className='d-flex bg-transparent mt-1'>
+                            </div> : <div className='d-flex bg-transparent '>
                                 <i class="fa-solid fa-indian-rupee-sign bg-transparent" id='totalAmount-rupee'></i>
 
                                 <h6 className='bg-transparent'>{data.price}</h6>
@@ -97,7 +97,7 @@ const Payment = () => {
                 </div>
 
                 <hr className='my-4' />
-                <div className="accordion-item bg-white">
+                <div className="accordion-item bg-white ">
                     <h2 className="accordion-header bg-white" id="headingTwo">
                         <div
                             className="accordion-button border collapsed bg-white"
@@ -109,7 +109,7 @@ const Payment = () => {
                         >
                             <div className='bg-transparent d-flex flex-column align-items-start'>
                                 <div className='bg-white d-flex flex-row align-items-center gap-3'>
-                                    <i className="fa-solid fa-credit-card account-section-icon mb-1" style={{ fontSize: "20px" }}></i>
+                                    <i className="fa-solid fa-credit-card account-section-icon mb-2" style={{ fontSize: "20px" }}></i>
                                     <h5 className='bg-white'>Credit / ATM Card</h5>
                                 </div>
 
@@ -125,11 +125,11 @@ const Payment = () => {
                     </h2>
                     <div
                         id="collapseTwo"
-                        className="accordion-collapse collapse"
+                        className="accordion-collapse collapse "
                         aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample"
                     >
-                        <div className="accordion-body bg-white row gap-2">
+                        <div className="accordion-body bg-white row gap-2   ">
 
                             <div className="col-12 col-md-5 bg-white">
                                 <label htmlFor="validationCustom01" className="form-label bg-white">
@@ -171,9 +171,9 @@ const Payment = () => {
                             <div className="col-12 col-md-3 bg-white mt-2 ">
 
                                 <div className='btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
-                                   <span className='bg-transparent' style={{marginRight:"0.5rem"}}>Pay</span>
+                                    <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
                                     <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
-                                    </div>
+                                </div>
 
                             </div>
 
@@ -181,19 +181,29 @@ const Payment = () => {
                     </div>
                 </div>
 
+                <hr className='my-4' />
 
-                {/* <div className="accordion-item">
-                    <h2 className="accordion-header" id="headingThree">
-                        <button
-                            className="accordion-button collapsed"
+                <div className="accordion-item bg-white">
+                    <h2 className="accordion-header bg-white" id="headingThree">
+                        <div
+                            className="accordion-button collapsed bg-white border"
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#collapseThree"
                             aria-expanded="false"
                             aria-controls="collapseThree"
                         >
-                            Accordion Item #3
-                        </button>
+                            <div className='bg-transparent d-flex flex-column align-items-start'>
+                                <div className='bg-white d-flex flex-row align-items-center gap-3'>
+                                    <i className="fa-solid fa-credit-card account-section-icon mb-2" style={{ fontSize: "20px" }}></i>
+                                    <h5 className='bg-white'>UPI</h5>
+                                </div>
+
+                                <div className='bg-white'>
+                                    <h6 className='bg-white rbi-text text-success'>Pay by any UPI app</h6>
+                                </div>
+                            </div>
+                        </div>
                     </h2>
                     <div
                         id="collapseThree"
@@ -212,7 +222,7 @@ const Payment = () => {
                             overflow.
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
 
 
