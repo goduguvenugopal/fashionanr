@@ -195,7 +195,7 @@ const Payment = () => {
                         >
                             <div className='bg-transparent d-flex flex-column align-items-start'>
                                 <div className='bg-white d-flex flex-row align-items-center gap-3'>
-                                    <i className="fa-solid fa-credit-card account-section-icon mb-2" style={{ fontSize: "20px" }}></i>
+                                    <i className="fa-solid  fa-building-columns account-section-icon mb-2" style={{ fontSize: "20px" }}></i>
                                     <h5 className='bg-white'>UPI</h5>
                                 </div>
 
@@ -220,46 +220,46 @@ const Payment = () => {
                                 </summary>
 
                                 <div className='bg-white d-flex justify-content-center mt-2'>
-                                <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
-                                    <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
-                                    <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                    <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
+                                        <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
+                                        <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                    </div>
                                 </div>
-                                </div>
-                               
+
 
                             </details>
                             <hr className='m-0' />
                             <details className='bg-white py-3   '>
                                 <summary className='bg-white p-1 fs-5 fw-bold d-flex justify-content-between'>
                                     Google Pay
-                                    <i class="fa-brands fa-google bg-white text-success fs-2"></i>
+                                    <i class="fa-brands fa-google bg-white text-info fs-2"></i>
 
                                 </summary>
 
                                 <div className='bg-white d-flex justify-content-center mt-2'>
-                                <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
-                                    <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
-                                    <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                    <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
+                                        <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
+                                        <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                    </div>
                                 </div>
-                                </div>
-                               
+
 
                             </details>
                             <hr className='m-0' />
                             <details className='bg-white py-3   '>
                                 <summary className='fs-5 bg-white p-1 fw-bold d-flex justify-content-between'>
                                     PayPal
-                                    <i class="fa-brands fa-paypal bg-white text- fs-2"></i>
+                                    <i class="fa-brands fa-paypal bg-white text-danger fs-2"></i>
 
                                 </summary>
 
                                 <div className='bg-white d-flex justify-content-center mt-2'>
-                                <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
-                                    <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
-                                    <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                    <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
+                                        <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
+                                        <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                    </div>
                                 </div>
-                                </div>
-                               
+
 
                             </details>
                             <hr className='m-0' />
@@ -271,12 +271,12 @@ const Payment = () => {
                                 </summary>
 
                                 <div className='bg-white d-flex justify-content-center mt-2'>
-                                <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
-                                    <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
-                                    <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                    <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
+                                        <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
+                                        <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                    </div>
                                 </div>
-                                </div>
-                               
+
 
                             </details>
                             <hr className='m-0' />
@@ -286,6 +286,41 @@ const Payment = () => {
                     </div>
                 </div>
             </div>
+            <hr className='my-4' />
+
+            <div className="accordion bg-white" id="accordionPanelsStayOpenExample">
+                <div className="accordion-item bg-white">
+                    <h2 className="accordion-header" id="panelsStayOpen-headingOne">
+                        <div
+                            className="accordion-button bg-white"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseOne"
+                            aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseOne"
+                        >
+                            <div className='bg-white d-flex flex-row align-items-center gap-3'>
+                                <i className="fa-solid  fa-money-check-dollar account-section-icon mb-2" style={{ fontSize: "20px" }}></i>
+                                <h5 className='bg-white'>Cash on Delivery</h5>
+                            </div>
+                        </div>
+                    </h2>
+                    <div
+                        id="panelsStayOpen-collapseOne"
+                        className="accordion-collapse collapse show"
+                        aria-labelledby="panelsStayOpen-headingOne"
+                    >
+                        <div className="accordion-body row d-flex justify-content-center py-5">
+                            <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
+                                Place Order
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
 
 
         </div>
