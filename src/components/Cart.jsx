@@ -122,7 +122,8 @@ const Cart = () => {
                   <button onClick={() => priceIncrement(item._id)} className='incre-bt '> +</button>
                 </div>
                 <div className='d-flex gap-2 bg-white'>
-                  <button className='buy-now-bt'>BUY NOW</button>
+                  <Link to={`/cart/${item._id}`}>   <button className='buy-now-bt'>BUY NOW</button></Link>
+                
 
                   <button onClick={() => itemRemoveFunc(item._id, item.title)} className='remove-bt'>REMOVE</button>
                 </div>

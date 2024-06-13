@@ -132,7 +132,7 @@ const OrderSummary = () => {
       <div className='bg-white  pt-4 pb-2 '>
         <h4 className='bg-white mb-4'>Price Details</h4>
         <div className='d-flex justify-content-between bg-white  '>
-          <h5 className='bg-white '>Price ({data.length} items)</h5>
+          <h5 className='bg-white '>Price ({data.quantity} Quantity)</h5>
           <div className='d-flex bg-white'>
             <i class="fa-solid fa-indian-rupee-sign bg-white" id='totalAmount-rupee'></i>
             <h6 className='bg-white'>{(data.price * data.quantity).toLocaleString('en-IN')}</h6></div>

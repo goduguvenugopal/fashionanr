@@ -65,6 +65,7 @@ function App() {
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/delivery" element={<DeliveryAddress />} />
                 <Route path="/products/id/:itemId" element={<OrderSummary/>}/>
+                <Route path="/cart/:itemId" element={<OrderSummary/>}/>
               </Routes>
             </BrowserRouter>
           </cartContext.Provider>
