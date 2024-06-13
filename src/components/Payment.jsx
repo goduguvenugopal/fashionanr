@@ -211,15 +211,77 @@ const Payment = () => {
                         aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample"
                     >
-                        <div className="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden
-                            by default, until the collapse plugin adds the appropriate classes that
-                            we use to style each element. These classes control the overall
-                            appearance, as well as the showing and hiding via CSS transitions. You
-                            can modify any of this with custom CSS or overriding our default
-                            variables. It's also worth noting that just about any HTML can go within
-                            the <code>.accordion-body</code>, though the transition does limit
-                            overflow.
+                        <div className="accordion-body bg-white">
+                            <details className='bg-white py-3   '>
+                                <summary className='bg-white p-1 fw-bold d-flex justify-content-between fs-5'>
+                                    Amazon Pay
+                                    <i class="fa-brands fa-cc-amazon-pay bg-white text-primary fs-2"></i>
+
+                                </summary>
+
+                                <div className='bg-white d-flex justify-content-center mt-2'>
+                                <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
+                                    <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
+                                    <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                </div>
+                                </div>
+                               
+
+                            </details>
+                            <hr className='m-0' />
+                            <details className='bg-white py-3   '>
+                                <summary className='bg-white p-1 fs-5 fw-bold d-flex justify-content-between'>
+                                    Google Pay
+                                    <i class="fa-brands fa-google bg-white text-success fs-2"></i>
+
+                                </summary>
+
+                                <div className='bg-white d-flex justify-content-center mt-2'>
+                                <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
+                                    <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
+                                    <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                </div>
+                                </div>
+                               
+
+                            </details>
+                            <hr className='m-0' />
+                            <details className='bg-white py-3   '>
+                                <summary className='fs-5 bg-white p-1 fw-bold d-flex justify-content-between'>
+                                    PayPal
+                                    <i class="fa-brands fa-paypal bg-white text- fs-2"></i>
+
+                                </summary>
+
+                                <div className='bg-white d-flex justify-content-center mt-2'>
+                                <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
+                                    <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
+                                    <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                </div>
+                                </div>
+                               
+
+                            </details>
+                            <hr className='m-0' />
+                            <details className='bg-white py-3   '>
+                                <summary className='bg-white fs-5 p-1 fw-bold d-flex justify-content-between'>
+                                    Whatsapp Pay
+                                    <i class="fa-brands fa-whatsapp bg-white text-success fs-2"></i>
+
+                                </summary>
+
+                                <div className='bg-white d-flex justify-content-center mt-2'>
+                                <div className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
+                                    <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
+                                    <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                </div>
+                                </div>
+                               
+
+                            </details>
+                            <hr className='m-0' />
+
+
                         </div>
                     </div>
                 </div>
