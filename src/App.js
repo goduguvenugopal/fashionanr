@@ -16,6 +16,8 @@ import ContactUs from "./components/ContactUs";
 import DeliveryAddress from "./components/DeliveryAddress";
 import OrderSummary from "./components/OrderSummary";
 import Payment from "./components/Payment";
+import OrderPlaced from "./components/OrderPlaced";
+import MyOrders from "./components/MyOrders";
 
 export const cartContext = createContext();
 export const tokenContext = createContext();
@@ -39,9 +41,9 @@ function App() {
       setCart(JSON.parse(localStorageCart));
     }
     // address retriveing from localStorage
-    const address = localStorage.getItem("userAddress")
-    if(address){
-      setDeliveryAddress(JSON.parse(address))
+    const address = localStorage.getItem("userAddress");
+    if (address) {
+      setDeliveryAddress(JSON.parse(address));
     }
   }, [token]);
 
@@ -65,9 +67,11 @@ function App() {
                 <Route path="/address" element={<Address />} />
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/delivery" element={<DeliveryAddress />} />
-                <Route path="/products/id/:itemId" element={<OrderSummary/>}/>
-                <Route path="/cart/:itemId" element={<OrderSummary/>}/>
-                <Route path="/product/id/itemId/:paymentId" element={<Payment/>} />
+                <Route path="/products/id/:itemId" element={<OrderSummary />} />
+                <Route path="/cart/:itemId" element={<OrderSummary />} />
+                <Route path="/product/id/itemId/:paymentId" element={<Payment />}/>
+                <Route path="/orderplaced" element={<OrderPlaced />} />
+                <Route path="/orders" element={<MyOrders />} />
               </Routes>
             </BrowserRouter>
           </cartContext.Provider>
