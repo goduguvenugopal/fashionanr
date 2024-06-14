@@ -67,7 +67,7 @@ const Payment = () => {
         catch (error) {
             setSpinner(false)
             console.log(error)
-            alert("Please Emter Correct Email For Order Confirmation")
+            alert("Please Enter Correct Email For Order Confirmation")
 
         }
     }
