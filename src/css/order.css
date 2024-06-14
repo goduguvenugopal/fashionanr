@@ -19,6 +19,21 @@
 }
 
 
+/* payment spinner styling  */
+
+.payment-spinner-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(131, 133, 134 , 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+
+}
+
 /* order placed component styling  */
 
 .order-placed-card {

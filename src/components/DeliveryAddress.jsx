@@ -11,6 +11,7 @@ const DeliveryAddress = () => {
     const [data, setData] = useState([])
     const [token] = useContext(tokenContext)
     const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
     const [mobile, setMobile] = useState("")
     const [address, setAddress] = useState("")
     const [userId, setUserId] = useState("")
@@ -25,7 +26,7 @@ const DeliveryAddress = () => {
 
     // save delivery address function 
 
-    const formData = { name, mobile, code, address, userId }
+    const formData = { name, mobile, email, code, address, userId }
 
     const formFunc = async (e) => {
         e.preventDefault();
@@ -37,6 +38,7 @@ const DeliveryAddress = () => {
             setMobile("")
             setCode("")
             setAddress("")
+            setEmail("")
             setSpinner(false)
 
 
@@ -183,6 +185,21 @@ const DeliveryAddress = () => {
                             </div>
                             <div className="mb-3 bg-white">
                                 <label htmlFor="exampleFormControlInput1" className="bg-white form-label">
+                                 Email
+                                </label>
+                                <input
+                                    name='email'
+                                    required
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    className="form-control"
+                                    id="exampleFormControlInput1"
+                                    placeholder="Enter Your Email"
+                                />
+                            </div>
+                            <div className="mb-3 bg-white">
+                                <label htmlFor="exampleFormControlInput1" className="bg-white form-label">
                                     Pin code
                                 </label>
                                 <input
@@ -246,8 +263,10 @@ const DeliveryAddress = () => {
                                 <div key={item._id} className='p-3 bg-white results-address-card '>
 
                                     <h5 className='bg-white mt-3'>{item.name}</h5>
-                                    <h6 className='bg-white my-3'>{item.address} {item.code}</h6>
+                                    <h6 style={{ fontSize: "0.9rem" }} className='bg-white text-secondary mt-3'>{item.email}</h6>
+                                    <h6 className='bg-white my-2'>{item.address} {item.code}</h6>
                                     <h6 style={{ fontSize: "0.9rem" }} className='bg-white text-secondary'>{item.mobile}</h6>
+                                   
 
                                     {deliveryAddress._id === item._id ? <button className='default-bt'>Default</button> :
 
