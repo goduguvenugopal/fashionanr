@@ -63,13 +63,11 @@ const Payment = () => {
                     navigate("/orderplaced")
                 }, 1000);
             }
-
-
-
         }
         catch (error) {
             setSpinner(false)
             console.log(error)
+            alert("Please Emter Correct Email For Order Confirmation")
 
         }
     }
