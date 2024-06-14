@@ -11,7 +11,7 @@ const ContactUs = () => {
     const [text, setText] = useState("")
     const [spinner, setSpinner] = useState(false)
 
-    const formData = { to: to, subject: subject, text: text }
+    const formData = { to: to, subject: subject, html: text }
 
     const formFunc = async (e) => {
         e.preventDefault();

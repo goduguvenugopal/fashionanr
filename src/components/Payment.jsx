@@ -15,7 +15,6 @@ const Payment = () => {
     const [deliveryAddress] = useContext(addressContext);
     const [subject] = useState("Fashionanr Order Placed Successfully")
     const [to] = useState(deliveryAddress.email)
-    const [text] = useState(`Hii ${deliveryAddress.name}, Order successfully Placed, Your order will be delivered In few days .Confirm Your Order No : ${paymentId}. Thank You for shopping with Fashionanr. Track your Order https://fashionanr.netlify.app/`)
     const [spinner, setSpinner] = useState(false)
     const navigate = useNavigate()
 
@@ -48,8 +47,20 @@ const Payment = () => {
     }, [paymentId])
 
 
-    const formData = { to: to, subject: subject, text: text }
+    const html = `
+        <h3>Hii ${deliveryAddress.name}</h3>
+        <h3 className="mt-3"> Order successfully Placed.</h3>
+        <h4 className="mt-3">Your order will be delivered In few days.</h4>
+        <h4 className="my-3">Confirm Your Order No : ${paymentId}.</h4>
+        <h4>Thank You for shopping with Fashionanr.</h4>
+        <h5 className="text-secondary my-3">Track your Order :</h5>
+        <button style={{height:"35px", width:"130px"}} className="btn bg-primary text-white"> <a className="text-white" href="https://fashionanr.netlify.app/" target="_blank">Track Order</a></button>
+         `
 
+
+
+    const formData = { to: to, subject: subject, html: html }
+    console.log(formData)
 
 
     // sending mail to the customer oder details
@@ -67,13 +78,10 @@ const Payment = () => {
         catch (error) {
             setSpinner(false)
             console.log(error)
-            alert("Please Enter Correct Email For Order Confirmation")
+            alert("Please Add delivery Address To Place The Order")
 
         }
     }
-
-
-
 
 
     return (

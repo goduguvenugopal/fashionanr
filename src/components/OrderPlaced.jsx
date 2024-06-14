@@ -35,9 +35,9 @@ const OrderPlaced = () => {
 
             </div>
             <div className='bg-white text-center'>
-                <h3 className='bg-white fw-bold mb-2'>Order Placed</h3>
-                <h5 className='bg-white text-secondary'>Track Your <Link className='bg-white fw-bold' style={{ textDecoration: "none" }} to="/orders">Order</Link></h5>
-                <Link style={{ textDecoration: "none" }} className='mt-2 fw-bold fs-4 btn bg-primary text-white' to="/">Continue Shopping</Link>
+                <h4 className='bg-white fw-bold mb-2'>Order Placed</h4>
+                <h6 className='bg-white text-secondary'>Track Your <Link className='bg-white fw-bold' style={{ textDecoration: "none" }} to="/orders">Order</Link></h6>
+                <Link style={{ textDecoration: "none" }} className='mt-2 fw-bold fs-6 btn bg-primary text-white' to="/">Continue Shopping</Link>
             </div>
         </div>
     )
