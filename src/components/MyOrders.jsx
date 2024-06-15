@@ -28,7 +28,7 @@ const MyOrders = () => {
                     <h4 className=' bg-white cat-title-text' >{item.title}</h4>
                     <div className=' d-flex justify-content-flex-start align-items-center gap-1 bg-white '>
                       <i class="fa-solid fa-indian-rupee-sign bg-white  " id='indian-rupee'></i>
-                      <h4 className='fs-5 bg-white'>{item.price.toLocaleString('en-IN')}</h4>
+                      <h4 className='fs-5 bg-white'>{item.price}</h4>
                     </div>
 
 
