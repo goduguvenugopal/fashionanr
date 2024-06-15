@@ -4,11 +4,11 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import "../css/order.css"
 import "../css/cart.css"
-import { addressContext } from '../App'
+import { addressContext, ordersContext } from '../App'
 
 
 const Payment = () => {
-
+    const [orders, setOrders] = useContext(ordersContext)
     const [data, setData] = useState([])
     const { paymentId } = useParams()
     const [loader, setLoader] = useState(false)
@@ -46,10 +46,14 @@ const Payment = () => {
 
     }, [paymentId])
 
-
+    //sending mail about order details and confirmatiom message to customer 
     const html = `
         <h3>Hii ${deliveryAddress.name}</h3>
         <h3 className="mt-3"> Order successfully Placed.</h3>
+        <img src=${data.image} alt=${data.category} style={{width:"250px",height:"250px"}} className="mt-3 "/>
+          <h3 className="my-1">Product : ${data.title}</h3>
+          <h3 className="my-1">Price : ${data.price}</h3>
+          <h3 className="my-1">description : ${data.description}</h3>
         <h4 className="mt-3">Your order will be delivered In few days.</h4>
         <h4 className="my-3">Confirm Your Order No : ${paymentId}.</h4>
         <h4>Thank You for shopping with Fashionanr.</h4>
@@ -60,8 +64,7 @@ const Payment = () => {
 
 
     const formData = { to: to, subject: subject, html: html }
-    console.log(formData)
-
+   
 
     // sending mail to the customer oder details
     const orderConfirmMail = async () => {
@@ -70,7 +73,11 @@ const Payment = () => {
             const response = await axios.post("https://fashionkart-server.onrender.com/mail/sendmail", formData)
 
             if (response) {
+
                 setTimeout(() => {
+                    // orders sending to my orders component
+                    setOrders([...orders, { ...data }])
+                    localStorage.setItem("orders" , JSON.stringify([...orders , {...data}]))
                     navigate("/orderplaced")
                 }, 1000);
             }
@@ -87,15 +94,15 @@ const Payment = () => {
     return (
 
         <>
-            <div className='container bg-white py-5 pb-3 pt-3 px-3' id='single-product-main-card'>
+            <div className='container bg-white py-5 pb-3 pt-3 px-3 ' id='single-product-main-card'>
                 <h5 className='bg-white'>Payments</h5>
 
 
                 <div className="accordion mt-3 bg-white" id="accordionExample">
-                    <div className="accordion-item bg-white">
+                    <div className="accordion-item bg-white ">
                         <h2 className="accordion-header" id="headingOne">
                             <div
-                                className="accordion-button text-primary d-flex gap-3"
+                                className="accordion-button text-primary d-flex gap-3 border"
                                 type="button"
                                 data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne"
@@ -142,7 +149,7 @@ const Payment = () => {
                     </div>
 
                     <hr className='my-4' />
-                    <div className="accordion-item bg-white ">
+                    <div className="accordion-item bg-white border">
                         <h2 className="accordion-header bg-white" id="headingTwo">
                             <div
                                 className="accordion-button border collapsed bg-white"
@@ -170,11 +177,11 @@ const Payment = () => {
                         </h2>
                         <div
                             id="collapseTwo"
-                            className="accordion-collapse collapse "
+                            className="accordion-collapse collapse bg-white " style={{ paddingLeft: "0.8rem", paddingRight: "0.8rem" }}
                             aria-labelledby="headingTwo"
                             data-bs-parent="#accordionExample"
                         >
-                            <div className="accordion-body bg-white row gap-2   ">
+                            <div className="accordion-body bg-white row gap-2  border ">
 
                                 <div className="col-12 col-md-5 bg-white">
                                     <label htmlFor="validationCustom01" className="form-label bg-white">
@@ -228,7 +235,7 @@ const Payment = () => {
 
                     <hr className='my-4' />
 
-                    <div className="accordion-item bg-white">
+                    <div className="accordion-item bg-white border">
                         <h2 className="accordion-header bg-white" id="headingThree">
                             <div
                                 className="accordion-button collapsed bg-white border"
@@ -238,7 +245,7 @@ const Payment = () => {
                                 aria-expanded="false"
                                 aria-controls="collapseThree"
                             >
-                                <div className='bg-transparent d-flex flex-column align-items-start'>
+                                <div className='bg-transparent d-flex flex-column align-items-start '>
                                     <div className='bg-white d-flex flex-row align-items-center gap-3'>
                                         <i className="fa-solid  fa-building-columns account-section-icon mb-2" style={{ fontSize: "20px" }}></i>
                                         <h5 className='bg-white'>UPI</h5>
@@ -333,7 +340,7 @@ const Payment = () => {
                 </div>
                 <hr className='my-4' />
 
-                <div className="accordion bg-white" id="accordionPanelsStayOpenExample">
+                <div className="accordion bg-white border" id="accordionPanelsStayOpenExample">
                     <div className="accordion-item bg-white">
                         <h2 className="accordion-header" id="panelsStayOpen-headingOne">
                             <div
