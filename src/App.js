@@ -18,6 +18,7 @@ import OrderSummary from "./components/OrderSummary";
 import Payment from "./components/Payment";
 import OrderPlaced from "./components/OrderPlaced";
 import MyOrders from "./components/MyOrders";
+import TrackOrder from "./components/TrackOrder";
 
 
 
@@ -89,6 +90,7 @@ function App() {
                 />
                 <Route path="/orderplaced" element={<OrderPlaced />} />
                 <Route path="/orders" element={<MyOrders />} />
+                <Route path="/orders/:orderId" element={<TrackOrder/>}/>
               </Routes>
             </BrowserRouter>
           </cartContext.Provider>

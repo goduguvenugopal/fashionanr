@@ -16,31 +16,23 @@ const MyOrders = () => {
           {orders.map((item) => {
             return (
               <>
-                <div key={item._id} className='cart-item-card bg-white px-3 py-3'>
-
-
-                  <div>
-                    <img src={item.image} alt={item.category} className='cart-item-img bg-white' />
-
-                  </div>
-                  <div className=' bg-white pt-3 px-3'>
-                    <h5 className='text-uppercase bg-white cat-txt' >{item.category}</h5>
-                    <h4 className=' bg-white cat-title-text' >{item.title}</h4>
-                    <div className=' d-flex justify-content-flex-start align-items-center gap-1 bg-white '>
-                      <i class="fa-solid fa-indian-rupee-sign bg-white  " id='indian-rupee'></i>
-                      <h4 className='fs-5 bg-white'>{item.price}</h4>
+                <Link style={{ textDecoration: "none" }} className='text-dark' to={`/orders/${item._id}`}>
+                  <div key={item._id} className='cart-item-card bg-white px-3 py-3'>
+                    <div>
+                      <img src={item.image} alt={item.category} className='cart-item-img bg-white' />
                     </div>
-
-
+                    <div className=' bg-white pt-3 px-3'>
+                      <h5 className='text-uppercase bg-white cat-txt' >{item.category}</h5>
+                      <h4 className=' bg-white cat-title-text' >{item.title}</h4>
+                      <div className=' d-flex justify-content-flex-start align-items-center gap-1 bg-white '>
+                        <i class="fa-solid fa-indian-rupee-sign bg-white  " id='indian-rupee'></i>
+                        <h4 className='fs-5 bg-white'>{item.price}</h4>
+                      </div>
+                    </div>
                   </div>
-
-
-                </div>
-
+                </Link>
 
                 <hr className='my-3 ' />
-
-
 
               </>
 
