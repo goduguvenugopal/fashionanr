@@ -57,8 +57,11 @@ const MyOrders = () => {
 
 
   useEffect(() => {
-    navigate("/")
-  }, [token])
+    if(!token){
+      navigate("/")
+    }
+    
+  }, [token , navigate])
 
   return (
     <div className='container bg-white  pt-3' id='cart-main-cont'>
