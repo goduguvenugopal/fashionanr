@@ -21,13 +21,13 @@
 
 /* payment spinner styling  */
 
-.payment-spinner-card{
+.payment-spinner-card {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background-color: rgb(131, 133, 134 , 0.5);
+    background-color: rgb(131, 133, 134, 0.5);
     position: fixed;
     top: 0;
     left: 0;
@@ -46,22 +46,24 @@
     align-items: center;
     background-color: white;
     margin-top: 4rem;
-    
+
 
 }
-@media only screen and (max-width : 760px){
+
+@media only screen and (max-width : 760px) {
     .order-placed-card {
         margin-top: 0;
-        
-    
-    } 
+
+
+    }
 }
-@media only screen and (max-width : 760px) and (min-width : 500px){
+
+@media only screen and (max-width : 760px) and (min-width : 500px) {
     .order-placed-card {
         margin-top: 3rem;
-        
-    
-    } 
+
+
+    }
 }
 
 .check-card {
@@ -82,74 +84,78 @@
     color: white;
 }
 
-.dot-card1{
+.dot-card1 {
     position: absolute;
     top: 10px;
-    background-color:  rgb(24, 205, 24);
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-}
-.dot-card2{
-    position: absolute;
-    bottom: 10px;
-    background-color:  rgb(24, 205, 24);
+    background-color: rgb(24, 205, 24);
     border-radius: 50%;
     height: 20px;
     width: 20px;
 }
 
-.dot-card3{
+.dot-card2 {
+    position: absolute;
+    bottom: 10px;
+    background-color: rgb(24, 205, 24);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+}
+
+.dot-card3 {
     position: absolute;
     left: 10px;
-    background-color:  rgb(24, 205, 24);
+    background-color: rgb(24, 205, 24);
     border-radius: 50%;
     height: 20px;
     width: 20px;
 }
-.dot-card4{
+
+.dot-card4 {
     position: absolute;
     right: 10px;
-    background-color:  rgb(24, 205, 24);
+    background-color: rgb(24, 205, 24);
     border-radius: 50%;
     height: 20px;
     width: 20px;
 }
-.dot-card5{
+
+.dot-card5 {
     position: absolute;
     top: 60px;
     left: 60px;
     bottom: 10px;
-    background-color:  rgb(24, 205, 24);
+    background-color: rgb(24, 205, 24);
     border-radius: 50%;
     height: 20px;
     width: 20px;
 }
 
-.dot-card6{
+.dot-card6 {
     position: absolute;
     top: 60px;
     right: 60px;
-    background-color:  rgb(24, 205, 24);
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-}
-.dot-card7{
-    position: absolute;
-    bottom: 60px;
-    right: 60px;
-    background-color:  rgb(24, 205, 24);
+    background-color: rgb(24, 205, 24);
     border-radius: 50%;
     height: 20px;
     width: 20px;
 }
 
-.dot-card8{
+.dot-card7 {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    background-color: rgb(24, 205, 24);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+}
+
+.dot-card8 {
     position: absolute;
     bottom: 60px;
     left: 60px;
-    background-color:  rgb(24, 205, 24);
+    background-color: rgb(24, 205, 24);
     border-radius: 50%;
     height: 20px;
     width: 20px;
@@ -158,88 +164,89 @@
 
 /* orders component styling  */
 
-.orderid-text{
+.orderid-text {
     color: rgb(121, 122, 123);
 }
 
-.track-card{
+.track-card {
     display: flex;
     align-items: start;
     background-color: rgb(212, 242, 212);
     column-gap: 20px;
     padding: 7px;
-    
-}
-
-.track-check-card{
-background-color: rgb(20, 152, 20);
-border-radius: 50%;
-width: 18px;
-height: 18px;
-display: flex;
-justify-content: center;
-align-items: center;
-box-shadow: 0 0 9px green;
-margin-top: 3px;
- 
-
-}
-.track-check-icon{
-font-size: 10px;
-background-color: transparent;
-color: white;
 
 }
 
-.order-confirm-text{
+.track-check-card {
+    background-color: rgb(20, 152, 20);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 9px green;
+    margin-top: 3px;
+
+
+}
+
+.track-check-icon {
+    font-size: 10px;
+    background-color: transparent;
+    color: white;
+
+}
+
+.order-confirm-text {
     font-size: 17px;
 }
 
 
-.order-confirm-subtext{
+.order-confirm-subtext {
     font-size: 13px;
     color: rgb(101, 102, 103);
 }
 
-.track-card1{
+.track-card1 {
     display: flex;
     align-items: start;
     background-color: white;
     column-gap: 20px;
     padding: 7px;
     margin-top: 15px;
-    
-}
-
-.track-check-card1{
- border: 2px solid  rgb(140, 143, 141);
- background-color: white;
-border-radius: 50%;
-width: 18px;
-height: 18px;
-display: flex;
-justify-content: center;
-align-items: center;
- 
-margin-top: 2px;
- 
 
 }
- 
 
-.order-confirm-text1{
+.track-check-card1 {
+    border: 2px solid rgb(140, 143, 141);
+    background-color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2px;
+
+
+}
+
+
+.order-confirm-text1 {
     font-size: 17px;
     color: rgb(110, 114, 113);
 }
 
 
- .cancel-card{
+.cancel-card {
     display: flex;
     justify-content: space-around;
 
- }
+}
 
- .cancel-text{
+.cancel-text {
     padding-top: 5px;
     display: flex;
     justify-content: center;
@@ -251,5 +258,5 @@ margin-top: 2px;
     background-color: white;
     color: rgb(97, 97, 100);
     cursor: pointer;
- 
- }
+
+}

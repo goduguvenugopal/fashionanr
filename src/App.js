@@ -20,17 +20,14 @@ import OrderPlaced from "./components/OrderPlaced";
 import MyOrders from "./components/MyOrders";
 import TrackOrder from "./components/TrackOrder";
 
-
-
 // createContext
 export const cartContext = createContext();
 export const tokenContext = createContext();
 export const addressContext = createContext();
-export const ordersContext = createContext();
-
+ 
 
 function App() {
-  const [orders , setOrders] = useState([])
+ 
   const [cart, setCart] = useState([]);
   const [token, setToken] = useState("");
   const [deliveryAddress, setDeliveryAddress] = useState([]);
@@ -53,50 +50,47 @@ function App() {
       setDeliveryAddress(JSON.parse(address));
     }
 
-        // orders retriveing from localStorage
-        const orders = localStorage.getItem("orders");
-        if (orders) {
-          setOrders(JSON.parse(orders));
-        }
   }, [token]);
 
   return (
-
     <>
-    <ordersContext.Provider value={[orders , setOrders]}> 
-      <addressContext.Provider value={[deliveryAddress, setDeliveryAddress]}>
-        <tokenContext.Provider value={[token, setToken]}>
-          <cartContext.Provider value={[cart, setCart]}>
-            <BrowserRouter>
-              <Navbar />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/products/:id" element={<SingleProduct />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/footer" element={<Footer />} />
-                <Route path="/account" element={<Account />} />
-                <Route path="/password" element={<ForgotPassword />} />
-                <Route path="/address" element={<Address />} />
-                <Route path="/contact" element={<ContactUs />} />
-                <Route path="/delivery" element={<DeliveryAddress />} />
-                <Route path="/products/id/:itemId" element={<OrderSummary />} />
-                <Route path="/cart/:itemId" element={<OrderSummary />} />
-                <Route
-                  path="/product/id/itemId/:paymentId"
-                  element={<Payment />}
-                />
-                <Route path="/orderplaced" element={<OrderPlaced />} />
-                <Route path="/orders" element={<MyOrders />} />
-                <Route path="/orders/:orderId" element={<TrackOrder/>}/>
-              </Routes>
-            </BrowserRouter>
-          </cartContext.Provider>
-        </tokenContext.Provider>
-      </addressContext.Provider>
-      </ordersContext.Provider>
+     
+        <addressContext.Provider value={[deliveryAddress, setDeliveryAddress]}>
+          <tokenContext.Provider value={[token, setToken]}>
+            <cartContext.Provider value={[cart, setCart]}>
+              <BrowserRouter>
+                <Navbar />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/products" element={<Products />} />
+                  <Route path="/products/:id" element={<SingleProduct />} />
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="/signup" element={<Signup />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/footer" element={<Footer />} />
+                  <Route path="/account" element={<Account />} />
+                  <Route path="/password" element={<ForgotPassword />} />
+                  <Route path="/address" element={<Address />} />
+                  <Route path="/contact" element={<ContactUs />} />
+                  <Route path="/delivery" element={<DeliveryAddress />} />
+                  <Route
+                    path="/products/id/:itemId"
+                    element={<OrderSummary />}
+                  />
+                  <Route path="/cart/:itemId" element={<OrderSummary />} />
+                  <Route
+                    path="/product/id/itemId/:paymentId"
+                    element={<Payment />}
+                  />
+                  <Route path="/orderplaced" element={<OrderPlaced />} />
+                  <Route path="/orders" element={<MyOrders />} />
+                  <Route path="/orders/:orderId" element={<TrackOrder />} />
+                </Routes>
+              </BrowserRouter>
+            </cartContext.Provider>
+          </tokenContext.Provider>
+        </addressContext.Provider>
+     
     </>
   );
 }

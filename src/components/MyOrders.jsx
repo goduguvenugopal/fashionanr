@@ -1,19 +1,72 @@
-import React, { useContext } from 'react'
-import { ordersContext } from '../App'
+import React, { useContext, useEffect, useState } from 'react'
 import "../css/cart.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { tokenContext } from '../App'
+import axios from 'axios'
+
 
 const MyOrders = () => {
-  const [orders] = useContext(ordersContext)
+  const [token] = useContext(tokenContext)
+  const [userId, setUserId] = useState("")
+  const [data, setData] = useState([])
+  const [spinner, setSpinner] = useState(false)
+  const navigate = useNavigate()
 
+
+  useEffect(() => {
+    // fetching user id function 
+    const getUserFunc = async () => {
+
+      setSpinner(true)
+      try {
+        const response = await axios.get("https://fashionkart-server.onrender.com/authentication/getuser", {
+          headers: {
+            token: token
+          }
+        })
+        setUserId(response.data._id)
+
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+
+    getUserFunc()
+
+    // fetching all orders 
+    const getOrders = async () => {
+
+      try {
+        const response = await axios.get(`https://fashionkart-server.onrender.com/order/get-all-orders/${userId}`)
+        setData(response.data)
+        setSpinner(false)
+      }
+      catch (error) {
+        console.log(error)
+      }
+
+
+    }
+
+
+    getOrders()
+
+
+  }, [token, userId])
+
+
+  useEffect(() => {
+    navigate("/")
+  }, [token])
 
   return (
     <div className='container bg-white  pt-3' id='cart-main-cont'>
       <h5 className='bg-white mt-2'>My Orders</h5>
       <hr className='my-3 ' />
-      {orders.length ?
+      {data.length ?
         <>
-          {orders.map((item) => {
+          {data.map((item) => {
             return (
               <>
                 <Link style={{ textDecoration: "none" }} className='text-dark' to={`/orders/${item._id}`}>
@@ -40,8 +93,18 @@ const MyOrders = () => {
           })}
         </>
         : <div style={{ height: "70vh" }} className="bg-white d-flex flex-column justify-content-center align-items-center fw-bold fs-4">
-          No Orders
-          <Link style={{ textDecoration: "none" }} className='mt-2 fw-bold fs-6 btn bg-primary text-white' to="/">Continue Shopping</Link>
+
+          {!spinner ? <div className=" d-flex flex-column align-items-center justify-content-center bg-white" disabled>
+            No Orders
+            <Link style={{ textDecoration: "none" }} className='mt-2 fw-bold fs-6 btn bg-primary text-white' to="/">Continue Shopping</Link>
+          </div> : <div className=" d-flex align-items-center justify-content-center " disabled>
+            <span className="spinner-border bg-white text-primary spinner-border-sm " style={{ height: "25px", width: "25px" }} role="status" aria-hidden="true"></span>
+            <span className="visually-hidden">Loading...</span>
+          </div>}
+
+
+
+
         </div>}
 
     </div>

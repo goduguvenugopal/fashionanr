@@ -1,17 +1,16 @@
 import React, { useState, useEffect, useContext } from 'react'
 import "../css/cart.css"
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import "../css/order.css"
 import Footer from "./Footer"
-import { ordersContext } from '../App'
 import "../css/cart.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const TrackOrder = () => {
-    const [ setOrders] = useContext(ordersContext)
+
     const [data, setData] = useState([])
     const { orderId } = useParams()
     const [loader, setLoader] = useState(false)
@@ -28,9 +27,9 @@ const TrackOrder = () => {
         const getSingle = async () => {
             setLoader(true)
             try {
-                const response = await axios.get(`${API}/product/findproduct/${orderId}`)
+                const response = await axios.get(`${API}/order/get-single-order/${orderId}`)
 
-                setData(response.data.data)
+                setData(response.data)
                 setLoader(false)
 
             } catch (err) {
@@ -57,29 +56,24 @@ const TrackOrder = () => {
     }, [orderId])
 
 
-    //    order cancel function
+    // cancel order function
 
-    const orderCancel = () => {
-        setModal(true)
-        const orders = localStorage.getItem("orders")
-        if (orders) {
-            const localOrders = JSON.parse(orders)
+    const cancelFunc = async () => {
 
-            const cancelled = localOrders.filter((item) => item._id !== orderId)
-            setOrders(cancelled)
+        try {
+            await axios.delete(`${API}/order/delete-order/${orderId}`)
 
-            localStorage.setItem("orders", JSON.stringify(cancelled))
-            toast.success("Order has Been cancelled")
             setModal(false)
+            toast.success("Order Has Been Cancelled")
             setTimeout(() => {
                 navigate("/orders")
-            }, 1200);
+            }, 1000);
+
+        } catch (err) {
+            console.log(err)
+            toast.success("Please Try Again Order Has Not Been Cancelled")
         }
-
     }
-
-
-
 
     return (
         <>
@@ -161,7 +155,8 @@ const TrackOrder = () => {
                         <h6 className='bg-white '  >Cancel</h6>
                     </div>
                     <div className='cancel-text' >
-                        <h6 className='bg-white '>Chat with us</h6>
+                        <Link className='bg-white text-dark' style={{ textDecoration: "none" }} to="/contact">  <h6 className='bg-white '>Chat with us</h6></Link>
+
                     </div>
 
                 </div>
@@ -184,7 +179,7 @@ const TrackOrder = () => {
                             <button onClick={() => setModal(false)} style={{ width: "8.5rem" }} className="btn btn-outline-dark">
                                 Back
                             </button>
-                            <button onClick={orderCancel} style={{ width: "8.5rem" }} className="btn btn-danger">
+                            <button onClick={cancelFunc} style={{ width: "8.5rem" }} className="btn btn-danger">
                                 Cancel Order
                             </button></div>
                     </div>

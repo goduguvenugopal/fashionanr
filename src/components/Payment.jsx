@@ -4,11 +4,12 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import "../css/order.css"
 import "../css/cart.css"
-import { addressContext, ordersContext } from '../App'
+import { addressContext,  tokenContext } from '../App'
 
 
 const Payment = () => {
-    const [orders, setOrders] = useContext(ordersContext)
+    const [token] = useContext(tokenContext)
+    const [userId, setUserId] = useState("")
     const [data, setData] = useState([])
     const { paymentId } = useParams()
     const [loader, setLoader] = useState(false)
@@ -44,7 +45,25 @@ const Payment = () => {
 
 
 
-    }, [paymentId])
+        // fetching user id function 
+        const getUserFunc = async () => {
+
+            try {
+                const response = await axios.get("https://fashionkart-server.onrender.com/authentication/getuser", {
+                    headers: {
+                        token: token
+                    }
+                })
+                setUserId(response.data._id)
+
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+
+        getUserFunc()
+    }, [paymentId, token])
 
     //sending mail about order details and confirmatiom message to customer 
     const html = `
@@ -62,22 +81,35 @@ const Payment = () => {
          `
 
 
-
+// mail properties 
     const formData = { to: to, subject: subject, html: html }
-   
 
-    // sending mail to the customer oder details
+    // order details 
+    const orderDetails = {
+        category: data.category,
+        title: data.title,
+        price: data.price,
+        description : data.description,
+        rating: data.rating,
+        image: data.image,
+        userId: userId
+    }
+
+  
+
     const orderConfirmMail = async () => {
         setSpinner(true)
         try {
+            // sending order details to the database
+            await axios.post("https://fashionkart-server.onrender.com/order/add-order", orderDetails)
+          
+            // sending mail to the customer oder details
             const response = await axios.post("https://fashionkart-server.onrender.com/mail/sendmail", formData)
 
             if (response) {
 
                 setTimeout(() => {
                     // orders sending to my orders component
-                    setOrders([...orders, { ...data }])
-                    localStorage.setItem("orders" , JSON.stringify([...orders , {...data}]))
                     navigate("/orderplaced")
                 }, 1000);
             }
@@ -88,6 +120,12 @@ const Payment = () => {
             alert("Please Add delivery Address To Place The Order")
 
         }
+
+
+
+
+
+
     }
 
 
