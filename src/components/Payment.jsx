@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import "../css/order.css"
 import "../css/cart.css"
-import { addressContext,  tokenContext } from '../App'
+import { addressContext, tokenContext } from '../App'
 
 
 const Payment = () => {
@@ -81,7 +81,7 @@ const Payment = () => {
          `
 
 
-// mail properties 
+    // mail properties 
     const formData = { to: to, subject: subject, html: html }
 
     // order details 
@@ -89,23 +89,23 @@ const Payment = () => {
         category: data.category,
         title: data.title,
         price: data.price,
-        description : data.description,
+        description: data.description,
         rating: data.rating,
         image: data.image,
         userId: userId
     }
 
-  
+
 
     const orderConfirmMail = async () => {
         setSpinner(true)
         try {
-            // sending order details to the database
-            await axios.post("https://fashionkart-server.onrender.com/order/add-order", orderDetails)
-          
+
+
             // sending mail to the customer oder details
             const response = await axios.post("https://fashionkart-server.onrender.com/mail/sendmail", formData)
-
+            // sending order details to the database
+            await axios.post("https://fashionkart-server.onrender.com/order/add-order", orderDetails)
             if (response) {
 
                 setTimeout(() => {
@@ -120,11 +120,6 @@ const Payment = () => {
             alert("Please Add delivery Address To Place The Order")
 
         }
-
-
-
-
-
 
     }
 
