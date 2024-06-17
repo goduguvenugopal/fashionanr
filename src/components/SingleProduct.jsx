@@ -130,12 +130,12 @@ const SingleProduct = () => {
             <>
                 <div className='container bg-white py-5 ' style={{ marginTop: "4.5rem" }}>
                     <div className='row'>
-                        <div className='col-12 col-md-6 bg-white text-center pb-4 '>
+                        <div className='col-12 col-md-4 bg-white text-center pb-4 '>
                             <Skeleton height="330px" width="320px" />
 
                         </div><hr className='d-md-none mb-0 ' />
 
-                        <div className='pb-3 col-12 col-md-6 bg-white pt-3 px-3'>
+                        <div className='pb-3 col-12 col-md-8 bg-white pt-3 px-3'>
                             <Skeleton width="170px" height="40px" />
                             <Skeleton className='mt-3' height="40px" />
                             <Skeleton className='mt-3' height="40px" />
@@ -212,7 +212,7 @@ const SingleProduct = () => {
 
                 <div className='container bg-white py-5 ' id='single-product-main-card'>
                     <div className='row'>
-                        <div className='col-12 col-md-6 bg-white text-center pb-4 ' style={{ position: "relative" }}>
+                        <div className='col-12 col-md-4 bg-white  pb-4  text-center px-3' style={{ position: "relative" }}>
 
                             <img height="330px" width="320px" key={data._id} src={data.image} className='single-img bg-white' alt={data.category} />
                             <i onClick={shareFunc} className="fa-solid fa-share-nodes share-icon"></i>
@@ -220,7 +220,7 @@ const SingleProduct = () => {
 
                         </div><hr className='d-md-none mb-0 ' />
 
-                        <div className='pb-3 col-12 col-md-6 bg-white pt-3 px-3'>
+                        <div className='pb-3 col-12 col-md-8 bg-white pt-3 px-3 '>
                             <h5 key={data._id} className='text-uppercase text-black-50 bg-white' >{data.category}</h5>
                             <h4 key={data._id} className='display-5 bg-white' >{data.title}</h4>
                             <div className='bg-success mr-2 rating-card mt-3' >

@@ -104,10 +104,7 @@ const MyOrders = () => {
             <span className="spinner-border bg-white text-primary spinner-border-sm " style={{ height: "25px", width: "25px" }} role="status" aria-hidden="true"></span>
             <span className="visually-hidden">Loading...</span>
           </div>}
-
-
-
-
+          
         </div>}
 
     </div>
