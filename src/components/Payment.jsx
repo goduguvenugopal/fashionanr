@@ -149,7 +149,7 @@ const Payment = () => {
                                 </div> : <div className='d-flex bg-transparent '>
                                     <i class="fa-solid fa-indian-rupee-sign bg-transparent" id='totalAmount-rupee'></i>
 
-                                    <h6 className='bg-transparent'>{data.price}</h6>
+                                    <h6 className='bg-transparent'>{data.price === undefined ? "" : data.price.toLocaleString('en-IN')}</h6>
                                 </div>}
 
 
@@ -166,7 +166,7 @@ const Payment = () => {
                                     <h5 className='bg-transparent'>Price</h5>
                                     <div className='d-flex  bg-transparent '>
                                         <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>
-                                        <h6 className=' bg-transparent '>{data.price}</h6></div>
+                                        <h6 className=' bg-transparent '>{data.price === undefined ? "" : data.price.toLocaleString('en-IN')}</h6></div>
 
                                 </div>
 
@@ -257,7 +257,7 @@ const Payment = () => {
 
                                     <div onClick={orderConfirmMail} className='btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
                                         <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
-                                        <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                        <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price === undefined ? "" : data.price.toLocaleString('en-IN')}
                                     </div>
 
                                 </div>
@@ -307,7 +307,7 @@ const Payment = () => {
                                     <div className='bg-white d-flex justify-content-center mt-2'>
                                         <div onClick={orderConfirmMail} className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
                                             <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
-                                            <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                            <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price === undefined ? "" : data.price.toLocaleString('en-IN')}
                                         </div>
                                     </div>
 
@@ -324,7 +324,7 @@ const Payment = () => {
                                     <div className='bg-white d-flex justify-content-center mt-2'>
                                         <div onClick={orderConfirmMail} className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
                                             <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
-                                            <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                            <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{ data.price === undefined ? "" : data.price.toLocaleString('en-IN')}
                                         </div>
                                     </div>
 
@@ -341,7 +341,7 @@ const Payment = () => {
                                     <div className='bg-white d-flex justify-content-center mt-2'>
                                         <div onClick={orderConfirmMail} className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
                                             <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
-                                            <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                            <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{ data.price === undefined ? "" : data.price.toLocaleString('en-IN')}
                                         </div>
                                     </div>
 
@@ -358,7 +358,7 @@ const Payment = () => {
                                     <div className='bg-white d-flex justify-content-center mt-2'>
                                         <div onClick={orderConfirmMail} className='col-12 col-md-4 btn bg-warning fs-6 fw-bold d-flex align-items-center  justify-content-center'>
                                             <span className='bg-transparent' style={{ marginRight: "0.5rem" }}>Pay</span>
-                                            <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{data.price}
+                                            <i class="fa-solid fa-indian-rupee-sign  bg-transparent " id='totalAmount-rupee'></i>{ data.price === undefined ? "" : data.price.toLocaleString('en-IN')}
                                         </div>
                                     </div>
 

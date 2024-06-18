@@ -35,7 +35,7 @@ const Home = () => {
   }, [])
 
 
-  // loader 
+  // loader KO
   const Loading = () => {
     return (
       <>
