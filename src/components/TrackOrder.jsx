@@ -105,7 +105,7 @@ const TrackOrder = () => {
                         <h6 className='bg-white mt-1'>Rating</h6>
                         <div className=' d-flex justify-content-flex-start align-items-center gap-1 bg-white '>
                             <i class="fa-solid fa-indian-rupee-sign bg-white  " id='indian-rupee'></i>
-                            <h4 className='fs-5 bg-white'>{data.price}</h4>
+                            <h4 className='fs-5 bg-white'>{data.price === undefined ? "" : data.price.toLocaleString('en-IN')}</h4>
                         </div>
                     </div>
                 </div>
