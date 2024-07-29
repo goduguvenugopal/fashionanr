@@ -70,11 +70,6 @@ const Products = () => {
                     <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("children")}>Childrenwear</button>
 
                     <button className='btn btn-outline-dark me-2 filter-bt' onClick={() => filterFunc("bag")}>PlasticWireBag's</button>
-
-
-
-
-
                 </div>
                 <div className='products-cont pt-5 pb-3 px-3'>
                     {filter.map((item) => {
@@ -126,7 +121,10 @@ const Products = () => {
 
     return (
         <div className='container bg-white text-center py-3 latest-product-card'>
-            <h4 className='bg-white '>Latest Products</h4>
+           <div className="latest-pro-cont bg-white">   
+            <h4 className='bg-white latest-text'>Latest Products</h4>
+            </div>
+          
             <hr className='mb-4' />
             {loader ? <Loading /> : <ShowProducts />}
         </div>
