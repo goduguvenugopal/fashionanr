@@ -22,7 +22,7 @@ const Navbar = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${API}/product/getproducts`);
-                setData(response.data);
+                setData(response.data.reverse());
                 setOriginalData(response.data); 
             } catch (error) {
                 console.log(error);

@@ -167,7 +167,7 @@ const Cart = () => {
 
 
         <div className='bg-white d-flex flex-column justify-content-center align-items-center' style={{ height: "100vh", width: "100vw" }} >
-          <img src='\images\men\cart.png' alt='cart' className='bg-white cart-img' />
+          <img src='\images\carousel\cart.png' alt='cart' className='bg-white cart-img' />
           <h5 className='text-secondary bg-white' style={{ marginLeft: "1.5rem" }}>Oops, cart is Empty</h5>
         </div>}
 

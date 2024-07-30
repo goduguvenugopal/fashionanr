@@ -19,7 +19,7 @@ const Products = () => {
             setLoader(true);
             try {
                 const response = await axios.get(`${API}/product/getproducts`);
-                setData(response.data)
+                setData(response.data.reverse())
                 setFilter(response.data)
                 setLoader(false);
             } catch (err) {

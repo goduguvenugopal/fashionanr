@@ -23,7 +23,7 @@ const Home = () => {
 
       try {
         const response = await axios.get(`${API}/product/getproducts`);
-        setData(response.data)
+        setData(response.data.reverse())
 
       } catch (err) {
         console.log(err)
