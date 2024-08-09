@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import '../App.css'
 import { Link } from 'react-router-dom'
 import { cartContext, tokenContext } from '../App'
@@ -10,20 +10,43 @@ const Navbar = () => {
     const [data, setData] = useState([])
     const [search, setSearch] = useState("")
     const [result, setResult] = useState(false)
-    const [orginalData , setOriginalData] = useState([])
-   
+    const [orginalData, setOriginalData] = useState([])
+
+
+    const navbarRef = useRef(null);
+    const navbarTogglerRef = useRef(null);
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            const navbar = navbarRef.current;
+            const navbarToggler = navbarTogglerRef.current;
+
+            if (navbar && navbarToggler) {
+                if (navbar.classList.contains('show') && !navbar.contains(event.target) && !navbarToggler.contains(event.target)) {
+                    navbarToggler.click();
+                }
+            }
+        }
+
+        document.addEventListener('click', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
+
 
 
     const API = "https://fashionkart-server.onrender.com"
 
 
-      // Fetch data 
-      useEffect(() => {
+    // Fetch data 
+    useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${API}/product/getproducts`);
                 setData(response.data.reverse());
-                setOriginalData(response.data); 
+                setOriginalData(response.data);
             } catch (error) {
                 console.log(error);
             }
@@ -31,10 +54,10 @@ const Navbar = () => {
         fetchData();
     }, []);
 
- 
 
-       // clicks to close the result dropdown
-       useEffect(() => {
+
+    // clicks to close the result dropdown
+    useEffect(() => {
         const handleClickOutside = () => {
             setResult(false);
             setSearch('');
@@ -80,7 +103,7 @@ const Navbar = () => {
                                     <Link className='text-dark' style={{ textDecoration: "none" }} to={`/products/${item._id}`}>
                                         <div onClick={() => setResult(false)} key={item._id} className='search-res'>
                                             <img src={item.image} alt={item.category} className='results-img' />
-                                            <h5 className='results-title'>{item.title.substring(0,12)}</h5>
+                                            <h5 className='results-title'>{item.title.substring(0, 12)}</h5>
                                         </div></Link>
 
 
@@ -91,11 +114,6 @@ const Navbar = () => {
 
                     </div>
 
-
-
-
-
-
                     <button
                         className="navbar-toggler  bg-white"
                         type="button"
@@ -104,10 +122,11 @@ const Navbar = () => {
                         aria-controls="navbarSupportedContent"
                         aria-expanded="false"
                         aria-label="Toggle navigation"
+                        ref={navbarTogglerRef} // Assign the ref here
                     >
                         <span className="navbar-toggler-icon  bg-white" />
                     </button>
-                    <div className="collapse navbar-collapse bg-primary " id="navbarSupportedContent">
+                    <div className="collapse navbar-collapse bg-primary " id="navbarSupportedContent" ref={navbarRef}>
                         <ul className="navbar-nav mx-auto bg-primary mb-2 mb-lg-0">
                             <Link style={{ textDecoration: "none" }} to="/" className="nav-item  bg-primary">
                                 <h6 style={{ fontSize: "17px" }} className="nav-link active bg-primary text-white " aria-current="page"  >
