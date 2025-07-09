@@ -32,7 +32,7 @@ const DeliveryAddress = () => {
         e.preventDefault();
         setSpinner(true)
         try {
-            await axios.post("https://fashionkart-server.onrender.com/address/add-address", formData)
+            await axios.post("https://fashionanr-backend.onrender.com/address/add-address", formData)
             toast.success("Address Added successfully")
             setName("")
             setMobile("")

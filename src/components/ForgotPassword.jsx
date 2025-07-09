@@ -56,7 +56,7 @@ const ForgotPassword = () => {
             }
             else {
                 const userData = { email, password }
-                await axios.put("https://fashionkart-server.onrender.com/authentication/updatepassword", userData)
+                await axios.put("https://fashionanr-backend.onrender.com/authentication/updatepassword", userData)
                 toast.success("Password has been Changed Successfully")
                 setEmail("")
                 setPassword("")

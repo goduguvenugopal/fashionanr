@@ -17,7 +17,7 @@ const ContactUs = () => {
         e.preventDefault();
         setSpinner(true)
         try {
-            await axios.post("https://fashionkart-server.onrender.com/mail/sendmail", formData)
+            await axios.post("https://fashionanr-backend.onrender.com/mail/sendmail", formData)
             toast.success("Thank You for Contacting Us")
             setText("")
             setSubject("")

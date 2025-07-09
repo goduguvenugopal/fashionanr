@@ -19,7 +19,7 @@ const MyOrders = () => {
 
       setSpinner(true)
       try {
-        const response = await axios.get("https://fashionkart-server.onrender.com/authentication/getuser", {
+        const response = await axios.get("https://fashionanr-backend.onrender.com/authentication/getuser", {
           headers: {
             token: token
           }
@@ -38,7 +38,7 @@ const MyOrders = () => {
     const getOrders = async () => {
 
       try {
-        const response = await axios.get(`https://fashionkart-server.onrender.com/order/get-all-orders/${userId}`)
+        const response = await axios.get(`https://fashionanr-backend.onrender.com/order/get-all-orders/${userId}`)
         setData(response.data)
         setSpinner(false)
       }

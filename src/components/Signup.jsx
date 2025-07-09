@@ -57,7 +57,7 @@ const Signup = () => {
 
                 const userData = { name, email, password }
 
-                await axios.post("https://fashionkart-server.onrender.com/authentication/signup", userData)
+                await axios.post("https://fashionanr-backend.onrender.com/authentication/signup", userData)
 
                 toast.success("Signed Up Successfully")
                 setSpinner(false)

@@ -15,7 +15,7 @@ const Home = () => {
   const [data, setData] = useState([])
 
 
-  const API = "https://fashionkart-server.onrender.com"
+  const API =  "https://fashionanr-backend.onrender.com"
 
   // fetching the products 
   useEffect(() => {

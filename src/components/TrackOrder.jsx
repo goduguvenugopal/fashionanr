@@ -19,7 +19,7 @@ const TrackOrder = () => {
     const [modal, setModal] = useState(false)
     const navigate = useNavigate()
 
-    const API = "https://fashionkart-server.onrender.com"
+    const API = "https://fashionanr-backend.onrender.com"
 
     // fetching single product by id 
     useEffect(() => {

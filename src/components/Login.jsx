@@ -30,7 +30,7 @@ const Login = () => {
             }
             else {
                 const userData = { email, password }
-                const response = await axios.post("https://fashionkart-server.onrender.com/authentication/login", userData)
+                const response = await axios.post("https://fashionanr-backend.onrender.com/authentication/login", userData)
                 setToken(response.data.token)
                 localStorage.setItem("token", JSON.stringify(response.data.token))
                 toast.success("Logged In Successfully")

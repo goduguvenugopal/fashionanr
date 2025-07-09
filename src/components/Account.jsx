@@ -20,7 +20,7 @@ const Account = () => {
         const getUserFunc = async () => {
 
             try {
-                const response = await axios.get("https://fashionkart-server.onrender.com/authentication/getuser", {
+                const response = await axios.get("https://fashionanr-backend.onrender.com/authentication/getuser", {
                     headers: {
                         token: token
                     }
@@ -49,7 +49,7 @@ const Account = () => {
         setDeleSpinner(true)
         setModal(false)
         try {
-            await axios.delete(`https://fashionkart-server.onrender.com/authentication/delete/${userId}`)
+            await axios.delete(`https://fashionanr-backend.onrender.com/authentication/delete/${userId}`)
             setToken("")
             localStorage.removeItem("token")
             localStorage.removeItem("userName")

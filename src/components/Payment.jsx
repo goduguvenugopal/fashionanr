@@ -21,7 +21,7 @@ const Payment = () => {
 
 
 
-    const API = "https://fashionkart-server.onrender.com"
+    const API = "https://fashionanr-backend.onrender.com"
 
     // fetching single product by id 
     useEffect(() => {
@@ -49,7 +49,7 @@ const Payment = () => {
         const getUserFunc = async () => {
 
             try {
-                const response = await axios.get("https://fashionkart-server.onrender.com/authentication/getuser", {
+                const response = await axios.get("https://fashionanr-backend.onrender.com/authentication/getuser", {
                     headers: {
                         token: token
                     }
@@ -103,9 +103,9 @@ const Payment = () => {
 
 
             // sending mail to the customer oder details
-            const response = await axios.post("https://fashionkart-server.onrender.com/mail/sendmail", formData)
+            const response = await axios.post("https://fashionanr-backend.onrender.com/mail/sendmail", formData)
             // sending order details to the database
-            await axios.post("https://fashionkart-server.onrender.com/order/add-order", orderDetails)
+            await axios.post("https://fashionanr-backend.onrender.com/order/add-order", orderDetails)
             if (response) {
 
                 setTimeout(() => {
